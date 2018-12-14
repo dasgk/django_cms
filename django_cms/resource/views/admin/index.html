@@ -5,6 +5,7 @@
     <title>Django CMS系统</title>
     {%load staticfiles%}
     <link rel="stylesheet" href="{% static 'css/H-ui.admin.css' %}">
+    <link rel="stylesheet" href="{% static 'h-ui/css/H-ui.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'lib/Hui-iconfont/1.0.8/iconfont.css' %}">
     <link rel="stylesheet" href="{% static 'lib/layer/2.4/skin/layer.css' %}">
@@ -193,6 +194,12 @@
     <!--_footer 作为公共模版分离出去-->
     {%block js%}
     <script src="{% static 'lib/jquery/1.9.1/jquery.js' %}"></script>
+    <script src="{% static 'h-ui.admin/js/H-ui.admin.js' %}"></script>
+    <script src="{% static 'h-ui/js/H-ui.js' %}"></script>
+    <script src="{% static 'lib/jquery.contextmenu/jquery.contextmenu.r2.js' %}"></script>
+    <script src="{% static 'lib/layer/2.4/layer.js' %}"></script>
+
+
     {%endblock js%}
 </body>
 </html>
