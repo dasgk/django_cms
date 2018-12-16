@@ -70,6 +70,20 @@
 </header>
 <aside class="Hui-aside">
     <div class="menu_dropdown bk_2">
+        <!--输出菜单-->
+        {% for menu in menu_list %}
+        <dl id="{{ menu.id }}">
+            <dt><i class="Hui-iconfont">&#xe616;</i> {{menu.text}}<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    {% for node in menu.nodes %}
+                    <li><a data-href="{{ node.url }}" data-title="{{node.title}}" href="javascript:void(0)">{{node.title}}</a></li>
+                    {% endfor %}
+                </ul>
+            </dd>
+        </dl>
+        {% endfor %}
+
         <dl id="menu-article">
             <dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
@@ -78,14 +92,7 @@
                 </ul>
             </dd>
         </dl>
-        <dl id="menu-picture">
-            <dt><i class="Hui-iconfont">&#xe613;</i> 图片管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a data-href="picture-list.html" data-title="图片管理" href="javascript:void(0)">图片管理</a></li>
-                </ul>
-            </dd>
-        </dl>
+
         <dl id="menu-product">
             <dt><i class="Hui-iconfont">&#xe620;</i> 产品管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
@@ -191,15 +198,15 @@
         <li id="closeall">关闭全部</li>
     </ul>
 </div>
-    <!--_footer 作为公共模版分离出去-->
-    {%block js%}
-    <script src="{% static 'lib/jquery/1.9.1/jquery.js' %}"></script>
-    <script src="{% static 'h-ui.admin/js/H-ui.admin.js' %}"></script>
-    <script src="{% static 'h-ui/js/H-ui.js' %}"></script>
-    <script src="{% static 'lib/jquery.contextmenu/jquery.contextmenu.r2.js' %}"></script>
-    <script src="{% static 'lib/layer/2.4/layer.js' %}"></script>
+<!--_footer 作为公共模版分离出去-->
+{%block js%}
+<script src="{% static 'lib/jquery/1.9.1/jquery.js' %}"></script>
+<script src="{% static 'h-ui.admin/js/H-ui.admin.js' %}"></script>
+<script src="{% static 'h-ui/js/H-ui.js' %}"></script>
+<script src="{% static 'lib/jquery.contextmenu/jquery.contextmenu.r2.js' %}"></script>
+<script src="{% static 'lib/layer/2.4/layer.js' %}"></script>
 
 
-    {%endblock js%}
+{%endblock js%}
 </body>
 </html>
