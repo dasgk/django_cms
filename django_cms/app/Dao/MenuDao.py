@@ -3,7 +3,7 @@ class MenuDao:
     def getMenuListByUser():
         menu_list = MenuDao.getMenuList()
         return menu_list
-
+    # 可选的id 有 menu-article menu-product  menu-comments menu-member menu-admin menu-tongji menu-system
     @staticmethod
     def getMenuList():
         return [
