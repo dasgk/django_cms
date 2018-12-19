@@ -20,6 +20,7 @@ from django.conf.urls import include,url
 
 urlpatterns = [
     # 后台管理系统默认跳转到登录界面
-    path('admin/', admin.site.urls),
     path('admin/', include('django_cms.Routes.web_admin')),
+    path('admin/', admin.site.urls),
+
 ]
