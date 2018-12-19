@@ -1,7 +1,9 @@
 from django.conf.urls import url
-from django_cms.app.Http.Controller.HomeController import form
+from django_cms.app.Http.Controller.HomeController import HomeController
 
 urlpatterns = [
-    # 表单内容
-    url(r'form', form)
+    # 网页布局
+    url(r'index', HomeController.index),
+    # 欢迎页面，也是一个展示页面
+    url('welcome', HomeController.welcome,name='admin.welcome'),
 ]
