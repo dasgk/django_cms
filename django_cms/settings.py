@@ -47,8 +47,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_cms.app.Http.Middleware.AuthMiddleware.AuthMiddleWare'
 ]
-
 ROOT_URLCONF = 'django_cms.urls'
 
 TEMPLATES = [
