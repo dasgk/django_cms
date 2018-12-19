@@ -72,16 +72,31 @@
         <!--输出菜单-->
         {% for menu in menu_list %}
         <dl id="{{ menu.id }}">
-            <dt><i class="Hui-iconfont">&#xe616;</i> {{menu.text}}<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dt><i class="Hui-iconfont">&#xe616;</i> {{menu.text}}<i
+                    class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
                     {% for node in menu.nodes %}
-                    <li><a data-href="{{ node.url }}" data-title="{{node.title}}" href="javascript:void(0)">{{node.title}}</a></li>
+                    <li><a data-href="{{ node.url }}" data-title="{{node.title}}" href="javascript:void(0)">{{node.title}}</a>
+                    </li>
                     {% endfor %}
                 </ul>
             </dd>
         </dl>
         {% endfor %}
+
+        {% ifequal user_name 'root_admin' %}
+        <dl id="0">
+            <dt><i class="Hui-iconfont">&#xe616;</i> 权限管理<i
+                    class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-href="#" data-title="权限管理" href="javascript:void(0)">权限管理</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        {% endifequal %}
     </div>
 </aside>
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a>
