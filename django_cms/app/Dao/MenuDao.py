@@ -3,6 +3,7 @@ class MenuDao:
     def getMenuListByUser():
         menu_list = MenuDao.getMenuList()
         return menu_list
+
     # 可选的id 有 menu-article menu-product  menu-comments menu-member menu-admin menu-tongji menu-system
     @staticmethod
     def getMenuList():
@@ -12,10 +13,10 @@ class MenuDao:
                 'text': '测试菜单',
                 'icon_class': '',
                 'url': 'http://www.baidu.com',
-                'nodes':[
+                'nodes': [
                     {
-                        'url':'http://www.baidu.com',
-                        'title':'测试菜单'
+                        'url': 'http://www.baidu.com',
+                        'title': '测试菜单'
                     },
                 ]
             },
