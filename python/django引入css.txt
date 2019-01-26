@@ -1,0 +1,21 @@
+1. 在 settings.py中添加
+ 
+	STATIC_URL = '/static/'
+	STATICFILES_DIRS=(
+		os.path.join(BASE_DIR,'static'),  #注意括号后面的还有个逗号
+	)
+ 
+	STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+
+2. 在settings.py中添加 
+	INSTALLED_APPS=[
+		'django.contrib.staticfiles'
+	]
+	
+3. 在 html中进行渲染出css路径来
+	{%load staticfiles%}
+		<link rel="stylesheet" href="{% static 'css/div.css' %}">
+    {%block css%}
+    {%endblock css%}
+	
+4   在html中渲染出js路径来
