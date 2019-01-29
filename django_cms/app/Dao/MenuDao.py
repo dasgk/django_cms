@@ -14,7 +14,7 @@ class MenuDao:
                 'icon_class': '',
                 'nodes': [
                     {
-                        'url': 'http://www.baidu.com',
+                        'url': '/admin/article',
                         'title': '文章列表'
                     },
                 ]

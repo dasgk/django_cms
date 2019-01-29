@@ -1,5 +1,6 @@
 from django.conf.urls import url
-from django_cms.app.Http.Controller.HomeController import HomeController
+from django_cms.app.Http.Controller.Admin.HomeController import HomeController
+from django_cms.app.Http.Controller.Admin.ArticleController import ArticleController
 from django.urls import path
 
 # 如果
@@ -11,4 +12,7 @@ urlpatterns = [
     url('welcome', HomeController.welcome, name='admin.welcome'),
     # 用户登出
     url('logout', HomeController.logout, name='admin.logout'),
+
+    # 文章列表
+    url('article', ArticleController.index, name='admin.article.index'),
 ]
