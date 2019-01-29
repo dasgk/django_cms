@@ -59,7 +59,7 @@ MIGRATION_MODULES =[
 TEMPLATES = [
 		{
 			'BACKEND': 'django.template.backends.django.DjangoTemplates',
-			'DIRS': [BASE_DIR+"\\django_cms\\resource\\views"],
+			'DIRS': [BASE_DIR+"/django_cms/resource/views"],
 			'APP_DIRS': True,
 			'OPTIONS': {
 				'context_processors': [
