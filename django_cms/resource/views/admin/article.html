@@ -1,0 +1,12 @@
+<html>
+<head></head>
+<body>
+
+{% for article in article_list %}
+    {# Each "contact" is a Contact model object. #}
+    {{ article.content |upper }}<br />
+    ...
+{% endfor %}
+
+</body>
+</html>
