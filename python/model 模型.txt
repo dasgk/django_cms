@@ -21,7 +21,9 @@ INSTALLED_APPS = [
     'mysite.models',  #这里是自己定义的模型类的路径
 ]
 
-3.model 模型类 类似定义
+3.model 模型类类似定义，继承了Model，文件放在django_cms根目录下，同时需要注意的是，该文件的名称必须是models.py
+使用  python manager.py makemigrations
+      python manager.py migrate  然后就可已创建表了
 from django.db import models
 
 class Exhibit(models.Model):

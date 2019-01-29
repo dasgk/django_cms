@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_cms',  #这里是自己定义的模型类的路径
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,10 @@ MIDDLEWARE = [
     'django_cms.app.Http.Middleware.AuthMiddleware.AuthMiddleWare'
 ]
 ROOT_URLCONF = 'django_cms.urls'
+MIGRATION_MODULES =[
+    'django_cms.migrations'
+]
+
 
 TEMPLATES = [
 		{
@@ -127,4 +132,20 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
-
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+    }
+}

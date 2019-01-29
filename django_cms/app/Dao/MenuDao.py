@@ -10,14 +10,13 @@ class MenuDao:
         return [
             {
                 'id': 'menu-article',
-                'text': '测试菜单',
+                'text': '文章管理',
                 'icon_class': '',
-                'url': 'http://www.baidu.com',
                 'nodes': [
                     {
                         'url': 'http://www.baidu.com',
-                        'title': '测试菜单'
+                        'title': '文章列表'
                     },
                 ]
             },
-        ];
+        ]
