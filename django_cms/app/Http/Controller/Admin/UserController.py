@@ -9,4 +9,4 @@ class UserController(View):
         context = {}
         t = get_template('admin/login.html')
         html = t.render(context)
-        return HttpResponse("111")
+        return HttpResponse(html)

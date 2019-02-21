@@ -1,1 +1,58 @@
-﻿登录界面
+﻿
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <title>登录</title>
+
+     <!-- Bootstrap core CSS -->
+    {%load staticfiles%}
+    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+
+    <link href="{% static 'font-awesome-4.7.0/css/font-awesome.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrapvalidator-master/css/bootstrapValidator.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico">
+    <!--[if lte IE 9]>
+
+    <![endif]-->
+
+
+    </head>
+<body >
+
+    <div class="middle-box text-center loginscreen">
+        <div>
+            <h3>登陆</h3>
+
+            <form class="m-t" role="form" method="POST" action="http://127.0.0.1:8982/hdpanel/login">
+                <input type="hidden" name="_token" value="MA2A0YEmjz7qmALBn6pyBZySWA5Ck7rdzbxRW9ft">
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" placeholder="手机/邮箱/用户名" required="" value=""/>
+                                    </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="密码" required="">
+                                    </div>
+                
+                <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script src="{% static 'bootstrapvalidator-master/js/bootstrapValidator.js' %}"></script>
+<script src="{% static '/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+</html>

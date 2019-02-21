@@ -1,4 +1,4 @@
-1. setting.py  数据库配置
+1. setting.py  ?????
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -10,7 +10,7 @@ DATABASES = {
     }
 }
 
-2. 模型类的路径定义
+2. ????????
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -18,12 +18,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_cms.models',  #这里是自己定义的模型类的路径
+    'django_cms.models',  #??????????????
 ]
 
-3.model 模型类类似定义，继承了Model，文件放在django_cms根目录下，同时需要注意的是，该文件的名称必须是models.py
-使用  python manager.py makemigrations
-      python manager.py migrate  然后就可已创建表了
+3.model ???????????Model?????django_cms???????????????????????models.py
+??  python manager.py makemigrations
+      python manager.py migrate  ?????????
 from django.db import models
 
 class Exhibit(models.Model):
@@ -36,54 +36,54 @@ class Exhibit(models.Model):
     class Meta:
         db_table = "hd_exhibit"
 
-		
-4. 模型查找，返回一条数据
-exhibit_obj = Exhibit.objects.filter(exhibit_id=1).first()   这样，找到数据返回的是 Exhibit对象，未找到数据 返回的是None
 
-//返回多条数据
+4. ???????????
+exhibit_obj = Exhibit.objects.filter(exhibit_id=1).first()   ??????????? Exhibit???????? ????None
+
+//??????
 
 exhibit_list = Exhibit.objects.filter(exhibit_id=1).all()
 for i in exhibit_list:
     print(i.content)
-	
-	
-正序排列
+
+
+????
 exhibit_list = Exhibit.objects.filter(exhibit_id=1).order_by('exhibit_id').all()
-倒序排列
+????
 exhibit_list = Exhibit.objects.filter(exhibit_id=1).order_by('-exhibit_id').all()
-//多个字段排序
+//??????
 Articlelist = Article.objects.order_by('-nid','ctime')
 
 
-// 返回特定列， 并且返回的是多个列
+// ?????? ?????????
 exhibit_list = Exhibit.objects.filter(exhibit_id=1).order_by('exhibit_id').values('content','exhibit_id').all()
 print(exhibit_list)
 
-//返回一个字典
+//??????
 exhibit_list = Exhibit.objects.filter(exhibit_id=1).order_by('exhibit_id').values('content','exhibit_id').first()
 if exhibit_list != None:
 	print(exhibit_list.content)
 
-// 返回数量 
+// ????
  Book.objects.filter(publisher__name='BaloneyPress').count()
-//返回最大值
+//?????
 Book.objects.all().aggregate(Max('price'))
-  
-//返回平均值
-Book.objects.all().aggregate(Avg('price'))
-//返回综合
- Student.objects.aggregate(Sum('age'))
-  
-get 返回一个对象，
 
-新建一个对象，或者多个对象
-方式1 ：  Exhibit.objects.create(content="这是新建内容",video_path="去百度看吧",created_at="2018-11-14 00:00:00",updated_at="2018-11-14 09:00:00")
-方式2：
-test = Exhibit(content="这是新建内容",video_path="去百度看吧",created_at="2018-11-14 00:00:00",updated_at="2018-11-14 09:00:00")
-test.content = '这是最新的内容'
+//?????
+Book.objects.all().aggregate(Avg('price'))
+//????
+ Student.objects.aggregate(Sum('age'))
+
+get ???????
+
+?????????????
+??1 ?  Exhibit.objects.create(content="??????",video_path="?????",created_at="2018-11-14 00:00:00",updated_at="2018-11-14 09:00:00")
+??2?
+test = Exhibit(content="??????",video_path="?????",created_at="2018-11-14 00:00:00",updated_at="2018-11-14 09:00:00")
+test.content = '???????'
 test.save()
 
-方式3 
+??3
 Exhibit.objects.get_or_create(content="WZT", created_at="2018-11-14 03:33:02", updated_at="2018-11-14 03:33:02")
 
 product_list_to_insert = list()
@@ -93,30 +93,30 @@ Product.objects.bulk_create(product_list_to_insert)
 
 
 
-修改的方式自然也就这样了，现在看下批量修改
+?????????????????????
 
 
-批量更新数据
-批量更新数据时，先进行数据过滤，然后再调用update方法进行一次性地更新。下面的语句将生成类似update...where...的SQL语句。
-Exhibit.objects.filter(video_path__contains='哈').update(video_path="这是新内容",updated_at="2019-11-10 00:00:00")
-自然删除也是这么删除了
+??????
+?????????????????????update?????????????????????update...where...?SQL???
+Exhibit.objects.filter(video_path__contains='?').update(video_path="?????",updated_at="2019-11-10 00:00:00")
+???????????
 Exhibit.objects.filter(content__contains='WZT').delete()
 
 
 
-where条件查询
-Person.objects.filter(name="abc")  # 等于Person.objects.filter(name__exact="abc") 名称严格等于 "abc" 的人
+where????
+Person.objects.filter(name="abc")  # ??Person.objects.filter(name__exact="abc") ?????? "abc" ??
 
-Person.objects.filter(name__iexact="abc")  # 名称为 abc 但是不区分大小写，可以找到 ABC, Abc, aBC，这些都符合条件
+Person.objects.filter(name__iexact="abc")  # ??? abc ????????????? ABC, Abc, aBC????????
 
-Person.objects.filter(name__contains="abc")  # 名称中包含 "abc"的人
+Person.objects.filter(name__contains="abc")  # ????? "abc"??
 
-Person.objects.filter(name__icontains="abc")  #名称中包含 "abc"，且abc不区分大小写
+Person.objects.filter(name__icontains="abc")  #????? "abc"??abc??????
 
 
 
-Person.objects.filter(name__regex="^abc")  # 正则表达式查询
+Person.objects.filter(name__regex="^abc")  # ???????
 
-Person.objects.filter(name__iregex="^abc")  # 正则表达式不区分大小写
+Person.objects.filter(name__iregex="^abc")  # ???????????
 
-Person.objects.filter(name__contains="abc").exclude(age=23)  # 找出名称含有abc, 但是排除年龄是23岁的
+Person.objects.filter(name__contains="abc").exclude(age=23)  # ??????abc, ???????23??
