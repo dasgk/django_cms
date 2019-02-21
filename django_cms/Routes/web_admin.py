@@ -5,6 +5,5 @@ from django.urls import path
 
 # 如果
 urlpatterns = [
-    # 网页布局
-    path(r'', HomeController.index, name='admin.index')
+    url(r'', HomeController.index, name='admin.index')
 ]
