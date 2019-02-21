@@ -12,6 +12,6 @@ class HomeController(View):
     def index(request):
         menu_list = MenuDao.getMenuListByUser()
         context = {'menu_list': menu_list, 'user_name': request.user.username}
-        t = get_template('admin/index.html')
+        t = get_template('admin/1index.html')
         html = t.render(context)
         return HttpResponse(html)
