@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
 
     <link href="{% static 'font-awesome-4.7.0/css/font-awesome.css' %}" rel="stylesheet">
-    <link href="{% static 'bootstrapvalidator-master/css/bootstrapValidator.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -29,7 +28,6 @@
 
     <![endif]-->
 
-
     </head>
 <body >
 
@@ -37,7 +35,8 @@
         <div>
             <h3>登陆</h3>
 
-            <form class="m-t" role="form" method="POST" action="http://127.0.0.1:8982/hdpanel/login">
+            <form class="m-t" role="form" enctype="multipart/form-data" method="POST" action="{% url 'admin.user.login' %}">
+                {% csrf_token %}
                 <input type="hidden" name="_token" value="MA2A0YEmjz7qmALBn6pyBZySWA5Ck7rdzbxRW9ft">
                 <div class="form-group">
                     <input type="text" name="username" class="form-control" placeholder="手机/邮箱/用户名" required="" value=""/>
@@ -53,6 +52,5 @@
 
 </body>
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
-<script src="{% static 'bootstrapvalidator-master/js/bootstrapValidator.js' %}"></script>
 <script src="{% static '/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
 </html>
