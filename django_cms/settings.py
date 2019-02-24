@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_cms',  # 这里是自己定义的模型类的路径
+
 ]
 
 MIDDLEWARE = [
