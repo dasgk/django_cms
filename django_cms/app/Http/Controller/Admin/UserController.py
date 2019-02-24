@@ -4,7 +4,7 @@ from django.views import View
 
 from django.shortcuts import render_to_response,render
 from django.template import RequestContext
-
+from django_cms.models import AdminUser
 from django.views.generic import TemplateView
 class UserController(TemplateView):
     # 网站首页
@@ -13,11 +13,16 @@ class UserController(TemplateView):
         if request.method == 'GET':
             return render(request, 'admin/login.html', {'article_list': []})
         else:
-            return render(request, 'admin/index.html', {'article_list': []})
             parm = request.POST
-            new_user = UserInfo()
-            new_user.user_name = parm.get('user_name', 'not found')
-            new_user.password = parm.get('pwd', 'not found')
-            new_user.email = parm.get('email', 'not found')
+            username = parm.get('username', 'not found')
+            password = parm.get('password', 'not found')
+            user_filter = {}
+            user_filter['username'] = username
+            user_filter['password'] = password
+            login_admin_user = AdminUser.objects.filter(**user_filter).first()
+            if login_admin_user:
+                return render(request, 'admin/index.html', {'user':login_admin_user})
+            print(login_admin_user)
+
 
 
