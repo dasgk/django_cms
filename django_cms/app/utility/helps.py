@@ -4,8 +4,8 @@
 from django_cms.models import AdminUser
 
 def is_login(request):
-    username = request.session["username"]
-    password = request.session["password"]
+    username = request.session.get("username")
+    password = request.session.get("password")
     filters = {}
     filters['username'] = username
     filters['password'] = password

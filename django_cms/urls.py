@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include,url
+from django_cms.app.Http.Controller.Admin.HomeController import HomeController
+from django_cms.app.Http.Controller.Admin.UserController import UserController
 
 urlpatterns = [
-    # 后台管理系统默认跳转到登录界面
-    path('', include('django_cms.routes.web_admin'))
+    url('user/login', UserController.login,name='admin.user.login'),
+    url('index', HomeController.index,name='admin.index'),
 ]
