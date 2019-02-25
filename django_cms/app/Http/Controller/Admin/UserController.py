@@ -6,7 +6,7 @@ from django.shortcuts import render_to_response, render, redirect
 
 from django_cms.models import AdminUser
 from django.views.generic import TemplateView
-from django_cms.app.utility.helps import set_login, is_login
+from django_cms.app.utility.helps import set_login, is_login, do_logout, response_json
 
 
 class UserController(TemplateView):
@@ -32,3 +32,9 @@ class UserController(TemplateView):
                 return HttpResponseRedirect('/index')
             else:
                 return HttpResponse('error')
+
+    def logout(request):
+        do_logout(request)
+        result = {"status": "错误", "data": "", "city": "北京"}
+        # json返回为中文
+        return response_json(1, "")

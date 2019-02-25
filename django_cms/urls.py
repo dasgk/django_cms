@@ -21,5 +21,7 @@ from django_cms.app.Http.Controller.Admin.UserController import UserController
 
 urlpatterns = [
     url('user/login', UserController.login,name='admin.user.login'),
+    url('user/logout', UserController.logout,name='admin.user.logout'),
     url('index', HomeController.index,name='admin.index'),
+    url('', HomeController.index,name='admin.index'),
 ]
