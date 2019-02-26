@@ -81,8 +81,8 @@ DATABASES = {
         'NAME': 'records',
         'USER': 'root',
         'PASSWORD': 'hengda',
-        'HOST': '',
-        'PORT': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 

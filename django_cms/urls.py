@@ -18,10 +18,12 @@ from django.urls import path
 from django.conf.urls import include,url
 from django_cms.app.Http.Controller.Admin.HomeController import HomeController
 from django_cms.app.Http.Controller.Admin.UserController import UserController
+from django_cms.app.Http.Controller.Admin.ArticleController import ArticleController
 
 urlpatterns = [
     url('user/login', UserController.login,name='admin.user.login'),
     url('user/logout', UserController.logout,name='admin.user.logout'),
     url('index', HomeController.index,name='admin.index'),
+    url('article_list', ArticleController.index,name='admin.article.index'),
     url('', HomeController.index,name='admin.index'),
 ]
