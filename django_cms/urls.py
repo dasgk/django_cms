@@ -25,5 +25,6 @@ urlpatterns = [
     url('user/logout', UserController.logout,name='admin.user.logout'),
     url('index', HomeController.index,name='admin.index'),
     url('article_list', ArticleController.index,name='admin.article.index'),
+    url('show_article_form', ArticleController.show_article_form,name='admin.article.show_article_form'),
     url('', HomeController.index,name='admin.index'),
 ]

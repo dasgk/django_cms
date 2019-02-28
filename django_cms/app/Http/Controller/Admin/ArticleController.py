@@ -37,4 +37,10 @@ class ArticleController(View):
         t = get_template('admin/article.html')
         html = t.render(context)
         return HttpResponse(html)
+    def show_article_form(request):
+        t = get_template('admin/article_form.html')
+        html = t.render({})
+        return HttpResponse(html)
+
+
 

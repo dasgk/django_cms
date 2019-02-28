@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <title>Simple example - Editor.md examples</title>
+    {%load staticfiles%}
+    <link rel="stylesheet" href="{% static 'editor.md-master/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'editor.md-master/css/editormd.css' %}">
+    <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+<div id="layout">
+    <header>
+        <h1>Simple example</h1>
+    </header>
+    <div id="test-editormd">
+                <textarea style="display:none;">
+</textarea>
+    </div>
+</div>
+<link rel="stylesheet" href="{% static 'editor.md-master/css/style.css' %}">
+<script src="{% static 'js/jquery.min.js' %}"></script>
+
+<script src="{% static 'editor.md-master/editormd.min.js' %}"></script>
+<script type="text/javascript">
+			var testEditor;
+
+            $(function() {
+                testEditor = editormd("test-editormd", {
+                    theme : "dark",
+                    previewTheme : "dark",
+                    editorTheme : "pastel-on-dark",
+                    width   : "90%",
+                    height  : 640,
+                    syncScrolling : "single",
+                    path    : "{% static 'editor.md-master/lib/' %}"
+
+                });
+
+
+            });
+
+
+</script>
+</body>
+{%block css%}
+{%endblock css%}
+</html>
