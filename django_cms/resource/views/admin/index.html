@@ -15,19 +15,23 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
-    <!-- Favicons -->
+
     <link rel="icon" href="/favicon.ico">
 </head>
 <style>
-.navbar {
-        margin-bottom: 0;
+        .navbar {
+            margin-bottom: 0;
         }
+        a:hover {
+    background-color:black !important;
+    color:#9c9c9c;
+}
+
+
 </style>
 <body>
 <!-- 快速导航栏 -->
@@ -36,7 +40,8 @@
         <nav id="bs-navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
                 <li>
-                    <a href="{% url 'admin.index' %}">首页</a>
+
+                    <a class="index_a"href="{% url 'admin.index' %}">首页</a>
                 </li>
 
                 <li>
@@ -145,7 +150,10 @@ function sub_page_jump(obj){
     $("#rIframe").src = url
     $("#rIframe").attr('src',url)
 }
-
+$('.index_a').hover(function(event){
+return false;
+event.stopPropagation();
+});
 </script>
 {%block css%}
 {%endblock css%}
