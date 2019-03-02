@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import  render
+from django.shortcuts import render
+from django_cms.app.Dao.UserDao import AdminUserDao
 from django_cms.models import AdminUser
 from django.views.generic import TemplateView
 from django_cms.app.utility.helps import set_login, is_login, do_logout, response_json
@@ -22,11 +23,8 @@ class UserController(TemplateView):
             parm = request.POST
             username = parm.get('username', 'not found')
             password = parm.get('password', 'not found')
-            user_filter = {}
-            user_filter['username'] = username
-            user_filter['password'] = password
-            login_admin_user = AdminUser.objects.filter(**user_filter).first()
-            if login_admin_user != None:
+            login_admin_user = AdminUserDao.getUser(username, password)
+            if type(login_admin_user) == AdminUser:
                 set_login(request, username, password)
                 return HttpResponseRedirect('/index')
             else:

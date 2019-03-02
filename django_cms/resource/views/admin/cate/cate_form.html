@@ -30,11 +30,17 @@
     <div class="row"  style="margin-top: 3%;">
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
-                <form action="" method="post" class="form-horizontal ajaxForm" >
+                <form action="{% url 'admin.cate.save_cate' %}" enctype="multipart/form-data" method="post" class="form-horizontal ajaxForm" >
+                     {% csrf_token %}
                     <div class="form-group" style="margin-left:4%">
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" style="background-color:#1c232f;" name="source"
+                            <input type="text" class="form-control"  autocomplete="off"  style="background-color:#1c232f;" name="title"
                                    placeholder="类别名称"/>
+                            {% if cate %}
+                             <input type="hidden" name="cate_id" autocomplete="off"value="{{cate.cate_id}}"/>
+                            {% else %}
+                            <input type="hidden" name="cate_id" autocomplete="off"  value="0"/>
+                            {% endif %}
                         </div>
                     </div>
                     <br>
