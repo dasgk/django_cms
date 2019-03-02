@@ -40,7 +40,7 @@ import json
 '''
 def response_json(statusCode,data,msg=''):
     res={}
-    res['statusCode'] = statusCode
+    res['status'] = statusCode
     res['data'] = data
     res['msg'] = msg
     return HttpResponse(json.dumps(res, ensure_ascii=False), content_type="application/json,charset=utf-8")

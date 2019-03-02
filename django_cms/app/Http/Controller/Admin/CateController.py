@@ -25,7 +25,7 @@ class CateController(View):
         title = parm.get('title', '')
         cate = CateDao.createOrUpdate(cate_id, title)
         if type(cate) == Cate:
-            return response_json(1, "")
+            return response_json(1,[], "保存成功")
         else:
             return response_json(0, "")
 
