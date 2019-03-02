@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <title>文章内容</title>
+    {%load staticfiles%}
+    <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.css' %}">
+
+
+    <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
+</head>
+<body style="color:#9c9c9c;background-color:#1c232f;">
+<div id="layout">
+    <header>
+        <h1 style="margin-left: 5%;">类别编辑</h1>
+    </header>
+    <div class="form-group" style="margin-left:4%">
+        <div class="col-sm-4">
+            <input type="text" class="form-control" style="background-color:#1c232f;" name="source" placeholder="类别名称"/>
+        </div>
+    </div>
+    <br>
+    <div class="hr-line-dashed"></div>
+    <div class="form-group" style="margin-top: 2%;margin-left: 5%;">
+        <input type="submit" value="发布类别" class="button button-pill button-primary">
+    </div>
+</div>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+{%block css%}
+{%endblock css%}
+</html>

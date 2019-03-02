@@ -9,10 +9,10 @@ class CateController(View):
     def index(request):
         # 获得所有数据
         t = get_template('admin/cate/cate.html')
-        html = t.render({})
+        html = t.render({'cate_list':[]})
         return HttpResponse(html)
     def show_cate_form(request):
-        t = get_template('admin/article/article_form.html')
+        t = get_template('admin/cate/cate_form.html')
         html = t.render({})
         return HttpResponse(html)
 
