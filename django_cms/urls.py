@@ -28,7 +28,8 @@ urlpatterns = [
     url('article_list', ArticleController.index, name='admin.article.index'),
     url('show_article_form', ArticleController.show_article_form, name='admin.article.show_article_form'),
     url('cate_list', CateController.index, name='admin.cate.index'),
-    url('show_cate_form', CateController.show_cate_form, name='admin.cate.show_cate_form'),
+    url('show_cate_form/(\d+)/$', CateController.show_cate_form, name='admin.cate.show_cate_form'),
     url('save_cate', CateController.save_cate, name='admin.cate.save_cate'),
+    url('delete_cate/(\d+)/$', CateController.delete_cate, name='admin.cate.delete_cate'),
     url('', HomeController.index, name='admin.index'),
 ]

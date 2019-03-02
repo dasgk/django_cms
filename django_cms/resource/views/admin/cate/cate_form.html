@@ -19,7 +19,7 @@
                 <ul class="nav nav-tabs">
                     <li><a  url-data="{% url 'admin.cate.index' %}" onclick="sub_page_jump(this)" style="color:#9c9c9c;background-color:#1c232f;"
                                           href="javascript:void(0)">分类列表</a></li>
-                    <li  class="active"><a url-data="{% url 'admin.cate.show_cate_form' %}" onclick="sub_page_jump(this)"
+                    <li  class="active"><a url-data="{% url 'admin.cate.show_cate_form' 0 %}" onclick="sub_page_jump(this)"
                            style="color:#9c9c9c;background-color:#1c232f;" href="javascript:void(0)">添加分类</a></li>
                 </ul>
             </div>
@@ -34,11 +34,14 @@
                      {% csrf_token %}
                     <div class="form-group" style="margin-left:4%">
                         <div class="col-sm-4">
-                            <input type="text" class="form-control"  autocomplete="off"  style="background-color:#1c232f;" name="title"
-                                   placeholder="类别名称"/>
+
                             {% if cate %}
+                            <input type="text" class="form-control"  autocomplete="off"  style="background-color:#1c232f;" name="title"
+                                   value="{{cate.title}}"/>
                              <input type="hidden" name="cate_id" autocomplete="off"value="{{cate.cate_id}}"/>
                             {% else %}
+                            <input type="text" class="form-control"  autocomplete="off"  style="background-color:#1c232f;" name="title"
+                                   placeholder="类别名称"/>
                             <input type="hidden" name="cate_id" autocomplete="off"  value="0"/>
                             {% endif %}
                         </div>

@@ -38,9 +38,12 @@ import json
 '''
     返回json数据
 '''
-def response_json(statusCode,data,msg=''):
-    res={}
+
+
+def response_json(statusCode, data, msg='', url=''):
+    res = {}
     res['status'] = statusCode
     res['data'] = data
     res['msg'] = msg
+    res['url'] = url
     return HttpResponse(json.dumps(res, ensure_ascii=False), content_type="application/json,charset=utf-8")

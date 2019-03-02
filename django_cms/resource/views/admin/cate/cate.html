@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.css' %}">
     <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
 </head>
+<style>
+    .table>tbody>tr>td{
+        border:0px;
+    }
+</style>
 <body style="color:#9c9c9c;background-color:#1c232f;">
 <div class="wrapper wrapper-content">
     <div class="row m-b">
@@ -14,7 +19,7 @@
                 <ul class="nav nav-tabs">
                     <li class="active"><a style="color:#9c9c9c;background-color:#1c232f;"
                                           href="javascript:void(0)">分类列表</a></li>
-                    <li><a url-data="{% url 'admin.cate.show_cate_form' %}" onclick="sub_page_jump(this)"
+                    <li><a url-data="{% url 'admin.cate.show_cate_form' 0 %}" onclick="sub_page_jump(this)"
                            style="color:#9c9c9c;background-color:#1c232f;" href="javascript:void(0)">添加分类</a></li>
                 </ul>
             </div>
@@ -25,15 +30,20 @@
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
-                    <table class="table" id="category_tree">
+                    <table class="table">
                         <tr style="color:#9c9c9c;background-color:#1c232f;">
                             <th width="25%">分类名称</th>
                             <th width="25%">文章数量</th>
-                            <th width="25%">文章列表</th>
                             <th width="25%">操作</th>
                         </tr>
                         {% for cate in cate_list %}
                         <tr class="gradeA">
+                            <td width="25%">{{cate.title}}</td>
+                            <td width="25%">{{cate.article_count}}</td>
+
+                            <td width="25%"><a href=" {% url 'admin.cate.show_cate_form' cate.cate_id %}">编辑</a>|
+                                <a class="ajaxBtn" href="javascript:void(0);" uri="{% url 'admin.cate.delete_cate' cate.cate_id %}" msg="是否删除该类别？">删除</a>
+                            </td>
                         </tr>
                         {% endfor %}
                     </table>
@@ -44,11 +54,14 @@
 </div>
 </body>
 <script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'layer/layer.js' %}"></script>
+<script src="{% static 'js/public.js' %}"></script>
 <script>
     function sub_page_jump(obj){
     url =obj.getAttribute('url-data')
     location.href = url
 }
+
 </script>
 {%block css%}
 {%endblock css%}
