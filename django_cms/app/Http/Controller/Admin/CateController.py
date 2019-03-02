@@ -15,7 +15,8 @@ class CateController(View):
         page_num = request.GET.get('page_num',1)
         t = get_template('admin/cate/cate.html')
         cate_list = CateDao.getCateList(page_num)
-        html = t.render({'cate_list': cate_list})
+        html = t.render({'cate_list': cate_list[1],'paginator':cate_list[0]})
+
         return HttpResponse(html)
 
     def show_cate_form(request,cate_id):

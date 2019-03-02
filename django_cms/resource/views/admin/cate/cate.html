@@ -17,8 +17,6 @@
         z-index: 2;
         color:#9c9c9c;background-color:#1c232f;
     }
-
-
 </style>
 <body style="color:#9c9c9c;background-color:#1c232f;">
 <div class="wrapper wrapper-content">
@@ -62,14 +60,28 @@
         </div>
     </div>
 
-    <div class="row" style="color:#9c9c9c;background-color:#1c232f;">
+    {% load page%}
+
+
+
+    {% autoescape off %}
+  {% view_page cate_list paginator 1 %}
+
+
+{% autoescape on %}
+
+{% endautoescape %}
+{% endautoescape %}
+
+
+
+    <div class="row" >
         <div class="col-sm-12">
             <div>共 1 条记录</div>
             <ul class="pagination">
                 <li class="disabled"><span>«</span></li>
                 <li class="active"><span>1</span></li>
-                <li><a style="color:#9c9c9c;background-color:#1c232f;"
-                       href="https://applite.museum-edu.cn/hdpanel/cabinet/cabinet?page=2">2</a></li>
+                <li><a href="https://applite.museum-edu.cn/hdpanel/cabinet/cabinet?page=2">2</a></li>
                 <li><a href="https://applite.museum-edu.cn/hdpanel/cabinet/cabinet?page=3">3</a></li>
                 <li><a href="https://applite.museum-edu.cn/hdpanel/cabinet/cabinet?page=4">4</a></li>
                 <li><a href="https://applite.museum-edu.cn/hdpanel/cabinet/cabinet?page=2" rel="next">»</a></li>

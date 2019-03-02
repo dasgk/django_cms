@@ -24,7 +24,7 @@ class CateDao:
         for obj in p.object_list:
             cate_filter['cate_id'] = obj.cate_id
             obj.article_count = Article.objects.filter(** cate_filter).count()
-        return p.page(page_num)
+        return [p, p.page(page_num)]
 
 
 
