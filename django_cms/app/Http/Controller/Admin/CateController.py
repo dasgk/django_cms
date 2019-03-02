@@ -11,10 +11,20 @@ class CateController(View):
         t = get_template('admin/cate/cate.html')
         html = t.render({'cate_list':[]})
         return HttpResponse(html)
+
     def show_cate_form(request):
         t = get_template('admin/cate/cate_form.html')
         html = t.render({})
         return HttpResponse(html)
 
+    def save_cate(request):
+        t = get_template('admin/cate/cate_form.html')
+        html = t.render({})
+        return HttpResponse(html)
+
+    def delete_cate(request):
+        t = get_template('admin/cate/cate_form.html')
+        html = t.render({})
+        return HttpResponse(html)
 
 
