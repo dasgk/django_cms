@@ -5,7 +5,7 @@
     <title>文章内容</title>
     {%load staticfiles%}
     <link rel="stylesheet" href="{% static 'editor.md-master/css/style.css' %}">
-     <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'editor.md-master/css/editormd.css' %}">
     <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
 </head>
@@ -13,15 +13,38 @@
 选择样式
 http://www.bootcss.com/p/icheck/
 -->
+<style>
+    .dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    white-space: nowrap;
+}
+
+
+</style>
 <body style="color:#9c9c9c;background-color:#1c232f;">
 <div id="layout">
     <header>
         <h1>新建文章</h1>
     </header>
-    <div class="form-group" style="margin-left:5%">
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="文章标题">
+    <div class="form-group" style="margin-left:4%">
+        <div class="col-sm-4">
+            <input type="text" class="form-control" style="background-color:#1c232f;" name="source" placeholder="文章标题"/>
+        </div>
     </div>
-    <div class="form-group" >
+    <div class="form-group" style="    margin-left: 4%;margin-top: 3%;margin-bottom: 0%;">
+        <div class="col-sm-2"style="float:none">
+            <select name="cate_id" class="form-control" style="color:#9c9c9c;background-color:#1c232f;">
+                <option value="">--请选择分类--</option>
+                <option value="1">测试分类</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
         <div id="test-editormd">
             <textarea style="display:none;"></textarea>
         </div>
@@ -29,10 +52,10 @@ http://www.bootcss.com/p/icheck/
 </div>
 <link rel="stylesheet" href="{% static 'editor.md-master/css/style.css' %}">
 <script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'editor.md-master/editormd.min.js' %}"></script>
 <script type="text/javascript">
 			var testEditor;
-
             $(function() {
                 testEditor = editormd("test-editormd", {
                     theme : "dark",
@@ -43,9 +66,13 @@ http://www.bootcss.com/p/icheck/
                     placeholder: '请写下您的点滴记录...',
                     syncScrolling : "single",
                     path    : "{% static 'editor.md-master/lib/' %}"
-
                 });
             });
+
+
+
+
+
 </script>
 </body>
 {%block css%}
