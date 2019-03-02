@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.views import View
 from django.shortcuts import render
 from django_cms.app.Dao.CateDao import CateDao
-from django_cms.models import Cate
+from django_cms.models import Cate,Article
 from django.urls import reverse
 from django_cms.app.utility.helps import response_json
 
@@ -37,6 +37,9 @@ class CateController(View):
     def delete_cate(request, cate_id):
         cate_filter = dict()
         cate_filter['cate_id'] = cate_id
+        count = Article.objects.filter(**cate_filter).count()
+        if count>0:
+            return response_json(0, [], "该类别下有文章，不允许删除")
         cate = Cate.objects.filter(**cate_filter).first()
         cate.delete()
         return response_json(1, [], "删除成功", reverse('admin.cate.index'))
