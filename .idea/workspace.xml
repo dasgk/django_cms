@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4ad98cc-f6e3-4b41-9d79-d90007606b88" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/django_cms/migrations/0001_initial.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/django_cms/models.py" afterPath="$PROJECT_DIR$/django_cms/models.py" />
-      <change beforePath="$PROJECT_DIR$/django_cms/resource/views/admin/article_form.html" afterPath="$PROJECT_DIR$/django_cms/resource/views/admin/article_form.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/CateController.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/django_cms/resource/views/admin/cate/cate.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/ArticleController.py" afterPath="$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/ArticleController.py" />
+      <change beforePath="$PROJECT_DIR$/django_cms/resource/views/admin/article.html" afterPath="$PROJECT_DIR$/django_cms/resource/views/admin/article/article.html" />
+      <change beforePath="$PROJECT_DIR$/django_cms/resource/views/admin/article_form.html" afterPath="$PROJECT_DIR$/django_cms/resource/views/admin/article/article_form.html" />
+      <change beforePath="$PROJECT_DIR$/django_cms/resource/views/admin/index.html" afterPath="$PROJECT_DIR$/django_cms/resource/views/admin/index.html" />
+      <change beforePath="$PROJECT_DIR$/django_cms/urls.py" afterPath="$PROJECT_DIR$/django_cms/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="article_form.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/article_form.html">
+      <file leaf-file-name="article_form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/article/article_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+            <state relative-caret-position="290">
+              <caret line="40" column="71" lean-forward="false" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -29,7 +33,64 @@
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#textarea#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#2226#2232#0" expanded="true" />
+                <element signature="e#2232#2238#0" expanded="true" />
+                <element signature="e#2238#2244#0" expanded="true" />
+                <element signature="e#2244#2250#0" expanded="true" />
+                <element signature="e#2250#2256#0" expanded="true" />
+                <element signature="e#2256#2262#0" expanded="true" />
+                <element signature="e#2262#2268#0" expanded="true" />
+                <element signature="e#2268#2274#0" expanded="true" />
+                <element signature="e#2274#2280#0" expanded="true" />
+                <element signature="e#2280#2286#0" expanded="true" />
+                <element signature="e#2286#2292#0" expanded="true" />
+                <element signature="e#2292#2298#0" expanded="true" />
+                <element signature="e#2298#2304#0" expanded="true" />
+                <element signature="e#2304#2310#0" expanded="true" />
+                <element signature="e#2310#2316#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tagsinput.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/django_cms/static/js/tagsinput.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="562" column="0" lean-forward="true" selection-start-line="562" selection-start-column="0" selection-end-line="562" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="464">
+              <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="label.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/django_cms/static/css/label.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="article.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/article/article.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="579">
+              <caret line="33" column="45" lean-forward="true" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -44,12 +105,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/index.html">
+      <file leaf-file-name="ArticleController.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/ArticleController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1131">
-              <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="666">
+              <caret line="40" column="40" lean-forward="false" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cate.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/cate/cate.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="579">
+              <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CateController.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/CateController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/django_cms/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="719">
+              <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+              <folding>
+                <element signature="e#634#666#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,6 +172,7 @@
       <find>Text</find>
       <find>添加</find>
       <find>Enjoy</find>
+      <find>live</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -108,24 +208,31 @@
         <option value="$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/UserController.py" />
         <option value="$PROJECT_DIR$/django_cms/settings.py" />
         <option value="$PROJECT_DIR$/django_cms/migrations/__init__.py" />
-        <option value="$PROJECT_DIR$/django_cms/urls.py" />
-        <option value="$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/ArticleController.py" />
         <option value="$PROJECT_DIR$/django_cms/static/js/comon.js" />
         <option value="$PROJECT_DIR$/django_cms/static/js/common.js" />
         <option value="$PROJECT_DIR$/django_cms/resource/views/admin/article.html" />
-        <option value="$PROJECT_DIR$/django_cms/resource/views/admin/index.html" />
         <option value="$PROJECT_DIR$/django_cms/static/editor.md-master/docs/editormd.js.html" />
         <option value="$PROJECT_DIR$/django_cms/static/editor.md-master/editormd.amd.js" />
         <option value="$PROJECT_DIR$/django_cms/static/editor.md-master/editormd.js" />
         <option value="$PROJECT_DIR$/django_cms/static/editor.md-master/src/editormd.js" />
         <option value="$PROJECT_DIR$/django_cms/models.py" />
+        <option value="$PROJECT_DIR$/django_cms/static/js/lable.js" />
+        <option value="$PROJECT_DIR$/django_cms/static/css/label.css" />
         <option value="$PROJECT_DIR$/django_cms/resource/views/admin/article_form.html" />
+        <option value="$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/ArticleController.py" />
+        <option value="$PROJECT_DIR$/django_cms/urls.py" />
+        <option value="$PROJECT_DIR$/django_cms/resource/views/admin/index.html" />
+        <option value="$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/CateController.py" />
+        <option value="$PROJECT_DIR$/django_cms/resource/views/admin/cate/cate.html" />
+        <option value="$PROJECT_DIR$/django_cms/resource/views/admin/article/article.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="850" />
+    <option name="y" value="85" />
     <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="height" value="970" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -180,7 +287,96 @@
               <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
               <item name="django_cms" type="462c0819:PsiDirectoryNode" />
               <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
               <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="article" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="cate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -197,8 +393,12 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\python\project\django_cms\django_cms\resource\views\admin\article" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\python\project\django_cms\django_cms\app\Http\Controller\Admin" />
+      <recent name="D:\python\project\django_cms\django_cms\resource\views\admin\cate" />
       <recent name="D:\python\project\django_cms\records\images" />
     </key>
   </component>
@@ -266,23 +466,37 @@
       <option name="project" value="LOCAL" />
       <updated>1551178809721</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="添加分类管理">
+      <created>1551490761273</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1551490761273</updated>
+    </task>
+    <task id="LOCAL-00007" summary="文章管理布局">
+      <created>1551494635424</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1551494635424</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="3719000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17906483" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17755532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26299044" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26985854" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -309,7 +523,9 @@
     <MESSAGE value="修改js" />
     <MESSAGE value="修改菜单" />
     <MESSAGE value="添加文章管理" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加文章管理" />
+    <MESSAGE value="添加分类管理" />
+    <MESSAGE value="文章管理布局" />
+    <option name="LAST_COMMIT_MESSAGE" value="文章管理布局" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -323,22 +539,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/article_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/records/index.html" />
     <entry file="file://$PROJECT_DIR$/records/css/row.css" />
     <entry file="file://$PROJECT_DIR$/records/css/container.css" />
@@ -401,33 +601,6 @@
     <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/indexback.html" />
     <entry file="file://$PROJECT_DIR$/django_cms/static/js/comon.js" />
     <entry file="file://$PROJECT_DIR$/django_cms/static/js/common.js" />
-    <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/article.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/ArticleController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/django_cms/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="28" column="53" lean-forward="false" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
-          <folding>
-            <element signature="e#634#666#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/django_cms/static/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -480,14 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/django_cms/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -504,10 +669,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/article_form.html">
+    <entry file="file://$PROJECT_DIR$/django_cms/static/js/lable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+        <state relative-caret-position="0">
+          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_cms/static/css/label.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/article/article_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="40" column="71" lean-forward="false" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -516,7 +697,88 @@
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2226#2232#0" expanded="true" />
+            <element signature="e#2232#2238#0" expanded="true" />
+            <element signature="e#2238#2244#0" expanded="true" />
+            <element signature="e#2244#2250#0" expanded="true" />
+            <element signature="e#2250#2256#0" expanded="true" />
+            <element signature="e#2256#2262#0" expanded="true" />
+            <element signature="e#2262#2268#0" expanded="true" />
+            <element signature="e#2268#2274#0" expanded="true" />
+            <element signature="e#2274#2280#0" expanded="true" />
+            <element signature="e#2280#2286#0" expanded="true" />
+            <element signature="e#2286#2292#0" expanded="true" />
+            <element signature="e#2292#2298#0" expanded="true" />
+            <element signature="e#2298#2304#0" expanded="true" />
+            <element signature="e#2304#2310#0" expanded="true" />
+            <element signature="e#2310#2316#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_cms/static/js/tagsinput.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="562" column="0" lean-forward="true" selection-start-line="562" selection-start-column="0" selection-end-line="562" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/ArticleController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="40" column="40" lean-forward="false" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_cms/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="719">
+          <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+          <folding>
+            <element signature="e#634#666#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/CateController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/cate/cate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/article/article.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="33" column="45" lean-forward="true" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>

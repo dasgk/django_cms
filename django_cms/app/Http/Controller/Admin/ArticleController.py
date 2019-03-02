@@ -34,11 +34,11 @@ class ArticleController(View):
             # If page is out of range (e.g. 9999), deliver last page of results.
             article_list = p.page(1)
         context = {'article_list': article_list}
-        t = get_template('admin/article.html')
+        t = get_template('admin/article/article.html')
         html = t.render(context)
         return HttpResponse(html)
     def show_article_form(request):
-        t = get_template('admin/article_form.html')
+        t = get_template('admin/article/article_form.html')
         html = t.render({})
         return HttpResponse(html)
 

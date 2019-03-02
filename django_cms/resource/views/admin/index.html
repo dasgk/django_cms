@@ -85,15 +85,15 @@
                 <ul>
                     <li class="header-menu"><span>Dropdown  menu</span></li>
                     <li class="sidebar-dropdown">
-                        <a href="#"><i class="fa fa-tv"></i><span>我的文章</span><span
+                        <a href="javascript:void(0)" url-data="{% url 'admin.article.index' %}" onclick="sub_page_jump(this)"><i class="fa fa-tv"></i><span>我的文章</span><span
                                 class="label label-danger">New</span></a>
                     </li>
                     <li class="sidebar-dropdown">
-                        <a href="#"><i class="fa fa-photo"></i><span>我的分类</span><span class="badge">3</span></a>
+                        <a href="javascript:void(0)" url-data="{% url 'admin.cate.index' %}" onclick="sub_page_jump(this)"><i class="fa fa-photo"></i><span>我的分类</span><span class="badge">3</span></a>
                     </li>
 
                     <li class="sidebar-dropdown">
-                        <a href="#"><i class="fa fa-diamond"></i><span>我的标签</span></a>
+                        <a  href="#"><i class="fa fa-diamond"></i><span>我的标签</span></a>
                     </li>
                       <li class="sidebar-dropdown">
                         <a href="#"><i class="fa fa-bar-chart-o"></i><span>文章评论</span></a>

@@ -19,12 +19,15 @@ from django.conf.urls import include,url
 from django_cms.app.Http.Controller.Admin.HomeController import HomeController
 from django_cms.app.Http.Controller.Admin.UserController import UserController
 from django_cms.app.Http.Controller.Admin.ArticleController import ArticleController
+from django_cms.app.Http.Controller.Admin.CateController import CateController
 
 urlpatterns = [
     url('user/login', UserController.login,name='admin.user.login'),
     url('user/logout', UserController.logout,name='admin.user.logout'),
     url('index', HomeController.index,name='admin.index'),
     url('article_list', ArticleController.index,name='admin.article.index'),
+    url('show_article_form', ArticleController.show_article_form,name='admin.article.show_article_form'),
+    url('cate_list', CateController.index,name='admin.cate.index'),
     url('show_article_form', ArticleController.show_article_form,name='admin.article.show_article_form'),
     url('', HomeController.index,name='admin.index'),
 ]
