@@ -15,7 +15,7 @@ class CateController(View):
     # 文章类别列表
     def index(request):
         # 获得所有数据
-        page_num = request.GET.get('page_num',1)
+        page_num = request.GET.get('page',1)
         cate_list = CateDao.getCateList(page_num)
         return render(request, 'admin/cate/cate.html', {'cate_list': cate_list[1],'paginator':cate_list[0]})
 

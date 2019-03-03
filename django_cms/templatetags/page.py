@@ -1,7 +1,7 @@
 from django import template
 import logging
 
-register=template.Library() #对象名必须为register
+register = template.Library() #对象名必须为register
 
 def get_current_uri(page_num, url, getParam):
     is_first = True
