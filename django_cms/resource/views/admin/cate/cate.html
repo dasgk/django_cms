@@ -62,7 +62,7 @@
 
     {% load page%}
     {% autoescape off %}
-    {% view_page cate_list paginator 1 url getParam %}
+    {% view_page cate_list paginator request %}
     {% autoescape on %}
     {% endautoescape %}
     {% endautoescape %}

@@ -1,6 +1,6 @@
 from django_cms.models import Cate,Article
 from django.core.paginator import Paginator
-
+from django_cms.app.Dao.ConstDao import ConstDao
 class CateDao:
     @staticmethod
     def createOrUpdate(cate_id, title):
@@ -16,14 +16,14 @@ class CateDao:
         return cate
 
     @staticmethod
-    def getCateList(page_num=1):
+    def getCateList(page_num):
         cate_list = Cate.objects.order_by("cate_id").all()
-        p = Paginator(cate_list, 4)
+        page = Paginator(cate_list, ConstDao.getPageNum())
         cate_filter = dict()
-        for obj in p.object_list:
+        for obj in page.object_list:
             cate_filter['cate_id'] = obj.cate_id
             obj.article_count = Article.objects.filter(** cate_filter).count()
-        return [p, p.page(page_num)]
+        return [page, page.page(page_num)]
 
 
 
