@@ -8,6 +8,9 @@ from django.urls import reverse
 from django_cms.app.utility.helps import response_json
 
 
+import logging
+
+
 class CateController(View):
     # 文章类别列表
     def index(request):
@@ -15,8 +18,7 @@ class CateController(View):
         page_num = request.GET.get('page_num',1)
         t = get_template('admin/cate/cate.html')
         cate_list = CateDao.getCateList(page_num)
-        html = t.render({'cate_list': cate_list[1],'paginator':cate_list[0]})
-
+        html = t.render({'cate_list': cate_list[1],'paginator':cate_list[0],'url':request.path, 'getParam':request.GET})
         return HttpResponse(html)
 
     def show_cate_form(request,cate_id):
