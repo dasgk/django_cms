@@ -1,16 +1,15 @@
 <html>
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     {%load staticfiles%}
-    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.css' %}">
-    <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
 </head>
 <style>
     .table>tbody>tr>td{
         border:0px;
     }
     .pagination > li,
+    .pagination > li > .disable,
+     .pagination > .disabled > a,
     .pagination > .disabled > span,
     .pagination > li > span,
     .pagination > li > a  {

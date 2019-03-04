@@ -31,6 +31,11 @@ def get_current_uri(page_num, url, getParam):
 @register.simple_tag()
 def view_page(object_list, paginator, request):
     current_page = request.GET.get('page',1)
+    '''
+    logger = logging.getLogger('default')
+    logger.error(current_page)
+    logging.error(paginator.page_range)
+    '''
     html = ' <div class="row" >'
     html +='<div class="col-sm-12"> '
     html += '<div>共 '
@@ -43,9 +48,8 @@ def view_page(object_list, paginator, request):
         html +='">上一页</a></li>'
     else:
         html +='<li class="previous disabled"><a href="#">上一页</a></li>'
-
     for num in paginator.page_range:
-        if num == current_page:
+        if int(num) == int(current_page):
             html +='<li class="item active"><a href="'
             html += get_current_uri(num, request.path, request.GET)
             html +='">'

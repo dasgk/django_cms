@@ -123,39 +123,57 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGGING_DIR = "D:\\logging"
+if not os.path.exists(LOGGING_DIR):
+    os.mkdir(LOGGING_DIR)
 
 
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
-        'verbose': {
-            'format': '[%(asctime)s] [%(levelname)s] %(message)s'
+        'standard': {
+            'format': '[%(levelname)s][%(asctime)s][%(filename)s][%(funcName)s][%(lineno)d] > %(message)s'
+        },
+        'simple': {
+            'format': '[%(levelname)s]> %(message)s'
+        },
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
         },
     },
     'handlers': {
-        'console':{
-            'level':'INFO',
-            'class':'logging.StreamHandler',
-            'formatter': 'verbose'
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
         },
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': 'monitor.log',
-            'formatter': 'verbose'
-        },
-        'email': {
+        'file_handler': {
+             'level': 'INFO',
+             'class': 'logging.handlers.TimedRotatingFileHandler',
+             'filename': '%s/django.log' % LOGGING_DIR,
+             'formatter':'standard'
+        }, # ??????
+        'mail_admins': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler',
-            'include_html' : True,
-        }
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console', 'file', 'email'],
-            'level': 'INFO',
-            'propagate': True,
+             'formatter':'standard'
         },
     },
+    'loggers': {
+        'mdjango': {
+            'handlers': ['console','file_handler'],
+            'level':'DEBUG',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    }
 }
+
