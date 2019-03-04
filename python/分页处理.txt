@@ -1,0 +1,86 @@
+#导入render和HttpResponse模块
+from django.shortcuts import render,HttpResponse
+
+#导入Paginator,EmptyPage和PageNotAnInteger模块
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+#从Django项目的应用中导入模块
+from app01.models import *
+
+def index(request):
+
+    #获取Book数据表中的所有记录
+    book_list=Book.objects.all()
+
+    #生成paginator对象,定义每页显示10条记录
+    paginator = Paginator(book_list, 10)
+
+    #从前端获取当前的页码数,默认为1
+    page = request.GET.get('page',1)
+    
+    #把当前的页码数转换成整数类型
+    currentPage=int(page)
+
+    try:
+        print(page)
+        book_list = paginator.page(page)#获取当前页码的记录
+    except PageNotAnInteger:
+        book_list = paginator.page(1)#如果用户输入的页码不是整数时,显示第1页的内容
+    except EmptyPage:
+        book_list = paginator.page(paginator.num_pages)#如果用户输入的页数不在系统的页码列表中时,显示最后一页的内容
+
+    return render(request,"index.html",locals())
+	
+	
+	
+	
+前端页面
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+</head>
+<body>
+<div class="container">
+    <h4>分页器</h4>
+    <ul>
+        #遍历boot_list中的所有元素
+        {% for book in book_list %}
+            #打印书籍的名称和价格
+            <li>{{ book.title }} {{ book.price }}</li>
+        {% endfor %}
+    </ul>
+    <ul class="pagination" id="pager">
+        {#上一页按钮开始#}
+        {# 如果当前页有上一页#}
+        {% if book_list.has_previous %}
+            {#  当前页的上一页按钮正常使用#}
+            <li class="previous"><a href="/?page={{ book_list.previous_page_number }}">上一页</a></li>
+        {% else %}
+            {# 当前页的不存在上一页时,上一页的按钮不可用#}
+            <li class="previous disabled"><a href="#">上一页</a></li>
+        {% endif %}
+        {#上一页按钮结束#}
+        {# 页码开始#}
+        {% for num in paginator.page_range %}
+
+            {% if num == currentPage %}
+                <li class="item active"><a href="/?page={{ num }}">{{ num }}</a></li>
+            {% else %}
+                <li class="item"><a href="/?page={{ num }}">{{ num }}</a></li>
+
+            {% endif %}
+        {% endfor %}
+        {#页码结束#}
+        {# 下一页按钮开始#}
+        {% if book_list.has_next %}
+            <li class="next"><a href="/?page={{ book_list.next_page_number }}">下一页</a></li>
+        {% else %}
+            <li class="next disabled"><a href="#">下一页</a></li>
+        {% endif %}
+        {# 下一页按钮结束#}
+    </ul>
+</div>
+</body>
+</html>
