@@ -18,14 +18,13 @@ class CateDao(object):
 
     @staticmethod
     def getCateList(page_num):
-        cate_list = Cate.objects.order_by("cate_id").all()
-        page = Paginator(cate_list, ConstDao.getPageNum())
-        obj_list = page.page(page_num)
+        skip = (int(page_num)-1)*ConstDao.getPageNum()
+        cate_counts = Cate.objects.order_by("cate_id").all()[skip:skip+ConstDao.getPageNum()]
         cate_filter = dict()
-        for obj in obj_list.object_list:
+        for obj in cate_counts:
             cate_filter['cate_id'] = obj.cate_id
             obj.article_count = Article.objects.filter(** cate_filter).count()
-        return [page, obj_list]
+        return [cate_counts, cate_counts]
 
 
 

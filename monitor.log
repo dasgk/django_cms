@@ -1,0 +1,589 @@
+[2019-03-03 11:41:06,817] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 18, in index
+    html = t.render({'cate_list': cate_list[1],'paginator':cate_list[0],'url':request.get_full_path()})
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/defaulttags.py", line 37, in render
+    output = self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/templatetags/page.py", line 37, in view_page
+    html += get_current_uri(object_list.previous_page_number)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/templatetags/page.py", line 23, in get_current_uri
+    logger = logging.getLogger('django')
+NameError: name 'logging' is not defined
+[2019-03-03 11:41:06,865] [ERROR] "GET /cate_list HTTP/1.1" 500 120802
+[2019-03-03 11:42:17,722] [INFO] This is an error msg
+[2019-03-03 11:42:17,722] [INFO] This is an error msg
+[2019-03-03 11:42:17,722] [INFO] This is an error msg
+[2019-03-03 11:42:17,722] [INFO] This is an error msg
+[2019-03-03 11:42:17,723] [INFO] "GET /cate_list HTTP/1.1" 200 4640
+[2019-03-03 11:43:03,889] [INFO] 
+[2019-03-03 11:43:03,889] [INFO] 
+[2019-03-03 11:43:03,889] [INFO] 
+[2019-03-03 11:43:03,889] [INFO] 
+[2019-03-03 11:43:03,890] [INFO] "GET /cate_list HTTP/1.1" 200 4640
+[2019-03-03 11:43:30,397] [INFO] 
+[2019-03-03 11:43:30,397] [INFO] 
+[2019-03-03 11:43:30,398] [INFO] 
+[2019-03-03 11:43:30,398] [INFO] 
+[2019-03-03 11:43:30,398] [INFO] "GET /cate_list HTTP/1.1" 200 4640
+[2019-03-03 11:44:28,411] [INFO] /cate_list
+[2019-03-03 11:44:28,411] [INFO] "GET /cate_list HTTP/1.1" 200 4640
+[2019-03-03 11:46:15,192] [INFO] "GET /cate_list HTTP/1.1" 200 4640
+[2019-03-03 11:51:13,057] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 19, in index
+    t = get_template('admin/cate/cate.html')
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/defaulttags.py", line 527, in autoescape
+    nodelist = parser.parse(('endautoescape',))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/library.py", line 121, in compile_func
+    kwonly, kwonly_defaults, takes_context, function_name,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/library.py", line 308, in parse_bits
+    (name, ", ".join("'%s'" % p for p in unhandled_params + unhandled_kwargs)))
+django.template.exceptions.TemplateSyntaxError: 'view_page' did not receive value(s) for the argument(s): 'getParam'
+[2019-03-03 11:51:13,104] [ERROR] "GET /cate_list HTTP/1.1" 500 144708
+[2019-03-03 11:51:53,483] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 21, in index
+    html = t.render({'cate_list': cate_list[1],'paginator':cate_list[0],'url':request.path, 'getParam':request.GET})
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/defaulttags.py", line 37, in render
+    output = self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/templatetags/page.py", line 39, in view_page
+    if num == current_page:
+NameError: name 'current_page' is not defined
+[2019-03-03 11:51:53,523] [ERROR] "GET /cate_list HTTP/1.1" 500 117505
+[2019-03-03 11:53:05,766] [INFO] "GET /cate_list HTTP/1.1" 200 4680
+[2019-03-03 12:00:23,742] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 21, in index
+    html = t.render({'cate_list': cate_list[1],'paginator':cate_list[0]})
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/defaulttags.py", line 37, in render
+    output = self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/templatetags/page.py", line 25, in view_page
+    current_page = request.GET.get('page',1)
+AttributeError: 'str' object has no attribute 'GET'
+[2019-03-03 12:00:23,783] [ERROR] "GET /cate_list HTTP/1.1" 500 115749
+[2019-03-03 12:02:35,655] [INFO] "GET /cate_list HTTP/1.1" 200 4680
+[2019-03-03 12:06:45,981] [INFO] "GET /cate_list HTTP/1.1" 200 4816
+[2019-03-03 12:07:58,981] [INFO] "GET /cate_list?page=%3Cbound%20method%20Page.next_page_number%20of%20%3CPage%201%20of%202%3E%3E HTTP/1.1" 200 4808
+[2019-03-03 12:08:20,837] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 20, in index
+    return render(request, 'admin/cate/cate.html', {'cate_list': cate_list[1],'paginator':cate_list[0]})
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/defaulttags.py", line 37, in render
+    output = self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/templatetags/page.py", line 42, in view_page
+    html += get_current_uri(object_list.previous_page_number(),  request.path, request.GET)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 167, in previous_page_number
+    return self.paginator.validate_number(self.number - 1)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 44, in validate_number
+    raise EmptyPage(_('That page number is less than 1'))
+django.core.paginator.EmptyPage: That page number is less than 1
+[2019-03-03 12:08:20,882] [ERROR] "GET /cate_list?page=%3Cbound%20method%20Page.next_page_number%20of%20%3CPage%201%20of%202%3E%3E HTTP/1.1" 500 133963
+[2019-03-03 12:11:51,262] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 20, in index
+    return render(request, 'admin/cate/cate.html', {'cate_list': cate_list[1],'paginator':cate_list[0]})
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/defaulttags.py", line 37, in render
+    output = self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/templatetags/page.py", line 63, in view_page
+    html += get_current_uri(object_list.next_page_number(), request.path, request.GET)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 164, in next_page_number
+    return self.paginator.validate_number(self.number + 1)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 49, in validate_number
+    raise EmptyPage(_('That page contains no results'))
+django.core.paginator.EmptyPage: That page contains no results
+[2019-03-03 12:11:51,306] [ERROR] "GET /cate_list HTTP/1.1" 500 132885
+[2019-03-03 12:12:03,811] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 20, in index
+    return render(request, 'admin/cate/cate.html', {'cate_list': cate_list[1],'paginator':cate_list[0]})
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/defaulttags.py", line 37, in render
+    output = self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/templatetags/page.py", line 42, in view_page
+    html += get_current_uri(object_list.previous_page_number(),  request.path, request.GET)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 167, in previous_page_number
+    return self.paginator.validate_number(self.number - 1)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 44, in validate_number
+    raise EmptyPage(_('That page number is less than 1'))
+django.core.paginator.EmptyPage: That page number is less than 1
+[2019-03-03 12:12:03,854] [ERROR] "GET /cate_list HTTP/1.1" 500 132570
+[2019-03-03 12:13:38,629] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 20, in index
+    return render(request, 'admin/cate/cate.html', {'cate_list': cate_list[1],'paginator':cate_list[0]})
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/defaulttags.py", line 37, in render
+    output = self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/templatetags/page.py", line 42, in view_page
+    html += get_current_uri(object_list.previous_page_number(),  request.path, request.GET)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 167, in previous_page_number
+    return self.paginator.validate_number(self.number - 1)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 44, in validate_number
+    raise EmptyPage(_('That page number is less than 1'))
+django.core.paginator.EmptyPage: That page number is less than 1
+[2019-03-03 12:13:38,673] [ERROR] "GET /cate_list HTTP/1.1" 500 132577
+[2019-03-03 12:15:21,356] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 19, in index
+    cate_list = CateDao.getCateList(page_num)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Dao/CateDao.py", line 26, in getCateList
+    return [page, page.page(page_num)]
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 67, in page
+    number = self.validate_number(number)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 44, in validate_number
+    raise EmptyPage(_('That page number is less than 1'))
+django.core.paginator.EmptyPage: That page number is less than 1
+[2019-03-03 12:15:21,387] [ERROR] "GET /cate_list HTTP/1.1" 500 74257
+[2019-03-03 12:15:40,624] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 19, in index
+    cate_list = CateDao.getCateList(page_num)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Dao/CateDao.py", line 26, in getCateList
+    return [page, page.page(page_num)]
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 67, in page
+    number = self.validate_number(number)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 44, in validate_number
+    raise EmptyPage(_('That page number is less than 1'))
+django.core.paginator.EmptyPage: That page number is less than 1
+[2019-03-03 12:15:40,655] [ERROR] "GET /cate_list HTTP/1.1" 500 74257
+[2019-03-03 12:16:49,922] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 20, in index
+    return render(request, 'admin/cate/cate.html', {'cate_list': cate_list[1],'paginator':cate_list[0]})
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/defaulttags.py", line 37, in render
+    output = self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/templatetags/page.py", line 42, in view_page
+    html += get_current_uri(object_list.previous_page_number(),  request.path, request.GET)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 167, in previous_page_number
+    return self.paginator.validate_number(self.number - 1)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 44, in validate_number
+    raise EmptyPage(_('That page number is less than 1'))
+django.core.paginator.EmptyPage: That page number is less than 1
+[2019-03-03 12:16:49,967] [ERROR] "GET /cate_list HTTP/1.1" 500 132577
+[2019-03-03 12:17:56,052] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 20, in index
+    return render(request, 'admin/cate/cate.html', {'cate_list': cate_list[1],'paginator':cate_list[0]})
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/defaulttags.py", line 37, in render
+    output = self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/templatetags/page.py", line 40, in view_page
+    if object_list.previous_page_number():
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 167, in previous_page_number
+    return self.paginator.validate_number(self.number - 1)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 44, in validate_number
+    raise EmptyPage(_('That page number is less than 1'))
+django.core.paginator.EmptyPage: That page number is less than 1
+[2019-03-03 12:17:56,096] [ERROR] "GET /cate_list HTTP/1.1" 500 132521
+[2019-03-03 12:19:19,471] [INFO] "GET /static/js/public.js HTTP/1.1" 304 0
+[2019-03-03 12:19:19,472] [INFO] "GET /static/layer/skin/layer.css HTTP/1.1" 304 0
+[2019-03-03 12:19:19,474] [INFO] "GET /static/layer/layer.js HTTP/1.1" 304 0
+[2019-03-03 12:19:19,540] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 20, in index
+    return render(request, 'admin/cate/cate.html', {'cate_list': cate_list[1],'paginator':cate_list[0]})
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/defaulttags.py", line 37, in render
+    output = self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/templatetags/page.py", line 40, in view_page
+    if object_list.previous_page_number()>0:
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 167, in previous_page_number
+    return self.paginator.validate_number(self.number - 1)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 44, in validate_number
+    raise EmptyPage(_('That page number is less than 1'))
+django.core.paginator.EmptyPage: That page number is less than 1
+[2019-03-03 12:19:19,584] [ERROR] "GET /cate_list HTTP/1.1" 500 132531
+[2019-03-03 12:21:41,759] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 20, in index
+    return render(request, 'admin/cate/cate.html', {'cate_list': cate_list[1],'paginator':cate_list[0]})
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/defaulttags.py", line 37, in render
+    output = self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/library.py", line 192, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/templatetags/page.py", line 42, in view_page
+    html += get_current_uri(object_list.previous_page_number(),  request.path, request.GET)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 167, in previous_page_number
+    return self.paginator.validate_number(self.number - 1)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/paginator.py", line 44, in validate_number
+    raise EmptyPage(_('That page number is less than 1'))
+django.core.paginator.EmptyPage: That page number is less than 1
+[2019-03-03 12:21:41,802] [ERROR] "GET /cate_list HTTP/1.1" 500 132577
+[2019-03-03 12:23:12,716] [INFO] "GET /cate_list HTTP/1.1" 200 4701
+[2019-03-03 12:23:12,740] [INFO] "GET /static/layer/layer.js HTTP/1.1" 304 0
+[2019-03-03 12:23:12,740] [INFO] "GET /static/js/public.js HTTP/1.1" 304 0
+[2019-03-03 12:23:12,744] [INFO] "GET /static/layer/skin/layer.css HTTP/1.1" 304 0
+[2019-03-03 12:23:58,254] [INFO] "GET /cate_list?page=2 HTTP/1.1" 200 4693
+[2019-03-03 12:24:00,265] [INFO] "GET /cate_list?page=1 HTTP/1.1" 200 4693
+[2019-03-03 12:24:01,290] [INFO] "GET /cate_list?page=2 HTTP/1.1" 200 4693
+[2019-03-03 12:28:46,762] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 19, in index
+    cate_list = CateDao.getCateList(page_num)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Dao/CateDao.py", line 21, in getCateList
+    page = Paginator(cate_list, ConstDao.getPageNum())
+TypeError: getPageNum() takes 0 positional arguments but 1 was given
+[2019-03-03 12:28:46,797] [ERROR] "GET /cate_list?page=2 HTTP/1.1" 500 66911
+[2019-03-03 12:32:04,754] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 19, in index
+    cate_list = CateDao.getCateList(page_num)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Dao/CateDao.py", line 21, in getCateList
+    page = Paginator(cate_list, ConstDao.getPageNum())
+TypeError: getPageNum() takes 0 positional arguments but 1 was given
+[2019-03-03 12:32:04,788] [ERROR] "GET /cate_list?page=2 HTTP/1.1" 500 66911
+[2019-03-03 12:33:14,020] [INFO] "GET /cate_list?page=2 HTTP/1.1" 200 4693
+[2019-03-03 12:33:17,349] [INFO] "GET /cate_list?page=1 HTTP/1.1" 200 4693
+[2019-03-03 12:33:18,571] [INFO] "GET /cate_list?page=2 HTTP/1.1" 200 4693
+[2019-03-03 12:37:16,746] [INFO] "GET /cate_list?page=2 HTTP/1.1" 200 4693
+[2019-03-03 12:37:36,917] [INFO] "GET /cate_list?page=2 HTTP/1.1" 200 4693
+[2019-03-03 12:38:34,717] [INFO] "GET /cate_list?page=2 HTTP/1.1" 200 4693
+[2019-03-03 12:39:51,936] [INFO] "GET /cate_list?page=2 HTTP/1.1" 200 4693
+[2019-03-03 12:39:53,671] [INFO] "GET /cate_list?page=2 HTTP/1.1" 200 4693
+[2019-03-03 12:39:54,837] [INFO] "GET /cate_list?page=1 HTTP/1.1" 200 4693
+[2019-03-03 12:40:20,350] [ERROR] Internal Server Error: /cate_list
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/CateController.py", line 19, in index
+    cate_list = CateDao.getCateList(page_num)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Dao/CateDao.py", line 21, in getCateList
+    cate_list = Cate.objects.order_by("cate_id asc").all()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/db/models/query.py", line 1026, in order_by
+    obj.query.add_ordering(*field_names)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1779, in add_ordering
+    raise FieldError('Invalid order_by arguments: %s' % errors)
+django.core.exceptions.FieldError: Invalid order_by arguments: ['cate_id asc']
+[2019-03-03 12:40:20,387] [ERROR] "GET /cate_list?page=1 HTTP/1.1" 500 79446
+[2019-03-03 12:41:46,428] [INFO] "GET /cate_list?page=1 HTTP/1.1" 200 4693
+[2019-03-03 12:41:48,349] [INFO] "GET /cate_list?page=1 HTTP/1.1" 200 4693
+[2019-03-03 12:41:49,353] [INFO] "GET /cate_list?page=2 HTTP/1.1" 200 4693
+[2019-03-03 12:42:03,951] [INFO] "GET /cate_list?page=2 HTTP/1.1" 200 4693
+[2019-03-03 12:42:34,197] [INFO] "GET /cate_list?page=1 HTTP/1.1" 200 4693
+[2019-03-03 12:42:35,555] [INFO] "GET /cate_list?page=2 HTTP/1.1" 200 4693
