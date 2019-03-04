@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4ad98cc-f6e3-4b41-9d79-d90007606b88" name="Default" comment="添加分页操作">
-      <change afterPath="$PROJECT_DIR$/django_cms/app/Dao/ConstDao.py" afterDir="false" />
+    <list default="true" id="d4ad98cc-f6e3-4b41-9d79-d90007606b88" name="Default" comment="代码实现分页">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_cms/app/Dao/CateDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_cms/app/Dao/CateDao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/CateController.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/CateController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_cms/resource/views/admin/cate/cate.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_cms/resource/views/admin/cate/cate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_cms/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_cms/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_cms/app/Dao/ConstDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_cms/app/Dao/ConstDao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_cms/templatetags/page.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_cms/templatetags/page.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/cate/cate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="64" column="44" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="44" />
+            <state relative-caret-position="945">
+              <caret line="63" column="26" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -42,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/CateController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+            <state relative-caret-position="105">
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -54,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django_cms/app/Dao/CateDao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+            <state relative-caret-position="390">
+              <caret line="26" column="78" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -63,38 +59,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django_cms/app/Dao/ConstDao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/django_cms/app/Dao/UserDao.py">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+              <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/django_cms/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/django_cms/templatetags/page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="60" column="29" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
+            <state relative-caret-position="30">
+              <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -180,10 +158,10 @@
         <option value="$PROJECT_DIR$/django_cms/template_tag/page.py" />
         <option value="$PROJECT_DIR$/django_cms/settings.py" />
         <option value="$PROJECT_DIR$/django_cms/resource/views/admin/cate/cate.html" />
-        <option value="$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/CateController.py" />
-        <option value="$PROJECT_DIR$/django_cms/templatetags/page.py" />
         <option value="$PROJECT_DIR$/django_cms/app/Dao/CateDao.py" />
+        <option value="$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/CateController.py" />
         <option value="$PROJECT_DIR$/django_cms/app/Dao/ConstDao.py" />
+        <option value="$PROJECT_DIR$/django_cms/templatetags/page.py" />
       </list>
     </option>
   </component>
@@ -330,7 +308,8 @@
       <workItem from="1551187492713" duration="1737000" />
       <workItem from="1551445754820" duration="1732000" />
       <workItem from="1551532747594" duration="3740000" />
-      <workItem from="1551607823566" duration="7467000" />
+      <workItem from="1551607823566" duration="8085000" />
+      <workItem from="1551701655390" duration="1298000" />
     </task>
     <task id="LOCAL-00001" summary="修改模型">
       <created>1551057896104</created>
@@ -423,17 +402,31 @@
       <option name="project" value="LOCAL" />
       <updated>1551614045196</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="抽象页码数量">
+      <created>1551616430788</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1551616430788</updated>
+    </task>
+    <task id="LOCAL-00015" summary="代码实现分页">
+      <created>1551616942805</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1551616942805</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14926000" />
+    <option name="totallyTimeSpent" value="16842000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18168813" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18383405" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -469,7 +462,9 @@
     <MESSAGE value="修改用户，添加类别管理" />
     <MESSAGE value="添加分野操作" />
     <MESSAGE value="添加分页操作" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加分页操作" />
+    <MESSAGE value="抽象页码数量" />
+    <MESSAGE value="代码实现分页" />
+    <option name="LAST_COMMIT_MESSAGE" value="代码实现分页" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -687,47 +682,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/django_cms/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/django_cms/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/cate/cate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="64" column="44" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/django_cms/templatetags/page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="60" column="29" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/CateController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -738,10 +696,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/django_cms/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/cate/cate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="26" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/CateController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/django_cms/app/Dao/CateDao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+        <state relative-caret-position="390">
+          <caret line="26" column="78" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
@@ -750,8 +735,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/django_cms/app/Dao/ConstDao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        <state relative-caret-position="105">
+          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_cms/templatetags/page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
