@@ -25,7 +25,11 @@
         <div class="col-sm-2" style="float:none">
             <select name="cate_id" class="form-control" style="color:#9c9c9c;background-color:#1c232f;">
                 <option value="">--请选择分类--</option>
-                <option value="1">测试分类</option>
+
+                 {% for cate in cate_list %}
+         <option value="{{cate.cate_id}}">{{cate.title}}</option>
+
+        {% endfor %}
             </select>
         </div>
     </div>

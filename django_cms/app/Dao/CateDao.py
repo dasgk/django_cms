@@ -27,5 +27,9 @@ class CateDao(object):
             obj.article_count = Article.objects.filter(** cate_filter).count()
         return [cate_list, cate_count]
 
+    @staticmethod
+    def getAllCate():
+        cate_list = Cate.objects.order_by("cate_id").all()
+        return cate_list
 
 

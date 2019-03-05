@@ -4,6 +4,8 @@ from django.shortcuts import render
 from django.views import View
 from django_cms.models import Article
 from django_cms.app.Dao.ArticleDao import ArticleDao
+
+from django_cms.app.Dao.CateDao import CateDao
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 class ArticleController(View):
@@ -19,15 +21,15 @@ class ArticleController(View):
             filter_dict['title_contains'] = title
         if type_id:
             filter_dict['type_id'] = type_id
-
         article_list = ArticleDao.getArticleList(filter_dict, param.get('page',1))
-        # 进行分页操作
 
-        return render(request, 'admin/article/article.html',{'article_list': article_list[1],'total_count':article_list[1]})
+        print (cate_list)
+        return render(request, 'admin/article/article.html',{'article_list': article_list[1],'total_count':article_list[1],
+                                                             'cate_list':cate_list})
     def show_article_form(request):
-        t = get_template('admin/article/article_form.html')
-        html = t.render({})
-        return HttpResponse(html)
+        cate_list = CateDao.getAllCate()
+        return render(request, 'admin/article/article_form.html',
+                      {'cate_list': cate_list})
 
 
 
