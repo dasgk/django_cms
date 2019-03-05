@@ -17,7 +17,7 @@ class CateController(View):
         # 获得所有数据
         page_num = request.GET.get('page',1)
         cate_list = CateDao.getCateList(page_num)
-        return render(request, 'admin/cate/cate.html', {'cate_list': cate_list[1],'total_count':cate_list[0]})
+        return render(request, 'admin/cate/cate.html', {'cate_list': cate_list[0],'total_count':cate_list[1]})
 
 
     def show_cate_form(request,cate_id):
