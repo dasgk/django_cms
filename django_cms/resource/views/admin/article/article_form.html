@@ -16,33 +16,41 @@
     <header>
         <h1>新建文章</h1>
     </header>
+
+      <div class="row"  style="margin-top: 3%;">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <form action="{% url 'admin.article.article_save' %}" enctype="multipart/form-data" method="post" class="form-horizontal ajaxForm" >
+
+  {% csrf_token %}
+
+
     <div class="form-group" style="margin-left:4%">
         <div class="col-sm-4">
-            <input type="text" class="form-control" style="background-color:#1c232f;" name="source" placeholder="文章标题"/>
+            <input type="text" value="{{article.title}}" class="form-control" style="background-color:#1c232f;" name="title" placeholder="文章标题"/>
+            <input type="hidden" name="article_id" value="{{article.article_id}}" />
         </div>
     </div>
     <div class="form-group" style="    margin-left: 4%;margin-top: 3%;margin-bottom: 0%;">
         <div class="col-sm-2" style="float:none">
             <select name="cate_id" class="form-control" style="color:#9c9c9c;background-color:#1c232f;">
                 <option value="">--请选择分类--</option>
-
                  {% for cate in cate_list %}
-         <option value="{{cate.cate_id}}">{{cate.title}}</option>
-
-        {% endfor %}
+                  <option value="{{cate.cate_id}}" {% if article.cate_id == cate.cate_id %} selected {% endif %} >{{cate.title}}</option>
+                 {% endfor %}
             </select>
         </div>
     </div>
     <br>
     <div class="form-group">
         <div id="test-editormd">
-            <textarea style="display:none;"></textarea>
+            <textarea name="content" style="display:none;">{{article.content}}</textarea>
         </div>
     </div>
     <div class="form-group">
         <div class="box"  style="color:white;background-color:#1c232f;">
             <div class="tagsinput-primary form-group" style="color:white;background-color:#1c232f;">
-                <input name="tagsinput" id="tagsinputval" class="tagsinput" data-role="tagsinput" value="faltui,这是一个标签"
+                <input name="tagsinput" id="tagsinputval" class="tagsinput" data-role="tagsinput" value=""
                        placeholder="输入后回车"/>
                 <!--   <button class="btn" onClick="getinput()">获取输入的值</button>-->
             </div>
@@ -56,7 +64,13 @@
              <button  class="button button-glow button-border button-rounded info">保存草稿</button>
         </div>
     </div>
+                </form>
+            </div>
+        </div>
+      </div>
 </div>
+</body>
+
 
 <script src="{% static 'js/jquery.min.js' %}"></script>
 <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>

@@ -7,9 +7,14 @@ from django_cms.app.Dao.ArticleDao import ArticleDao
 
 from django_cms.app.Dao.CateDao import CateDao
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django_cms.app.utility.helps import response_json
+from django.urls import reverse
 
 class ArticleController(View):
-    # 网站首页
+    '''
+        文章列表
+    '''
+
     def index(request):
         # 获得所有数据
         param = request.GET
@@ -22,14 +27,38 @@ class ArticleController(View):
         if type_id:
             filter_dict['type_id'] = type_id
         article_list = ArticleDao.getArticleList(filter_dict, param.get('page',1))
+        return render(request, 'admin/article/article.html',{'article_list': article_list[0],'total_count':article_list[1]})
 
-        print (cate_list)
-        return render(request, 'admin/article/article.html',{'article_list': article_list[1],'total_count':article_list[1],
-                                                             'cate_list':cate_list})
-    def show_article_form(request):
+    '''
+        展示文章的编辑页面
+    '''
+    def show_article_form(request,article_id):
         cate_list = CateDao.getAllCate()
+        article_filter = dict()
+        article_filter['article_id'] = article_id
+        article = Article.objects.filter(**article_filter).first()
         return render(request, 'admin/article/article_form.html',
-                      {'cate_list': cate_list})
+                      {'cate_list': cate_list,'article':article})
 
+    ''' 
+        文章信息保存
+    '''
+    def article_save(request):
+        dic = {}
+        param = request.POST
+        cate_id = param.get('cate_id', 1)
+        dic['cate_id'] = cate_id
+        dic['content'] = param.get('content')
+        dic['title'] = param.get('title')
+        # 暂时不处理
+        tagsinput = param.get('tagsinput')
+        Article.objects.create(**dic)
+        return response_json(1, [], "保存成功", reverse('admin.article.index'))
 
+    def article_delete(request, article_id):
+        cate_filter = dict()
+        cate_filter['article_id'] = article_id
+        article = Article.objects.filter(**cate_filter).first()
+        article.delete()
+        return response_json(1, [], "删除成功", reverse('admin.article.index'))
 
