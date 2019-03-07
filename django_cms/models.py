@@ -48,7 +48,7 @@ class Label(models.Model):
 
 class LabelArticle(models.Model):
     label_article_id = models.AutoField(primary_key=True, help_text="主键")
-    lable_id = models.IntegerField( help_text="标签id", null=True, default=0)
+    label_id = models.IntegerField( help_text="标签id", null=True, default=0)
     article_id = models.IntegerField(help_text="文章id", null=True, default=0)
     created_at = models.DateTimeField(help_text="创建时间", null=True, default="2019-01-29 12:13:00", blank=True)
     updated_at = models.DateTimeField(help_text="更新时间", null=True, default="2019-01-29 12:13:00")

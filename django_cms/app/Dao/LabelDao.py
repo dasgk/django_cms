@@ -11,9 +11,10 @@ class LabelDao(object):
             tag_filter['title'] = label
             tag_model = Label.objects.filter(**tag_filter).first()
             if tag_model == None:
-                tag_model= Label()
-                tag_model.title = label
-                tag_model.save()
+                lab_dict = {}
+                lab_dict['title'] = label
+                tag_model = Label.objects.create(**dic)
+
             label_article = LabelArticle()
             label_article.lable_id = tag_model.label_id
             label_article.article_id = article_id
@@ -38,4 +39,11 @@ class LabelDao(object):
             relative.delete()
         # 增加关联关系，如果标签不存在，则新建标签
         LabelDao.update_label(labels, article_id)
-        #
+
+    @staticmethod
+    def get_lables_by_artocle_id(article_id):
+        label_article = {}
+        label_article['article_id'] = article_id
+        lable_ids = LabelArticle.objects.filter(**label_article).values_list('label_id',flat=True)
+        titles = Label.objects.filter(label_id__in=lable_ids).values_list('title', flat=True)
+        print(titles)

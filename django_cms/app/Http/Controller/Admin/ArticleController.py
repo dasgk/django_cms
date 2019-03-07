@@ -38,6 +38,8 @@ class ArticleController(View):
         article_filter = dict()
         article_filter['article_id'] = article_id
         article = Article.objects.filter(**article_filter).first()
+        LabelDao.get_lables_by_artocle_id(article_id)
+
         return render(request, 'admin/article/article_form.html',
                       {'cate_list': cate_list,'article':article})
 
