@@ -7,16 +7,14 @@ class LabelDao(object):
     def update_label(tagsinput, article_id):
         labels = tagsinput.split(',')
         for label in labels:
-            tag_filter = {}
+            tag_filter = dict()
             tag_filter['title'] = label
             tag_model = Label.objects.filter(**tag_filter).first()
             if tag_model == None:
-                lab_dict = {}
-                lab_dict['title'] = label
-                tag_model = Label.objects.create(**dic)
+                tag_model = Label.objects.create(title=label)
 
             label_article = LabelArticle()
-            label_article.lable_id = tag_model.label_id
+            label_article.label_id = tag_model.label_id
             label_article.article_id = article_id
             label_article.save()
 
@@ -27,6 +25,7 @@ class LabelDao(object):
         condition = {}
         condition['article_id'] = article_id
         relatives = LabelArticle.objects.filter(**condition).all()
+
         for relative in relatives:
             # 如果标签只关联了当前文章，则删除关联关系，并删除标签
             label_id = relative.label_id
@@ -37,6 +36,7 @@ class LabelDao(object):
                 #删除该标签
                 Label.objects.filter(**label_condition).delete()
             relative.delete()
+
         # 增加关联关系，如果标签不存在，则新建标签
         LabelDao.update_label(labels, article_id)
 
@@ -46,4 +46,6 @@ class LabelDao(object):
         label_article['article_id'] = article_id
         lable_ids = LabelArticle.objects.filter(**label_article).values_list('label_id',flat=True)
         titles = Label.objects.filter(label_id__in=lable_ids).values_list('title', flat=True)
-        print(titles)
+        char = ','
+        return char.join(titles)
+

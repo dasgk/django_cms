@@ -38,24 +38,20 @@ class ArticleController(View):
         article_filter = dict()
         article_filter['article_id'] = article_id
         article = Article.objects.filter(**article_filter).first()
-        LabelDao.get_lables_by_artocle_id(article_id)
-
+        labels = LabelDao.get_lables_by_artocle_id(article_id)
         return render(request, 'admin/article/article_form.html',
-                      {'cate_list': cate_list,'article':article})
+                      {'cate_list': cate_list,'article':article,'labels':labels})
 
     ''' 
         文章信息保存
     '''
     def article_save(request):
-        dic = {}
+
         param = request.POST
-        cate_id = param.get('cate_id', 1)
-        dic['cate_id'] = cate_id
-        dic['content'] = param.get('content')
-        dic['title'] = param.get('title')
-        # 暂时不处理
+        article = Article.objects.create(cate_id=param.get('cate_id',1),content=param.get('content',''),title=param.get('title'))
         tagsinput = param.get('tagsinput')
-        article = Article.objects.create(**dic)
+        print(article.article_id)
+        print (tagsinput)
         LabelDao.update_lable_article(tagsinput, article.article_id)
         return response_json(1, [], "保存成功", reverse('admin.article.index'))
 
