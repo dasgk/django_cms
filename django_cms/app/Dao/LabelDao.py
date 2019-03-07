@@ -1,0 +1,41 @@
+from django_cms.models import Cate,Article,Label,LabelArticle
+from django.core.paginator import Paginator
+from django_cms.app.Dao.ConstDao import ConstDao
+import logging
+class LabelDao(object):
+    @staticmethod
+    def update_label(tagsinput, article_id):
+        labels = tagsinput.split(',')
+        for label in labels:
+            tag_filter = {}
+            tag_filter['title'] = label
+            tag_model = Label.objects.filter(**tag_filter).first()
+            if tag_model == None:
+                tag_model= Label()
+                tag_model.title = label
+                tag_model.save()
+            label_article = LabelArticle()
+            label_article.lable_id = tag_model.label_id
+            label_article.article_id = article_id
+            label_article.save()
+
+
+    @staticmethod
+    def update_lable_article(labels, article_id):
+        # 处理当前文章所关联的标签
+        condition = {}
+        condition['article_id'] = article_id
+        relatives = LabelArticle.objects.filter(**condition).all()
+        for relative in relatives:
+            # 如果标签只关联了当前文章，则删除关联关系，并删除标签
+            label_id = relative.label_id
+            label_condition = {}
+            label_condition['label_id'] = label_id
+            label_count = Label.objects.filter(**label_condition).count()
+            if label_count == 1:
+                #删除该标签
+                Label.objects.filter(**label_condition).delete()
+            relative.delete()
+        # 增加关联关系，如果标签不存在，则新建标签
+        LabelDao.update_label(labels, article_id)
+        #

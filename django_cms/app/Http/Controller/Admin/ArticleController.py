@@ -6,6 +6,7 @@ from django_cms.models import Article
 from django_cms.app.Dao.ArticleDao import ArticleDao
 
 from django_cms.app.Dao.CateDao import CateDao
+from django_cms.app.Dao.LabelDao import LabelDao
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django_cms.app.utility.helps import response_json
 from django.urls import reverse
@@ -52,7 +53,8 @@ class ArticleController(View):
         dic['title'] = param.get('title')
         # 暂时不处理
         tagsinput = param.get('tagsinput')
-        Article.objects.create(**dic)
+        article = Article.objects.create(**dic)
+        LabelDao.update_lable_article(tagsinput, article.article_id)
         return response_json(1, [], "保存成功", reverse('admin.article.index'))
 
     def article_delete(request, article_id):
