@@ -1,0 +1,75 @@
+<html>
+<head>
+    {%load staticfiles%}
+    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+</head>
+<style>
+    .table>tbody>tr>td{
+        border:0px;
+    }
+    .pagination > li,
+    .pagination > li > .disable,
+     .pagination > .disabled > a,
+    .pagination > .disabled > span,
+    .pagination > li > span,
+    .pagination > li > a  {
+        z-index: 2;
+        color:#9c9c9c;background-color:#1c232f;
+    }
+</style>
+<body style="color:#9c9c9c;background-color:#1c232f;">
+<div class="wrapper wrapper-content">
+    <div class="row m-b">
+        <div class="col-sm-12">
+            <div class="tabs-container">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a style="color:#9c9c9c;background-color:#1c232f;"
+                                          href="javascript:void(0)">标签列表</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 3%;">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <table class="table">
+                        <tr style="color:#9c9c9c;background-color:#1c232f;">
+                            <th width="25%">标签名称</th>
+                            <th width="25%">文章数量</th>
+
+                        </tr>
+                        {% for label in label_list %}
+                        <tr class="gradeA">
+                            <td width="25%">{{label.title}}</td>
+                            <td width="25%"><a href="{% url 'admin.article.index' %}?label_id={{label.label_id}}">{{label.article_count}}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% load page%}
+    {% autoescape off %}
+    {% view_page total_count request %}
+    {% autoescape on %}
+    {% endautoescape %}
+    {% endautoescape %}
+    </div>
+</div>
+</body>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'layer/layer.js' %}"></script>
+<script src="{% static 'js/public.js' %}"></script>
+<script>
+    function sub_page_jump(obj){
+    url =obj.getAttribute('url-data')
+    location.href = url
+}
+</script>
+{%block css%}
+{%endblock css%}
+</html>
