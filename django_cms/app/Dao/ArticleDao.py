@@ -8,3 +8,23 @@ class ArticleDao(object):
         article_count = Article.objects.filter(**options).count()
         return [article_list, article_count]
 
+    @staticmethod
+    def createOrUpdate(article_id, title, content,cate_id):
+        article_filter = dict()
+        article_filter['article_id'] = article_id
+        article = Article.objects.filter(**article_filter).first()
+
+        if article == None:
+            article = Article()
+            article.title = title
+            article.content = content
+            article.cate_id = cate_id
+            article.save()
+        else:
+            article.title = title
+            article.content = content
+            article.cate_id = cate_id
+            article.save()
+        return article
+
+

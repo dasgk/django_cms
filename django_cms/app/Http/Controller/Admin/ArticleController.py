@@ -46,12 +46,9 @@ class ArticleController(View):
         文章信息保存
     '''
     def article_save(request):
-
         param = request.POST
-        article = Article.objects.create(cate_id=param.get('cate_id',1),content=param.get('content',''),title=param.get('title'))
+        article = ArticleDao.createOrUpdate(article_id=param.get('article_id',0),cate_id=param.get('cate_id',1),title=param.get('title'), content=param.get('content',''))
         tagsinput = param.get('tagsinput')
-        print(article.article_id)
-        print (tagsinput)
         LabelDao.update_lable_article(tagsinput, article.article_id)
         return response_json(1, [], "保存成功", reverse('admin.article.index'))
 
