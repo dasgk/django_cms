@@ -1,6 +1,7 @@
 from django_cms.models import Cate,Article,Label,LabelArticle
 from django.core.paginator import Paginator
 from django_cms.app.Dao.ConstDao import ConstDao
+from django_cms.app.Dao.TimeDao import TimeDao
 import logging
 class LabelDao(object):
     @staticmethod
@@ -11,11 +12,14 @@ class LabelDao(object):
             tag_filter['title'] = label
             tag_model = Label.objects.filter(**tag_filter).first()
             if tag_model == None:
-                tag_model = Label.objects.create(title=label)
+                tag_model = Label.objects.create(title=label,created_at = TimeDao.get_current_time(), updated_at=TimeDao.get_current_time())
 
             label_article = LabelArticle()
             label_article.label_id = tag_model.label_id
             label_article.article_id = article_id
+            label_article.created_at = TimeDao.get_current_time()
+            label_article.updated_at = TimeDao.get_current_time()
+
             label_article.save()
 
 

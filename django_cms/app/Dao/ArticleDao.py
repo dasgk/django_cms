@@ -1,6 +1,8 @@
 from django_cms.app.Dao.ConstDao import ConstDao
-from django_cms.models import Article, LabelArticle
-
+from django_cms.app.Dao.TimeDao import TimeDao
+from django_cms.models import Article, LabelArticle,Label
+import time
+import logging
 
 class ArticleDao(object):
     @staticmethod
@@ -20,8 +22,10 @@ class ArticleDao(object):
 
     @staticmethod
     def createOrUpdate(article_id, title, content, cate_id):
-        if type(article_id) != int and len(article_id) == 0:
+        if not article_id:
             article_id = 0
+        else:
+            article_id = int(article_id)
         article = None
         if article_id > 0:
             article_filter = dict()
@@ -33,10 +37,29 @@ class ArticleDao(object):
             article.title = title
             article.content = content
             article.cate_id = cate_id
+            article.created_at = TimeDao.get_current_time()
+            article.updated_at = TimeDao.get_current_time()
             article.save()
         else:
             article.title = title
             article.content = content
             article.cate_id = cate_id
+            article.updated_at = TimeDao.get_current_time()
             article.save()
         return article
+
+    @staticmethod
+    def deleteArticle(article_id):
+        logger = logging.getLogger('scripts')
+        #删除文章
+        Article.objects.filter(article_id=article_id).delete()
+        #删除当前文章的关联关系
+        label_ids = LabelArticle.objects.filter(article_id=article_id).values_list('label_id', flat=True)
+        for label_id in label_ids:
+            logger.info(label_id)
+        LabelArticle.objects.filter(article_id=article_id).delete()
+        for label_id in label_ids:
+            label_count = LabelArticle.objects.filter(label_id=label_id).count()
+            logger.info(label_id)
+            if not label_count:
+                Label.objects.filter(label_id=label_id).delete()

@@ -1,7 +1,10 @@
 from django_cms.models import Cate,Article
 from django.core.paginator import Paginator
 from django_cms.app.Dao.ConstDao import ConstDao
+from django_cms.app.Dao.TimeDao import TimeDao
 import logging
+import time
+
 class CateDao(object):
     @staticmethod
     def createOrUpdate(cate_id, title):
@@ -10,9 +13,12 @@ class CateDao(object):
         cate = Cate.objects.filter(**filter_dict).first()
         if cate:
             cate.title = title
+            cate.updated_at = TimeDao.get_current_time()
         else:
             cate = Cate()
             cate.title = title
+            cate.updated_at = TimeDao.get_current_time()
+            cate.created_at = TimeDao.get_current_time()
             cate.save()
         return cate
 

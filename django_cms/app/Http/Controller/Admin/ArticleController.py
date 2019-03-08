@@ -53,9 +53,7 @@ class ArticleController(View):
         return response_json(1, [], "保存成功", reverse('admin.article.index'))
 
     def article_delete(request, article_id):
-        cate_filter = dict()
-        cate_filter['article_id'] = article_id
-        article = Article.objects.filter(**cate_filter).first()
-        article.delete()
+        #判断，如果该文章的标签是
+        ArticleDao.deleteArticle(article_id)
         return response_json(1, [], "删除成功", reverse('admin.article.index'))
 

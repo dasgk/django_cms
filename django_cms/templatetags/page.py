@@ -56,10 +56,9 @@ def view_page(total_count, request):
         page_range = page_range[current_page-2:]
     #分页，只取 定义最大数量的页码
     page_range = page_range[0:ConstDao.maxPageCount()]
-    print(ConstDao.maxPageCount())
-    print(page_range)
+
     for num in page_range:
-        print(num)
+
         if num == current_page:
             html +='<li class="item active"><a href="'
             html += get_current_uri(num, request.path, request.GET)
