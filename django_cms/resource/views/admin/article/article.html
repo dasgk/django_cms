@@ -37,6 +37,12 @@
 
         </tbody>
     </table>
+     {% load page%}
+    {% autoescape off %}
+    {% view_page total_count request %}
+    {% autoescape on %}
+    {% endautoescape %}
+    {% endautoescape %}
     {% else %}
     <h1>There are no articles,please wait</h1>
     {% endif %}
