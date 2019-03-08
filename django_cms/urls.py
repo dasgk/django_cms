@@ -20,6 +20,7 @@ from django_cms.app.Http.Controller.Admin.HomeController import HomeController
 from django_cms.app.Http.Controller.Admin.UserController import UserController
 from django_cms.app.Http.Controller.Admin.ArticleController import ArticleController
 from django_cms.app.Http.Controller.Admin.CateController import CateController
+from django_cms.app.Http.Controller.Admin.LabelController import LabelController
 
 urlpatterns = [
     url('user/login', UserController.login, name='admin.user.login'),
@@ -34,5 +35,8 @@ urlpatterns = [
     url('show_cate_form/(\d+)/$', CateController.show_cate_form, name='admin.cate.show_cate_form'),
     url('save_cate', CateController.save_cate, name='admin.cate.save_cate'),
     url('delete_cate/(\d+)/$', CateController.delete_cate, name='admin.cate.delete_cate'),
+
+    # ????
+    url('label_list', LabelController.index, name='admin.label.index'),
     url('', HomeController.index, name='admin.index'),
 ]

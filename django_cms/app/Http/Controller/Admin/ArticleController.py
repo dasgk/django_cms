@@ -7,7 +7,6 @@ from django_cms.app.Dao.ArticleDao import ArticleDao
 
 from django_cms.app.Dao.CateDao import CateDao
 from django_cms.app.Dao.LabelDao import LabelDao
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django_cms.app.utility.helps import response_json
 from django.urls import reverse
 
@@ -19,15 +18,16 @@ class ArticleController(View):
     def index(request):
         # 获得所有数据
         param = request.GET
-        type_id = param.get('cate_id',0)
+        cate_id = param.get('cate_id',0)
         title = param.get('title','')
+        label_id = param.get('label_id',0)
         filter_dict = dict()
         if len(title)>0:
             title = "%"+title+"%"
             filter_dict['title_contains'] = title
-        if type_id:
-            filter_dict['cate_id'] = type_id
-        article_list = ArticleDao.getArticleList(filter_dict, param.get('page',1))
+        if cate_id:
+            filter_dict['cate_id'] = cate_id
+        article_list = ArticleDao.getArticleList(filter_dict, param.get('page',1), label_id=label_id)
         return render(request, 'admin/article/article.html',{'article_list': article_list[0],'total_count':article_list[1]})
 
     '''
@@ -38,7 +38,7 @@ class ArticleController(View):
         article_filter = dict()
         article_filter['article_id'] = article_id
         article = Article.objects.filter(**article_filter).first()
-        labels = LabelDao.get_lables_by_artocle_id(article_id)
+        labels = LabelDao.get_lables_by_article_id(article_id)
         return render(request, 'admin/article/article_form.html',
                       {'cate_list': cate_list,'article':article,'labels':labels})
 

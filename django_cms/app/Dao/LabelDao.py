@@ -41,7 +41,7 @@ class LabelDao(object):
         LabelDao.update_label(labels, article_id)
 
     @staticmethod
-    def get_lables_by_artocle_id(article_id):
+    def get_lables_by_article_id(article_id):
         label_article = {}
         label_article['article_id'] = article_id
         lable_ids = LabelArticle.objects.filter(**label_article).values_list('label_id',flat=True)
@@ -49,3 +49,9 @@ class LabelDao(object):
         char = ','
         return char.join(titles)
 
+    @staticmethod
+    def get_label_list(page_num):
+        skip = (int(page_num) - 1) * ConstDao.getPageNum()
+        label_list = Label.objects.order_by("-label_id").all()[skip:skip + ConstDao.getPageNum()]
+        label_count = Label.objects.count()
+        return [label_list, label_count]

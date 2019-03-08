@@ -1,8 +1,16 @@
 from django_cms.app.Dao.ConstDao import ConstDao
-from django_cms.models import Article
+from django_cms.models import Article,LabelArticle
 class ArticleDao(object):
     @staticmethod
-    def getArticleList(options, page_num):
+    def getArticleList(options, page_num, label_id):
+        if label_id:
+            label_filter = dict()
+            label_filter['label_id'] = label_id
+            article_ids = LabelArticle.objects.filter(**label_filter).values_list('article_id',flat=True)
+            if article_ids:
+                options['article_id__in'] = article_ids
+            else :
+                return [[],0];
         skip = (int(page_num) - 1) * ConstDao.getPageNum()
         article_list = Article.objects.filter(**options).order_by("article_id").all()[skip:skip + ConstDao.getPageNum()]
         article_count = Article.objects.filter(**options).count()
