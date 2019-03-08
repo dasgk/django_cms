@@ -19,14 +19,14 @@ class ArticleController(View):
     def index(request):
         # 获得所有数据
         param = request.GET
-        type_id = param.get('type_id',0)
+        type_id = param.get('cate_id',0)
         title = param.get('title','')
         filter_dict = dict()
         if len(title)>0:
             title = "%"+title+"%"
             filter_dict['title_contains'] = title
         if type_id:
-            filter_dict['type_id'] = type_id
+            filter_dict['cate_id'] = type_id
         article_list = ArticleDao.getArticleList(filter_dict, param.get('page',1))
         return render(request, 'admin/article/article.html',{'article_list': article_list[0],'total_count':article_list[1]})
 
