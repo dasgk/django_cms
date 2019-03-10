@@ -1,0 +1,34 @@
+2019-03-08 14:38:18,005 [Thread-2:123145417523200] [scripts:59] [ArticleDao:deleteArticle] [INFO]- 37
+2019-03-08 14:38:18,008 [Thread-2:123145417523200] [scripts:63] [ArticleDao:deleteArticle] [INFO]- 37
+2019-03-10 07:08:28,198 [Thread-2:123145509552128] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:08:28
+2019-03-10 07:08:28,213 [Thread-2:123145509552128] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:08:28
+2019-03-10 07:08:28,213 [Thread-2:123145509552128] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:08:28
+2019-03-10 07:08:28,216 [Thread-2:123145509552128] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:08:28
+2019-03-10 07:08:28,216 [Thread-2:123145509552128] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:08:28
+2019-03-10 07:14:43,399 [Thread-2:123145521831936] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:14:43
+2019-03-10 07:14:43,410 [Thread-2:123145521831936] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:14:43
+2019-03-10 07:14:43,410 [Thread-2:123145521831936] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:14:43
+2019-03-10 07:14:43,413 [Thread-2:123145521831936] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:14:43
+2019-03-10 07:14:43,413 [Thread-2:123145521831936] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:14:43
+2019-03-10 15:18:00,642 [Thread-2:123145471614976] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:18:00
+2019-03-10 15:18:00,656 [Thread-2:123145471614976] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:18:00
+2019-03-10 15:18:00,656 [Thread-2:123145471614976] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:18:00
+2019-03-10 15:18:00,723 [Thread-2:123145471614976] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:18:00
+2019-03-10 15:18:00,723 [Thread-2:123145471614976] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:18:00
+2019-03-10 15:18:50,843 [Thread-2:123145444319232] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:18:50
+2019-03-10 15:18:50,857 [Thread-2:123145444319232] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:18:50
+2019-03-10 15:18:50,857 [Thread-2:123145444319232] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:18:50
+2019-03-10 15:18:50,888 [Thread-2:123145444319232] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:18:50
+2019-03-10 15:18:50,888 [Thread-2:123145444319232] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:18:50
+2019-03-10 15:20:43,670 [Thread-2:123145444319232] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:20:43
+2019-03-10 15:20:43,670 [Thread-2:123145444319232] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:20:43
+2019-03-10 15:20:43,678 [Thread-2:123145444319232] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:20:43
+2019-03-10 15:20:43,678 [Thread-2:123145444319232] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:20:43
+2019-03-10 15:20:43,680 [Thread-2:123145444319232] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:20:43
+2019-03-10 15:20:43,680 [Thread-2:123145444319232] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 07:20:43
+2019-03-10 15:21:46,117 [Thread-2:123145459130368] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 15:21:46
+2019-03-10 15:21:46,117 [Thread-2:123145459130368] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 15:21:46
+2019-03-10 15:21:46,126 [Thread-2:123145459130368] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 15:21:46
+2019-03-10 15:21:46,126 [Thread-2:123145459130368] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 15:21:46
+2019-03-10 15:21:46,172 [Thread-2:123145459130368] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 15:21:46
+2019-03-10 15:21:46,173 [Thread-2:123145459130368] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 15:21:46

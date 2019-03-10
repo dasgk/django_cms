@@ -20,8 +20,8 @@ class Article(models.Model):
     look_num = models.IntegerField(help_text="浏览数量", default=0, null=True)
     cate_id = models.IntegerField(help_text="文章类别", default=0, null=True)
     status = models.IntegerField(help_text="1 表示草稿 2表示已经发表", default=1, null=True)
-    created_at = models.DateTimeField(help_text="创建时间", null=True, default="2019-01-29 12:13:00", blank=True)
-    updated_at = models.DateTimeField(help_text="更新时间", null=True, default="2019-01-29 12:13:00")
+    created_at = models.CharField(help_text="创建时间", null=True, default="", max_length=20, blank=True)
+    updated_at = models.CharField(help_text="更新时间", null=True, default="", max_length=20)
 
     class Meta:
         db_table = "article"

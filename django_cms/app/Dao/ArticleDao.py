@@ -14,7 +14,7 @@ class ArticleDao(object):
             if article_ids:
                 options['article_id__in'] = article_ids
             else:
-                return [[], 0];
+                return [[], 0]
         skip = (int(page_num) - 1) * ConstDao.getPageNum()
         article_list = Article.objects.filter(**options).order_by("article_id").all()[skip:skip + ConstDao.getPageNum()]
         article_count = Article.objects.filter(**options).count()
