@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4ad98cc-f6e3-4b41-9d79-d90007606b88" name="Default" comment="修正时间">
+    <list default="true" id="d4ad98cc-f6e3-4b41-9d79-d90007606b88" name="Default" comment="添加前端样式">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/all.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/records/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/records/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,10 +17,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/records/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+            <state relative-caret-position="150">
+              <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log/error.log">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log/all.log">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -107,12 +119,12 @@
         <option value="$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/ArticleController.py" />
         <option value="$PROJECT_DIR$/django_cms/templatetags/page.py" />
         <option value="$PROJECT_DIR$/log/script.log" />
-        <option value="$PROJECT_DIR$/log/all.log" />
         <option value="$PROJECT_DIR$/django_cms/resource/views/admin/article/article_form.html" />
         <option value="$PROJECT_DIR$/django_cms/app/Dao/ArticleDao.py" />
         <option value="$PROJECT_DIR$/django_cms/models.py" />
         <option value="$PROJECT_DIR$/django_cms/settings.py" />
         <option value="$PROJECT_DIR$/django_cms/app/Dao/TimeDao.py" />
+        <option value="$PROJECT_DIR$/log/all.log" />
         <option value="$PROJECT_DIR$/records/index.html" />
       </list>
     </option>
@@ -166,12 +178,6 @@
               <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
               <item name="django_cms" type="462c0819:PsiDirectoryNode" />
               <item name="records" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="django_cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="django_cms" type="462c0819:PsiDirectoryNode" />
-              <item name="records" type="462c0819:PsiDirectoryNode" />
-              <item name="aui-20170109-v2.1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -232,7 +238,8 @@
       <workItem from="1551970131134" duration="1452000" />
       <workItem from="1552046499677" duration="7441000" />
       <workItem from="1552196723734" duration="2536000" />
-      <workItem from="1552480570920" duration="1860000" />
+      <workItem from="1552480570920" duration="2012000" />
+      <workItem from="1552485241325" duration="389000" />
     </task>
     <task id="LOCAL-00001" summary="修改模型">
       <created>1551057896104</created>
@@ -444,17 +451,24 @@
       <option name="project" value="LOCAL" />
       <updated>1552202567594</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="添加前端样式">
+      <created>1552483163269</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1552483163269</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42009000" />
+    <option name="totallyTimeSpent" value="42550000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="70" y="283" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20100144" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20386267" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -503,7 +517,8 @@
     <MESSAGE value="分类添加链接" />
     <MESSAGE value="添加标签处理" />
     <MESSAGE value="修正时间" />
-    <option name="LAST_COMMIT_MESSAGE" value="修正时间" />
+    <MESSAGE value="添加前端样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加前端样式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -730,9 +745,6 @@
     <entry file="file://$PROJECT_DIR$/django.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/error.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/django_cms/app/Http/Controller/Admin/ArticleController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -742,9 +754,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/all.log">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/django_cms/resource/views/admin/article/article.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -808,10 +817,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/log/error.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/all.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/records/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        <state relative-caret-position="150">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
         </state>
       </provider>
     </entry>
