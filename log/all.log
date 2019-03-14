@@ -1,0 +1,29 @@
+2019-03-14 15:51:42,798 [Dummy-1:14232] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-14 15:51:42,798 [Dummy-1:14232] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-14 15:51:42,837 [Dummy-1:14232] [django.db.backends:111] [utils:execute] [DEBUG]- (0.037) SHOW FULL TABLES; args=None
+2019-03-14 15:51:42,910 [Dummy-1:14232] [django.db.backends:111] [utils:execute] [DEBUG]- (0.041) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-03-14 15:55:13,590 [Thread-2:16556] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-14 15:55:13,593 [Thread-2:16556] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-14 15:55:13,607 [Thread-2:16556] [django.db.backends:111] [utils:execute] [DEBUG]- (0.014) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-14 07:55:13.587519' AND `django_session`.`session_key` = 'tscko96q837eehslusiy6a0p6wxp2tm9'); args=('2019-03-14 07:55:13.587519', 'tscko96q837eehslusiy6a0p6wxp2tm9')
+2019-03-14 15:55:13,655 [Thread-2:16556] [django.db.backends:111] [utils:execute] [DEBUG]- (0.025) SELECT `admin_user`.`admin_user_id`, `admin_user`.`username`, `admin_user`.`password`, `admin_user`.`api_token`, `admin_user`.`status`, `admin_user`.`created_at`, `admin_user`.`updated_at` FROM `admin_user` WHERE (`admin_user`.`password` = '111' AND `admin_user`.`username` = 'test') ORDER BY `admin_user`.`admin_user_id` ASC  LIMIT 1; args=('111', 'test')
+2019-03-14 15:55:13,701 [Thread-2:16556] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `cate`; args=()
+2019-03-14 15:55:13,717 [Thread-2:16556] [django.db.backends:111] [utils:execute] [DEBUG]- (0.016) SELECT COUNT(*) AS `__count` FROM `label`; args=()
+2019-03-14 15:55:13,749 [Thread-2:16556] [django.server:124] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 6017
+2019-03-14 15:55:13,765 [Thread-3:16560] [django.server:124] [basehttp:log_message] [INFO]- "GET /static/css/sider_header.css HTTP/1.1" 304 0
+2019-03-14 15:55:13,767 [Thread-4:16636] [django.server:124] [basehttp:log_message] [INFO]- "GET /static/css/sider_css.css HTTP/1.1" 304 0
+2019-03-14 15:55:13,769 [Thread-5:16640] [django.server:124] [basehttp:log_message] [INFO]- "GET /static/images/user.jpg HTTP/1.1" 304 0
+2019-03-14 15:55:13,798 [Thread-6:16644] [django.server:124] [basehttp:log_message] [INFO]- "GET /static/js/custom.js HTTP/1.1" 304 0
+2019-03-14 15:55:13,803 [Thread-7:16648] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-14 15:55:13,804 [Thread-7:16648] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-14 15:55:13,812 [Thread-8:16652] [django.server:124] [basehttp:log_message] [INFO]- "GET /static/js/jquery.mCustomScrollbar.concat.min.js HTTP/1.1" 304 0
+2019-03-14 15:55:13,927 [Thread-7:16648] [django.db.backends:111] [utils:execute] [DEBUG]- (0.123) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-14 15:55:13,996 [Thread-7:16648] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-14 15:55:14,088 [Thread-7:16648] [django.server:124] [basehttp:log_message] [INFO]- "GET /article_list HTTP/1.1" 200 2403
+2019-03-14 15:55:14,097 [Thread-9:16660] [django.server:124] [basehttp:log_message] [INFO]- "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+2019-03-14 15:55:14,154 [Thread-10:16664] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-14 15:55:14,154 [Thread-10:16664] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-14 15:55:14,156 [Thread-10:16664] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-14 07:55:14.153005' AND `django_session`.`session_key` = 'tscko96q837eehslusiy6a0p6wxp2tm9'); args=('2019-03-14 07:55:14.153005', 'tscko96q837eehslusiy6a0p6wxp2tm9')
+2019-03-14 15:55:14,157 [Thread-10:16664] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `admin_user`.`admin_user_id`, `admin_user`.`username`, `admin_user`.`password`, `admin_user`.`api_token`, `admin_user`.`status`, `admin_user`.`created_at`, `admin_user`.`updated_at` FROM `admin_user` WHERE (`admin_user`.`password` = '111' AND `admin_user`.`username` = 'test') ORDER BY `admin_user`.`admin_user_id` ASC  LIMIT 1; args=('111', 'test')
+2019-03-14 15:55:14,160 [Thread-10:16664] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `cate`; args=()
+2019-03-14 15:55:14,173 [Thread-10:16664] [django.db.backends:111] [utils:execute] [DEBUG]- (0.012) SELECT COUNT(*) AS `__count` FROM `label`; args=()
+2019-03-14 15:55:14,175 [Thread-10:16664] [django.server:124] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 200 6017

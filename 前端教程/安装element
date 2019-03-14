@@ -1,0 +1,3 @@
+blog
+    windows  vue install https://www.cnblogs.com/zhaomeizi/p/8483597.html
+    windows  vue publish :npm run build
