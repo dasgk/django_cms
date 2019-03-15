@@ -20,18 +20,18 @@
 				<!--搜索内容结束-->
 
 				<!--我的分类开始-->
-				<el-row style="    margin-top: 25%;">
+				<el-row style="margin-top: 25%;">
 					<el-col :span="24" style=" text-align:center;height: 30%;    line-height: 294%;">
-						<div class="grid-content bg-purple-dark"><span style='    color: black;font-size: 22px;'>我的分类</span></div>
+						<div class="grid-content bg-purple-dark"><span style='color: black;font-size: 22px;'>我的分类</span></div>
 					</el-col>
-					<el-col :span="24" style=" text-align:center; line-height: 294%;">
-						<div class="grid-content bg-purple-dark"><span style='    color: grey;font-size: 22px;'>我的分类</span></div>
+					<el-col :span="24" class="type_list">
+						<div class="grid-content bg-purple-dark"><span class="type_font">我的分类</span></div>
 					</el-col>
-					<el-col :span="24" style=" text-align:center; line-height: 294%;">
-						<div class="grid-content bg-purple-dark"><span style='    color:grey;font-size: 22px;'>我的分类</span></div>
+					<el-col :span="24" class="type_list">
+						<div class="grid-content bg-purple-dark"><span class="type_font">我的分类</span></div>
 					</el-col>
-					<el-col :span="24" style=" text-align:center; line-height: 294%;">
-						<div class="grid-content bg-purple-dark"><span style='    color: grey;font-size: 22px;'>我的分类</span></div>
+					<el-col :span="24" class="type_list">
+						<div class="grid-content bg-purple-dark"><span class="type_font">我的分类</span></div>
 					</el-col>
 				</el-row>
 				<!--我的分类结束-->
@@ -45,6 +45,12 @@
 	</el-container>
 </template>
 <style>
+	.type_list{
+		text-align:center; line-height: 294%;		
+	}
+	.type_font{
+		 color: grey;font-size: 22px;
+	}
 	.el-row {
 		margin-left: 0px;
 		margin-right: 0px;
