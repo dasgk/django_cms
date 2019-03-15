@@ -3,6 +3,7 @@ page layout : http://element-cn.eleme.io/
 blog
     windows  vue install https://www.cnblogs.com/zhaomeizi/p/8483597.html
     windows  vue publish :npm run build
+    cmd environment下运行 npm run dev
 
 install element.io
         in front_page directory  execute npm i element-ui -S
