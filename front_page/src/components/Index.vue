@@ -46,7 +46,7 @@
 </template>
 <style>
 	.type_list{
-		text-align:center; line-height: 294%;		
+		text-align:center; line-height: 294%;
 	}
 	.type_font{
 		 color: grey;font-size: 22px;
@@ -62,30 +62,30 @@
 			margin-bottom: 0;
 		}
 	}
-	
+
 	.el-input {
 		height: 10px;
 	}
-	
+
 	.el-col {
 		border-radius: 4px;
 		margin: auto;
 	}
-	
+
 	.el-aside {
 		overflow: hidden;
 	}
-	
+
 	body {
 		background: #f6f6f6;
 	}
 </style>
 <script>
-	export default {
-		data() {
-			return {
-				input: ''
-			}
-		}
-	}
+export default {
+  data () {
+    return {
+      input: ''
+    }
+  }
+}
 </script>
