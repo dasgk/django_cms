@@ -51,7 +51,7 @@
 
 			</el-aside>
 			<!--占位使用，不做任何处理-->
-			<el-aside>
+			<el-aside style="width:100px">
 			</el-aside>
 			<!--占位使用，不做任何处理-->
 		</el-container>
