@@ -2,9 +2,9 @@
 	<el-container style=" background-color: white;margin-left: 12%;margin-right: 12%;margin-top: 5%;">
 		<el-header style="height:13%;">
 			<h1><a id="Header1_HeaderTitle" class="headermaintitle" >dagsk的文集</a></h1>
-			<!--<template>-->
+			<!--引入的组件不需要增加template-->
 			<navigate> </navigate>
-			<!--</template>-->
+			<!--引入的组件不需要增加template-->
 		</el-header>
 		<el-container>
 			<!--占位使用，不做任何处理-->

@@ -4,7 +4,11 @@
 	</el-menu>
 </template>
 <style>
+	.el-menu-item,.el-menu{
+		cursor: auto;
+	}
 	.el-menu.el-menu--horizontal{
+		cursor: auto;
 		margin-left:79%;
 		border-bottom: solid 0px #e6e6e6;
 	}
