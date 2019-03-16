@@ -1,9 +1,15 @@
 <template>
-	<el-container style=" position: absolute;top: 0;left: 0;width: 100%; height: 100%;">
-		<el-header style="height:13%;"></el-header>
+	<el-container style=" background-color: white;margin-left: 12%;margin-right: 12%;margin-top: 5%;">
+		<el-header style="height:13%;">
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" >dagsk的文集</a></h1>
+			<!--<template>-->
+			<navigate> </navigate>
+			<!--</template>-->
+		</el-header>
 		<el-container>
 			<!--占位使用，不做任何处理-->
 			<el-aside>
+
 			</el-aside>
 			<!--占位使用，不做任何处理-->
 			<el-main></el-main>
@@ -20,7 +26,7 @@
 				<!--搜索内容结束-->
 
 				<!--我的分类开始-->
-				<el-row style="margin-top: 25%;height:37%">
+				<el-row style="margin-top: 7%;height:37%;    margin-left: -43%;">
 					<el-col :span="24" style=" text-align:center;height: 29%;    line-height: 400%;">
 						<div class="grid-content bg-purple-dark"><span style='color: black;font-size: 22px;'>我的分类</span></div>
 					</el-col>
@@ -36,9 +42,8 @@
 				</el-row>
 				<!--我的分类结束-->
 
-
 				<!--我的标签开始-->
-				<el-row style="margin-top: 25%;height:37%">
+				<el-row style="margin-top: 25%;height:37%;    margin-left: -43%;">
 					<el-col :span="24" style=" text-align:center;height: 29%;    line-height: 400%;">
 						<div class="grid-content bg-purple-dark"><span style='color: black;font-size: 22px;'>我的标签</span></div>
 					</el-col>
@@ -47,7 +52,6 @@
 					</el-col>
 				</el-row>
 				<!--我的标签结束-->
-
 
 			</el-aside>
 			<!--占位使用，不做任何处理-->
@@ -59,12 +63,16 @@
 	</el-container>
 </template>
 <style>
-	.type_list{
-		text-align:center; line-height: 294%;
+	.type_list {
+		text-align: center;
+		line-height: 294%;
 	}
-	.type_font{
-		 color: grey;font-size: 22px;
+	
+	.type_font {
+		color: grey;
+		font-size: 22px;
 	}
+	
 	.el-row {
 		margin-left: 0px;
 		margin-right: 0px;
@@ -76,30 +84,47 @@
 			margin-bottom: 0;
 		}
 	}
-
+	
 	.el-input {
 		height: 10px;
 	}
-
+	
 	.el-col {
 		border-radius: 4px;
 		margin: auto;
 	}
-
+	
 	.el-aside {
 		overflow: hidden;
 	}
-
-	body {
-		background: #f6f6f6;
+	
+	#blogTitle h1 {
+		font-size: 26px;
+		font-weight: bold;
+		line-height: 1.5em;
+		margin-top: 20px;
+	}
+	
+	#app {
+		font-family: 'Avenir', Helvetica, Arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-align: center;
+		color: #2c3e50;
+		margin-top: 60px;
 	}
 </style>
-<script>
-export default {
-  data () {
-    return {
-      input: ''
-    }
-  }
-}
+<script type="text/ecmascript-6">
+	import navigate from '@/components/navigate';
+	export default {
+		name: 'App',
+		data() {
+			return {
+				input: ''
+			}
+		},
+		components: {
+			navigate: navigate
+		}
+	}
 </script>
