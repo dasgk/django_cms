@@ -16,10 +16,10 @@
 			<el-aside>
 				<!--搜索内容开始-->
 				<el-row style="height: 17%;">
-					<el-col :span="12" style="    margin-top: 12%; margin-left: 5%;">
+					<el-col :span="12" style="    margin-top: 12%; margin-bottom:-5px;margin-left: 5%;">
 						<input type="text" autocomplete="off" placeholder="请输入内容" class="el-input__inner">
 					</el-col>
-					<el-col :span="12" style="margin-top: -12.8%;   margin-left: 59%;">
+					<el-col :span="12" style="margin-top: -12%; margin-bottom:-5px; margin-left: 59%;">
 						<el-button type="primary" icon="el-icon-search">搜索</el-button>
 					</el-col>
 				</el-row>
