@@ -1,11 +1,24 @@
-	/*
-	 * 1.首页展示多个页面组件
-	 *   第一步：在App.vue中引入组件
-	 *   第二步:在js中写入引入组件的名字
-	 *     components:{
-	 *       hi2,
-	 *       hi3
-	 *     }
-	 *     第三步：展示模板，一直以名字写在template
-	 *       例如：<hi2></hi2>
-	 * */
+1.首页展示多个页面组件
+  第一步：在App.vue中引入组件
+  第二步:在js中写入引入组件的名字
+    components:{
+      hi2,
+      hi3
+    }
+    第三步：展示模板，一直以名字写在template
+      例如：<hi2></hi2>
+	  
+import navigate from '@/components/navigate'
+	export default {
+		data() {
+			return {
+				input: ''
+			}
+		},
+		name: 'App',
+		components: {
+			navigate
+		}
+	}
+其中@是在build/webpack_base.js中配置的指向src
+注意：新的navigate.vue文件必须是以 template进行闭合

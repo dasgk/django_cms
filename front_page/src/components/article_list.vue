@@ -113,6 +113,9 @@
 		color: #2c3e50;
 		margin-top: 60px;
 	}
+	body{
+		font-family: KaiTi;
+	}
 </style>
 <script type="text/ecmascript-6">
 	import navigate from '@/components/navigate';
