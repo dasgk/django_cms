@@ -8,6 +8,10 @@
 		margin-left:79%;
 		border-bottom: solid 0px #e6e6e6;
 	}
+	.el-menu--horizontal>.el-menu-item.is-active{
+		
+		border-bottom: solid 0px #e6e6e6;	
+	}
 </style>
 <script>
 	export default {
