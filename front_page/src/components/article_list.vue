@@ -28,16 +28,24 @@
 				<!--我的分类开始-->
 				<el-row style="margin-top: 7%;height:37%;    margin-left: -43%;">
 					<el-col :span="24" style=" text-align:center;height: 29%;    line-height: 400%;">
-						<div class="grid-content bg-purple-dark"><span style='color: black;font-size: 22px;'>我的分类</span></div>
+						<div class="grid-content bg-purple-dark">
+							<span style='color: black;font-size: 22px;'>我的分类</span>
+						</div>
 					</el-col>
 					<el-col :span="24" class="type_list">
-						<div class="grid-content bg-purple-dark"><span class="type_font">我的分类</span></div>
+						<div class="grid-content bg-purple-dark">
+							<span class="type_font">我的分类</span>
+						</div>
 					</el-col>
 					<el-col :span="24" class="type_list">
-						<div class="grid-content bg-purple-dark"><span class="type_font">我的分类</span></div>
+						<div class="grid-content bg-purple-dark">
+							<span class="type_font">我的分类</span>
+						</div>
 					</el-col>
 					<el-col :span="24" class="type_list">
-						<div class="grid-content bg-purple-dark"><span class="type_font">我的分类</span></div>
+						<div class="grid-content bg-purple-dark">
+							<span class="type_font">我的分类</span>
+						</div>
 					</el-col>
 				</el-row>
 				<!--我的分类结束-->
@@ -45,13 +53,31 @@
 				<!--我的标签开始-->
 				<el-row style="margin-top: 25%;height:37%;    margin-left: -43%;">
 					<el-col :span="24" style=" text-align:center;height: 29%;    line-height: 400%;">
-						<div class="grid-content bg-purple-dark"><span style='color: black;font-size: 22px;'>我的标签</span></div>
+						<div class="grid-content bg-purple-dark">
+							<span style='color: black;font-size: 22px;'>我的标签</span>
+						</div>
+					</el-col>
+					<el-col :span="24" class="type_list">
+						<div class="grid-content bg-purple-dark">
+							<span>小标签</span>
+						</div>
+					</el-col>
+				</el-row>
+				<!--我的标签结束-->
+
+				<!--我的经常访问开始-->
+				<el-row style="margin-top: 25%;height:37%;    margin-left: -43%;">
+					<el-col :span="24" style=" text-align:center;height: 29%;    line-height: 400%;">
+						<div class="grid-content bg-purple-dark">
+							<span style='color: black;font-size: 22px;'>经常浏览</span>
+						</div>
 					</el-col>
 					<el-col :span="24" class="type_list">
 						<div class="grid-content bg-purple-dark"><span>我的分类</span></div>
 					</el-col>
 				</el-row>
-				<!--我的标签结束-->
+				<!--我的经常访问结束-->
+
 
 			</el-aside>
 			<!--占位使用，不做任何处理-->
