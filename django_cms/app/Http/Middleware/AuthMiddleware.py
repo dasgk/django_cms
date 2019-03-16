@@ -6,9 +6,9 @@ from django.utils.deprecation import MiddlewareMixin
 class AuthMiddleWare(MiddlewareMixin):
 
     def process_request(self, request):
-        if request.path == '/user/login' or request.path == 'user/register':
+        if request.path == 'admin/user/login' or request.path == 'admin/user/register':
             return None
         ticket = request.COOKIES.get('ticket')
         if not ticket:
-            return HttpResponseRedirect('/user/login')
+            return HttpResponseRedirect('admin/user/login')
         return None
