@@ -32,3 +32,6 @@
 2019-03-10 15:21:46,126 [Thread-2:123145459130368] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 15:21:46
 2019-03-10 15:21:46,172 [Thread-2:123145459130368] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 15:21:46
 2019-03-10 15:21:46,173 [Thread-2:123145459130368] [scripts:10] [TimeDao:get_current_time] [INFO]- 2019-03-10 15:21:46
+2019-03-17 14:58:22,875 [Thread-3:123145478889472] [django.request:228] [log:log_response] [WARNING]- Not Found: /
+2019-03-17 14:58:22,999 [Thread-3:123145478889472] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-17 15:26:01,401 [Thread-8:123145478889472] [django.request:228] [log:log_response] [WARNING]- Not Found: /
