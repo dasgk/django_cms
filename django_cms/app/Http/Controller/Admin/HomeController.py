@@ -17,3 +17,6 @@ class HomeController(View):
             return HttpResponse(html)
         else:
             return HttpResponseRedirect('/user/login')
+
+    def jump2Index(request):
+        return HttpResponseRedirect('/admin/index')

@@ -35,3 +35,4 @@
 2019-03-17 14:58:22,875 [Thread-3:123145478889472] [django.request:228] [log:log_response] [WARNING]- Not Found: /
 2019-03-17 14:58:22,999 [Thread-3:123145478889472] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
 2019-03-17 15:26:01,401 [Thread-8:123145478889472] [django.request:228] [log:log_response] [WARNING]- Not Found: /
+2019-03-17 15:35:57,594 [Thread-3:123145414488064] [django.request:228] [log:log_response] [WARNING]- Not Found: /

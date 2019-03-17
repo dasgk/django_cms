@@ -327,3 +327,144 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLR
 2019-03-17 15:32:42,337 [Thread-2:123145409232896] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
 2019-03-17 15:32:42,338 [Thread-2:123145409232896] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
 2019-03-17 15:32:42,339 [Thread-2:123145409232896] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 154
+2019-03-17 15:35:57,591 [Thread-3:123145414488064] [django.template:872] [base:_resolve_lookup] [DEBUG]- Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 111, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/urls/resolvers.py", line 520, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <module 'django_cms.admin_urls' from '/Users/jianyezhou/PycharmProjects/django_cms/django_cms/admin_urls.py'> (None:None) '^admin'>], [<URLResolver <module 'django_cms.api_urls' from '/Users/jianyezhou/PycharmProjects/django_cms/django_cms/api_urls.py'> (None:None) '^api'>]], 'path': ''}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'django_cms.admin_urls' from '/Users/jianyezhou/PycharmProjects/django_cms/django_cms/admin_urls.py'> (None:None) '^admin'>
+2019-03-17 15:35:57,593 [Thread-3:123145414488064] [django.template:872] [base:_resolve_lookup] [DEBUG]- Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 111, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/urls/resolvers.py", line 520, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <module 'django_cms.admin_urls' from '/Users/jianyezhou/PycharmProjects/django_cms/django_cms/admin_urls.py'> (None:None) '^admin'>], [<URLResolver <module 'django_cms.api_urls' from '/Users/jianyezhou/PycharmProjects/django_cms/django_cms/api_urls.py'> (None:None) '^api'>]], 'path': ''}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'django_cms.api_urls' from '/Users/jianyezhou/PycharmProjects/django_cms/django_cms/api_urls.py'> (None:None) '^api'>
+2019-03-17 15:35:57,595 [Thread-3:123145414488064] [django.server:154] [basehttp:log_message] [WARNING]- "GET / HTTP/1.1" 404 2029
+2019-03-17 15:36:03,045 [Thread-3:123145414488064] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-17 15:36:03,045 [Thread-3:123145414488064] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-17 15:36:03,046 [Thread-3:123145414488064] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 07:36:03.043011' AND `django_session`.`session_key` = 'zhdaf97c4r9s70wrf7wglr2c0xdnvlqr'); args=('2019-03-17 07:36:03.043011', 'zhdaf97c4r9s70wrf7wglr2c0xdnvlqr')
+2019-03-17 15:36:03,049 [Thread-3:123145414488064] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `admin_user`.`admin_user_id`, `admin_user`.`username`, `admin_user`.`password`, `admin_user`.`api_token`, `admin_user`.`status`, `admin_user`.`created_at`, `admin_user`.`updated_at` FROM `admin_user` WHERE (`admin_user`.`password` = '111' AND `admin_user`.`username` = 'test') ORDER BY `admin_user`.`admin_user_id` ASC  LIMIT 1; args=('111', 'test')
+2019-03-17 15:36:03,054 [Thread-3:123145414488064] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `cate`; args=()
+2019-03-17 15:36:03,056 [Thread-3:123145414488064] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `label`; args=()
+2019-03-17 15:36:03,061 [Thread-3:123145414488064] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 200 6062
+2019-03-17 15:36:03,093 [Thread-3:123145414488064] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-17 15:36:03,095 [Thread-3:123145414488064] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-17 15:36:03,099 [Thread-3:123145414488064] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-17 15:36:03,101 [Thread-3:123145414488064] [django.server:154] [basehttp:log_message] [INFO]- "GET /adminarticle_list HTTP/1.1" 200 1958
+2019-03-17 15:40:49,747 [Dummy-1:123145425952768] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-17 15:40:49,748 [Dummy-1:123145425952768] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-17 15:40:49,749 [Dummy-1:123145425952768] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SHOW FULL TABLES; args=None
+2019-03-17 15:40:49,751 [Dummy-1:123145425952768] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-03-17 15:40:54,226 [Dummy-1:123145381769216] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-17 15:40:54,226 [Dummy-1:123145381769216] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-17 15:40:54,227 [Dummy-1:123145381769216] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SHOW FULL TABLES; args=None
+2019-03-17 15:40:54,229 [Dummy-1:123145381769216] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-03-17 15:40:57,925 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+2019-03-17 15:40:57,932 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,940 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,944 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,947 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,950 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,952 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,955 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,957 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,960 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,962 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,965 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,969 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,973 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,975 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,977 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,980 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,982 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,984 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:40:57,988 [Thread-2:123145387024384] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-03-17 15:41:14,379 [Dummy-1:123145388384256] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-17 15:41:14,379 [Dummy-1:123145388384256] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-17 15:41:14,380 [Dummy-1:123145388384256] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SHOW FULL TABLES; args=None
+2019-03-17 15:41:14,382 [Dummy-1:123145388384256] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-03-17 15:41:18,756 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-17 15:41:18,757 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-17 15:41:18,757 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 07:41:18.754724' AND `django_session`.`session_key` = 'zhdaf97c4r9s70wrf7wglr2c0xdnvlqr'); args=('2019-03-17 07:41:18.754724', 'zhdaf97c4r9s70wrf7wglr2c0xdnvlqr')
+2019-03-17 15:41:18,759 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `admin_user`.`admin_user_id`, `admin_user`.`username`, `admin_user`.`password`, `admin_user`.`api_token`, `admin_user`.`status`, `admin_user`.`created_at`, `admin_user`.`updated_at` FROM `admin_user` WHERE (`admin_user`.`password` = '111' AND `admin_user`.`username` = 'test') ORDER BY `admin_user`.`admin_user_id` ASC  LIMIT 1; args=('111', 'test')
+2019-03-17 15:41:18,762 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `cate`; args=()
+2019-03-17 15:41:18,764 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `label`; args=()
+2019-03-17 15:41:18,771 [Thread-2:123145393639424] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 200 6062
+2019-03-17 15:41:18,842 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-17 15:41:18,846 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-17 15:41:18,850 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-17 15:41:18,854 [Thread-2:123145393639424] [django.server:154] [basehttp:log_message] [INFO]- "GET /adminarticle_list HTTP/1.1" 200 1958
+2019-03-17 15:41:18,938 [Thread-2:123145393639424] [django.server:154] [basehttp:log_message] [INFO]- "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map HTTP/1.1" 304 0
+2019-03-17 15:41:21,594 [Thread-2:123145393639424] [django.server:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+2019-03-17 15:41:21,601 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-17 15:41:21,602 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-17 07:41:21.599935' AND `django_session`.`session_key` = 'zhdaf97c4r9s70wrf7wglr2c0xdnvlqr'); args=('2019-03-17 07:41:21.599935', 'zhdaf97c4r9s70wrf7wglr2c0xdnvlqr')
+2019-03-17 15:41:21,605 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `admin_user`.`admin_user_id`, `admin_user`.`username`, `admin_user`.`password`, `admin_user`.`api_token`, `admin_user`.`status`, `admin_user`.`created_at`, `admin_user`.`updated_at` FROM `admin_user` WHERE (`admin_user`.`password` = '111' AND `admin_user`.`username` = 'test') ORDER BY `admin_user`.`admin_user_id` ASC  LIMIT 1; args=('111', 'test')
+2019-03-17 15:41:21,607 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `cate`; args=()
+2019-03-17 15:41:21,608 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `label`; args=()
+2019-03-17 15:41:21,610 [Thread-2:123145393639424] [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 200 6062
+2019-03-17 15:41:21,654 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-17 15:41:21,655 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-17 15:41:21,658 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-17 15:41:21,660 [Thread-2:123145393639424] [django.server:154] [basehttp:log_message] [INFO]- "GET /adminarticle_list HTTP/1.1" 200 1958
