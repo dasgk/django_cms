@@ -143,8 +143,10 @@
 		font-family: KaiTi;
 	}
 </style>
+<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 <script type="text/ecmascript-6">
 	import navigate from '@/components/navigate';
+	import 'jquery'
 	export default {
 		name: 'App',
 		data() {
@@ -156,4 +158,22 @@
 			navigate: navigate
 		}
 	}
+	$.ajax({
+             type: "GET",
+             url: "http:127.0.0.1:8000/api/article_list",
+             data: {username:$("#username").val(), content:$("#content").val()},
+             dataType: "json",
+             success: function(data){
+                         $('#resText').empty();   //清空resText里面的所有内容
+                         var html = '';
+                         $.each(data, function(commentIndex, comment){
+                               html += '<div class="comment"><h6>' + comment['username']
+                                         + ':</h6><p class="para"' + comment['content']
+                                         + '</p></div>';
+                         });
+                         $('#resText').html(html);
+                      }
+         });
+
+
 </script>
