@@ -1,6 +1,7 @@
 from django_cms.models import Article
 from django_cms.app.Dao.ArticleDao import ArticleDao
 from django_cms.app.utility.helps import response_json
+from datetime import datetime
 class ArticleController:
     def article_list(request):
         # 获得所有数据
@@ -23,6 +24,9 @@ class ArticleController:
             item['title'] = article.title
             item['content'] = article.content[0:138]
             item['look_num'] = article.look_num
-            item['updated_at'] = article.updated_at.strftime('%Y-%m-%d %H:%M:%S')
+            if type(article.updated_at) == datetime:
+                item['updated_at'] = article.updated_at.strftime('%Y-%m-%d %H:%M:%S')
+            else:
+                item['updated_at'] = article.updated_at
             res.append(item)
         return response_json(1,res)

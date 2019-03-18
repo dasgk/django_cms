@@ -61,7 +61,7 @@
 					<div v-for="cate in cate_list">
 						<el-col :span="24" class="type_list">
 							<div class="grid-content bg-purple-dark">
-								<span class="type_font">{{cate.title}}({{cate.article_count}})</span>
+								<span class="type_font" @click='article_list_by_cate(cate.cate_id)'>{{cate.title}}({{cate.article_count}})</span>
 							</div>
 						</el-col>
 					</div>
@@ -184,6 +184,7 @@
 	.type_font {
 		color: grey;
 		font-size: 22px;
+		cursor:pointer
 	}
 	
 	.el-row {
@@ -255,10 +256,27 @@
 		},
 		created: function() {
 			vue = this
+		},
+		methods:{
+		   article_list_by_cate(cate_id){
+  $.ajax({
+		type: "GET",
+		url: "http://127.0.0.1:8000/api/article_list",
+		data:{'cate_id': cate_id},
+		dataType: "json",
+		success: function(data) {
+			vue.article_list = data.data
+
+		}
+	});
+}
+
 		}
 	})
 
-	//请求文章列表
+
+$(document).ready(function(){
+ //请求文章列表
 	$.ajax({
 		type: "GET",
 		url: "http://127.0.0.1:8000/api/article_list",
@@ -291,4 +309,7 @@
 
 		}
 	});
+});
+
+
 </script>
