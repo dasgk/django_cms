@@ -43,10 +43,10 @@
 				<!--搜索内容开始-->
 				<el-row style="height: 17%;">
 					<el-col :span="12" style="    margin-top: 12%; margin-bottom:-5px;margin-left: 5%;">
-						<input type="text" autocomplete="off" placeholder="请输入内容" class="el-input__inner">
+						<input type="text" autocomplete="off" id="search" placeholder="请输入内容" class="el-input__inner">
 					</el-col>
 					<el-col :span="12" style="margin-top: -12%; margin-bottom:-5px; margin-left: 59%;">
-						<el-button type="primary" icon="el-icon-search">搜索</el-button>
+						<el-button type="primary" @click='search_article()' icon="el-icon-search">搜索</el-button>
 					</el-col>
 				</el-row>
 				<!--搜索内容结束-->
@@ -269,6 +269,22 @@
 
 		}
 	});
+},
+search_article(){
+var title = $("#search").val()
+  $.ajax({
+		type: "GET",
+		url: "http://127.0.0.1:8000/api/article_list",
+		data:{'title': title},
+		dataType: "json",
+		success: function(data) {
+			vue.article_list = data.data
+
+		}
+	});
+
+
+
 }
 
 		}

@@ -11,8 +11,7 @@ class ArticleController:
         label_id = param.get('label_id',0)
         filter_dict = dict()
         if len(title)>0:
-            title = "%"+title+"%"
-            filter_dict['title_contains'] = title
+            filter_dict['title__icontains'] = title
         if cate_id:
             filter_dict['cate_id'] = cate_id
         article_list = ArticleDao.getArticleList(filter_dict, param.get('page',1), label_id=label_id)
