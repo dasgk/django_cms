@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
 from django_cms.app.Http.Controller.Api.ArticleController import ArticleController
+from django_cms.app.Http.Controller.Api.CateController import CateController
 
 urlpatterns = [
     url('article_list', ArticleController.article_list, name='api.article.article_list'),
+    url('cate_list', CateController.cate_list, name='api.cate.cate_list'),
 ]

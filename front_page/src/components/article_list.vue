@@ -58,21 +58,13 @@
 							<span style='color: black;font-size: 22px;'>我的分类</span>
 						</div>
 					</el-col>
+					<div v-for="cate in cate_list">
 					<el-col :span="24" class="type_list">
 						<div class="grid-content bg-purple-dark">
-							<span class="type_font">我的分类</span>
+							<span class="type_font" >{{cate.title}}</span>
 						</div>
 					</el-col>
-					<el-col :span="24" class="type_list">
-						<div class="grid-content bg-purple-dark">
-							<span class="type_font">我的分类</span>
-						</div>
-					</el-col>
-					<el-col :span="24" class="type_list">
-						<div class="grid-content bg-purple-dark">
-							<span class="type_font">我的分类</span>
-						</div>
-					</el-col>
+					</div>					
 				</el-row>
 				<!--我的分类结束-->
 
@@ -253,7 +245,8 @@
 		data() {
 			return {
 				input: '',
-				article_list: []
+				article_list: [],
+				cate_list:[],
 			}
 		},
 		components: {
@@ -264,6 +257,7 @@
 		}
 	})
 
+	//请求文章列表
 	$.ajax({
 		type: "GET",
 		url: "http://127.0.0.1:8000/api/article_list",
@@ -273,4 +267,14 @@
 
 		}
 	});
+	//请求分类列表
+	$.ajax({
+		type: "GET",
+		url: "http://127.0.0.1:8000/api/cate_list",
+		dataType: "json",
+		success: function(data) {
+			vue.cate_list = data.data
+		}
+	});
+	//我的标签
 </script>
