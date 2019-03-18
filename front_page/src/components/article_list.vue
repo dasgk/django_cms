@@ -12,7 +12,33 @@
 
 			</el-aside>
 			<!--占位使用，不做任何处理-->
-			<el-main></el-main>
+			<el-main style="margin-left: -17%;">
+
+				<div v-for="article in article_list">
+
+					<div class="day">
+						<div class="dayTitle">
+							<a id="homepage1_HomePageDays_ctl00_ImageLink" href="https://www.cnblogs.com/haoyifei/">置顶随笔</a>
+						</div>
+
+						<div class="postTitle">
+							<a id="homepage1_HomePageDays_ctl00_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/haoyifei/p/5641115.html">{{article.title}}</a>
+						</div>
+						<div class="postCon">
+							<div class="c_b_p_desc">摘要:{{article.content}}
+								<a href="https://www.cnblogs.com/haoyifei/p/5641115.html" class="c_b_p_desc_readmore">阅读全文</a>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div class="postDesc"><i class="el-icon-edit"></i>posted @ {{article.updated_at}} 周建业 阅读({{article.look_num}})
+
+						</div>
+						<div class="clear"></div>
+
+					</div>
+
+				</div>
+			</el-main>
 			<el-aside>
 				<!--搜索内容开始-->
 				<el-row style="height: 17%;">
@@ -78,7 +104,6 @@
 				</el-row>
 				<!--我的经常访问结束-->
 
-
 			</el-aside>
 			<!--占位使用，不做任何处理-->
 			<el-aside style="width:100px">
@@ -89,6 +114,76 @@
 	</el-container>
 </template>
 <style>
+	.postTitle {
+		border-left: 3px solid #21759b;
+		margin-bottom: 10px;
+		font-size: 20px;
+		float: right;
+		width: 100%;
+		clear: both;
+	}
+	
+	.postCon {
+		float: right;
+		line-height: 1.5em;
+		width: 100%;
+		clear: both;
+		padding: 10px 0;
+	}
+	
+	.day .postTitle a {
+		padding-left: 10px;
+	}
+	
+	.postDesc {
+		font-size: 13px;
+		color: #757575;
+		float: left;
+		width: 100%;
+		clear: both;
+		text-align: left;		
+		padding-right: 5px;
+		margin-top: 20px;
+		line-height: 1.5;
+	}
+	
+	.dayTitle {
+		display: none;
+		border: 1px solid #21759b;
+		background: azure;
+		border-radius: 50%;
+		font-size: 12px;
+		height: 65px;
+		line-height: 1.5;
+		margin: 15px;
+		text-align: center;
+		width: 63px;
+		margin-left: -100px;
+		clear: both;
+		position: absolute;
+		top: -15px;
+	}
+	
+	.c_b_p_desc {
+		font-size: 14px;
+		line-height: 1.7;
+	}
+	
+	.c_b_p_desc {
+		word-wrap: break-word;
+		word-break: break-all;
+		overflow: hidden;
+		line-height: 1.5;
+	}
+	
+	.day {
+		min-height: 10px;
+		_height: 10px;
+		margin-bottom: 20px;
+		padding-bottom: 5px;
+		position: relative;
+	}
+	
 	.type_list {
 		text-align: center;
 		line-height: 294%;
@@ -139,7 +234,8 @@
 		color: #2c3e50;
 		margin-top: 60px;
 	}
-	body{
+	
+	body {
 		font-family: KaiTi;
 	}
 </style>
@@ -148,25 +244,33 @@
 	import navigate from '@/components/navigate';
 	import 'jquery'
 
-	export default {
+	function privateFoo(data) {
+		this.msg = data
+	}
+	var vue
+	export default({
 		name: 'App',
 		data() {
 			return {
-				input: ''
+				input: '',
+				article_list: []
 			}
 		},
 		components: {
 			navigate: navigate
+		},
+		created: function() {
+			vue = this
 		}
-	}
+	})
+
 	$.ajax({
-             type: "GET",
-             url: "http://127.0.0.1:8000/api/article_list",
-             dataType: "json",
-             success: function(data){
-                        console.log(data)
-                      }
-         });
+		type: "GET",
+		url: "http://127.0.0.1:8000/api/article_list",
+		dataType: "json",
+		success: function(data) {
+			vue.article_list = data.data
 
-
+		}
+	});
 </script>

@@ -36,3 +36,67 @@
 2019-03-17 14:58:22,999 [Thread-3:123145478889472] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
 2019-03-17 15:26:01,401 [Thread-8:123145478889472] [django.request:228] [log:log_response] [WARNING]- Not Found: /
 2019-03-17 15:35:57,594 [Thread-3:123145414488064] [django.request:228] [log:log_response] [WARNING]- Not Found: /
+2019-03-18 08:17:56,040 [Thread-2:200] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/article_list
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python\project\django_cms\django_cms\app\Http\Controller\Api\ArticleController.py", line 28, in article_list
+    return response_json(1,res)
+  File "D:\python\project\django_cms\django_cms\app\utility\helps.py", line 49, in response_json
+    return HttpResponse(json.dumps(res, ensure_ascii=False), content_type="application/json,charset=utf-8")
+  File "C:\Python36\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Python36\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python36\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python36\lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'datetime' is not JSON serializable
+2019-03-18 08:18:11,464 [Thread-3:3544] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/article_list
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python\project\django_cms\django_cms\app\Http\Controller\Api\ArticleController.py", line 28, in article_list
+    return response_json(1,res)
+  File "D:\python\project\django_cms\django_cms\app\utility\helps.py", line 49, in response_json
+    return HttpResponse(json.dumps(res, ensure_ascii=False), content_type="application/json,charset=utf-8")
+  File "C:\Python36\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Python36\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python36\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python36\lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'datetime' is not JSON serializable
+2019-03-18 11:11:43,062 [Thread-2:17420] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/article_list
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python\project\django_cms\django_cms\app\Http\Controller\Api\ArticleController.py", line 25, in article_list
+    item['content'] = article.content.decode('utf8')[0:138].encode('utf8')
+AttributeError: 'str' object has no attribute 'decode'
+2019-03-18 11:13:32,480 [Thread-3:15092] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/article_list
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python\project\django_cms\django_cms\app\Http\Controller\Api\ArticleController.py", line 25, in article_list
+    item['content'] = article.content[0:138].encode('utf8')
+AttributeError: 'str' object has no attribute 'decode'

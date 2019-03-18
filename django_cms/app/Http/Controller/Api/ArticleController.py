@@ -21,8 +21,8 @@ class ArticleController:
             item = {}
             item['article_id'] = article.article_id
             item['title'] = article.title
-            item['content'] = article.content
+            item['content'] = article.content[0:138]
             item['look_num'] = article.look_num
-            item['updated_at'] = article.updated_at
+            item['updated_at'] = article.updated_at.strftime('%Y-%m-%d %H:%M:%S')
             res.append(item)
         return response_json(1,res)

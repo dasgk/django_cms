@@ -468,3 +468,373 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLR
 2019-03-17 15:41:21,655 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
 2019-03-17 15:41:21,658 [Thread-2:123145393639424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
 2019-03-17 15:41:21,660 [Thread-2:123145393639424] [django.server:154] [basehttp:log_message] [INFO]- "GET /adminarticle_list HTTP/1.1" 200 1958
+2019-03-18 08:13:06,201 [Dummy-1:12864] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:13:06,202 [Dummy-1:12864] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:13:06,230 [Dummy-1:12864] [django.db.backends:111] [utils:execute] [DEBUG]- (0.028) SHOW FULL TABLES; args=None
+2019-03-18 08:13:06,265 [Dummy-1:12864] [django.db.backends:111] [utils:execute] [DEBUG]- (0.004) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-03-18 08:17:55,859 [Thread-2:200] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:17:55,860 [Thread-2:200] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:17:55,861 [Thread-2:200] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:17:55,863 [Thread-2:200] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:17:56,042 [Thread-2:200] [django.server:124] [basehttp:log_message] [ERROR]- "GET /api/article_list HTTP/1.1" 500 96985
+2019-03-18 08:18:11,402 [Thread-3:3544] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:18:11,403 [Thread-3:3544] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:18:11,406 [Thread-3:3544] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:18:11,407 [Thread-3:3544] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:18:11,420 [Thread-3:3544] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-18 00:18:11.419248' AND `django_session`.`session_key` = 'tscko96q837eehslusiy6a0p6wxp2tm9'); args=('2019-03-18 00:18:11.419248', 'tscko96q837eehslusiy6a0p6wxp2tm9')
+2019-03-18 08:18:11,466 [Thread-3:3544] [django.server:124] [basehttp:log_message] [ERROR]- "GET /api/article_list HTTP/1.1" 500 97562
+2019-03-18 08:18:11,758 [Thread-4:15600] [django.server:124] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+2019-03-18 08:18:11,764 [Thread-5:8976] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:18:11,764 [Thread-5:8976] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:18:11,766 [Thread-5:8976] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-18 00:18:11.761876' AND `django_session`.`session_key` = 'tscko96q837eehslusiy6a0p6wxp2tm9'); args=('2019-03-18 00:18:11.761876', 'tscko96q837eehslusiy6a0p6wxp2tm9')
+2019-03-18 08:18:11,769 [Thread-5:8976] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `admin_user`.`admin_user_id`, `admin_user`.`username`, `admin_user`.`password`, `admin_user`.`api_token`, `admin_user`.`status`, `admin_user`.`created_at`, `admin_user`.`updated_at` FROM `admin_user` WHERE (`admin_user`.`password` = '111' AND `admin_user`.`username` = 'test') ORDER BY `admin_user`.`admin_user_id` ASC  LIMIT 1; args=('111', 'test')
+2019-03-18 08:18:11,817 [Thread-5:8976] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `cate`; args=()
+2019-03-18 08:18:11,819 [Thread-5:8976] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `label`; args=()
+2019-03-18 08:18:11,846 [Thread-5:8976] [django.server:124] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 200 6062
+2019-03-18 08:20:07,779 [Dummy-1:12924] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:20:07,779 [Dummy-1:12924] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:20:07,781 [Dummy-1:12924] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SHOW FULL TABLES; args=None
+2019-03-18 08:20:07,784 [Dummy-1:12924] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-03-18 08:20:14,414 [Dummy-1:16032] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:20:14,415 [Dummy-1:16032] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:20:14,417 [Dummy-1:16032] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SHOW FULL TABLES; args=None
+2019-03-18 08:20:14,421 [Dummy-1:16032] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-03-18 08:20:54,150 [Dummy-1:11384] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:20:54,150 [Dummy-1:11384] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:20:54,152 [Dummy-1:11384] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SHOW FULL TABLES; args=None
+2019-03-18 08:20:54,155 [Dummy-1:11384] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-03-18 08:21:19,470 [Thread-3:1916] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:21:19,471 [Thread-3:1916] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:21:19,473 [Thread-3:1916] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:21:19,474 [Thread-3:1916] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:21:19,476 [Thread-3:1916] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 08:21:40,543 [Thread-4:13012] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:21:40,543 [Thread-4:13012] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:21:40,545 [Thread-4:13012] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:21:40,547 [Thread-4:13012] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:21:40,548 [Thread-4:13012] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 08:25:34,063 [Thread-5:2660] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:25:34,064 [Thread-5:2660] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:25:34,065 [Thread-5:2660] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:25:34,066 [Thread-5:2660] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:25:34,067 [Thread-5:2660] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 08:28:24,360 [Thread-6:6740] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:28:24,360 [Thread-6:6740] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:28:24,362 [Thread-6:6740] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:28:24,363 [Thread-6:6740] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:28:24,364 [Thread-6:6740] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 08:28:24,404 [Thread-7:16304] [django.server:124] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+2019-03-18 08:28:24,411 [Thread-8:10988] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:28:24,412 [Thread-8:10988] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:28:24,414 [Thread-8:10988] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2019-03-18 00:28:24.408788' AND `django_session`.`session_key` = 'tscko96q837eehslusiy6a0p6wxp2tm9'); args=('2019-03-18 00:28:24.408788', 'tscko96q837eehslusiy6a0p6wxp2tm9')
+2019-03-18 08:28:24,417 [Thread-8:10988] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `admin_user`.`admin_user_id`, `admin_user`.`username`, `admin_user`.`password`, `admin_user`.`api_token`, `admin_user`.`status`, `admin_user`.`created_at`, `admin_user`.`updated_at` FROM `admin_user` WHERE (`admin_user`.`password` = '111' AND `admin_user`.`username` = 'test') ORDER BY `admin_user`.`admin_user_id` ASC  LIMIT 1; args=('111', 'test')
+2019-03-18 08:28:24,424 [Thread-8:10988] [django.db.backends:111] [utils:execute] [DEBUG]- (0.004) SELECT COUNT(*) AS `__count` FROM `cate`; args=()
+2019-03-18 08:28:24,433 [Thread-8:10988] [django.db.backends:111] [utils:execute] [DEBUG]- (0.009) SELECT COUNT(*) AS `__count` FROM `label`; args=()
+2019-03-18 08:28:24,438 [Thread-8:10988] [django.server:124] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 200 6062
+2019-03-18 08:28:29,704 [Thread-10:2344] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:28:29,705 [Thread-10:2344] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:28:29,707 [Thread-10:2344] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:28:29,708 [Thread-10:2344] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:28:29,709 [Thread-10:2344] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 08:29:04,314 [Thread-11:13968] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:29:04,314 [Thread-11:13968] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:29:04,317 [Thread-11:13968] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:29:04,319 [Thread-11:13968] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:29:04,320 [Thread-11:13968] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 08:30:58,385 [Thread-12:3508] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:30:58,387 [Thread-12:3508] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:30:58,387 [Thread-12:3508] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:30:58,388 [Thread-12:3508] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:30:58,389 [Thread-12:3508] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 08:33:33,368 [Thread-13:11408] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:33:33,369 [Thread-13:11408] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:33:33,373 [Thread-13:11408] [django.db.backends:111] [utils:execute] [DEBUG]- (0.004) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:33:33,374 [Thread-13:11408] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:33:33,375 [Thread-13:11408] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 08:33:39,606 [Thread-14:11124] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:33:39,606 [Thread-14:11124] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:33:39,607 [Thread-14:11124] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:33:39,609 [Thread-14:11124] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:33:39,610 [Thread-14:11124] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 08:34:10,936 [Thread-15:15044] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:34:10,937 [Thread-15:15044] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:34:10,937 [Thread-15:15044] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:34:10,939 [Thread-15:15044] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:34:10,940 [Thread-15:15044] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 08:34:15,135 [Thread-16:3024] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:34:15,136 [Thread-16:3024] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:34:15,137 [Thread-16:3024] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:34:15,138 [Thread-16:3024] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:34:15,139 [Thread-16:3024] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 08:34:42,941 [Thread-17:15300] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:34:42,941 [Thread-17:15300] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:34:42,943 [Thread-17:15300] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:34:42,944 [Thread-17:15300] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:34:42,946 [Thread-17:15300] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 08:34:46,583 [Thread-18:3080] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:34:46,584 [Thread-18:3080] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:34:46,585 [Thread-18:3080] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:34:46,586 [Thread-18:3080] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:34:46,587 [Thread-18:3080] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 08:53:31,308 [Thread-19:14112] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 08:53:31,308 [Thread-19:14112] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 08:53:31,310 [Thread-19:14112] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 08:53:31,311 [Thread-19:14112] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 08:53:31,312 [Thread-19:14112] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:25:26,165 [Thread-20:16292] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:25:26,166 [Thread-20:16292] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:25:26,172 [Thread-20:16292] [django.db.backends:111] [utils:execute] [DEBUG]- (0.005) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:25:26,175 [Thread-20:16292] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:25:26,179 [Thread-20:16292] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:25:39,488 [Thread-21:6888] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:25:39,488 [Thread-21:6888] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:25:39,489 [Thread-21:6888] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:25:39,490 [Thread-21:6888] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:25:39,492 [Thread-21:6888] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:25:45,449 [Thread-22:16564] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:25:45,449 [Thread-22:16564] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:25:45,450 [Thread-22:16564] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:25:45,451 [Thread-22:16564] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:25:45,452 [Thread-22:16564] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:27:46,228 [Thread-23:13956] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:27:46,229 [Thread-23:13956] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:27:46,230 [Thread-23:13956] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:27:46,230 [Thread-23:13956] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:27:46,231 [Thread-23:13956] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:27:49,177 [Thread-24:12100] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:27:49,178 [Thread-24:12100] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:27:49,178 [Thread-24:12100] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:27:49,179 [Thread-24:12100] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:27:49,181 [Thread-24:12100] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:35:56,927 [Thread-25:15676] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:35:56,928 [Thread-25:15676] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:35:56,929 [Thread-25:15676] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:35:56,930 [Thread-25:15676] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:35:56,931 [Thread-25:15676] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:36:43,214 [Thread-26:244] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:36:43,214 [Thread-26:244] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:36:43,215 [Thread-26:244] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:36:43,216 [Thread-26:244] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:36:43,237 [Thread-26:244] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:36:57,271 [Thread-27:3304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:36:57,272 [Thread-27:3304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:36:57,272 [Thread-27:3304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:36:57,274 [Thread-27:3304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:36:57,275 [Thread-27:3304] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:37:00,944 [Thread-28:7808] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:37:00,944 [Thread-28:7808] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:37:00,945 [Thread-28:7808] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:37:00,946 [Thread-28:7808] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:37:00,948 [Thread-28:7808] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:38:51,779 [Thread-29:6316] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:38:51,780 [Thread-29:6316] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:38:51,782 [Thread-29:6316] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:38:51,783 [Thread-29:6316] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:38:51,784 [Thread-29:6316] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:48:08,151 [Thread-30:8992] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:48:08,151 [Thread-30:8992] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:48:08,152 [Thread-30:8992] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:48:08,153 [Thread-30:8992] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:48:08,154 [Thread-30:8992] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:50:22,484 [Thread-31:17120] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:50:22,484 [Thread-31:17120] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:50:22,485 [Thread-31:17120] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:50:22,487 [Thread-31:17120] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:50:22,488 [Thread-31:17120] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:50:27,561 [Thread-32:14804] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:50:27,562 [Thread-32:14804] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:50:27,563 [Thread-32:14804] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:50:27,564 [Thread-32:14804] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:50:27,564 [Thread-32:14804] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:50:50,446 [Thread-33:15356] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:50:50,447 [Thread-33:15356] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:50:50,447 [Thread-33:15356] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:50:50,449 [Thread-33:15356] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:50:50,450 [Thread-33:15356] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:51:24,787 [Thread-34:17780] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:51:24,787 [Thread-34:17780] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:51:24,789 [Thread-34:17780] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:51:24,790 [Thread-34:17780] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:51:24,791 [Thread-34:17780] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:51:46,050 [Thread-35:6352] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:51:46,051 [Thread-35:6352] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:51:46,052 [Thread-35:6352] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:51:46,053 [Thread-35:6352] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:51:46,054 [Thread-35:6352] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:52:05,608 [Thread-36:412] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:52:05,610 [Thread-36:412] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:52:05,612 [Thread-36:412] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:52:05,615 [Thread-36:412] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:52:05,619 [Thread-36:412] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:52:39,748 [Thread-37:13052] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:52:39,748 [Thread-37:13052] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:52:39,749 [Thread-37:13052] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:52:39,751 [Thread-37:13052] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:52:39,752 [Thread-37:13052] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:52:59,981 [Thread-38:14944] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:52:59,982 [Thread-38:14944] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:52:59,982 [Thread-38:14944] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:52:59,984 [Thread-38:14944] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:52:59,985 [Thread-38:14944] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:53:15,704 [Thread-39:10592] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:53:15,705 [Thread-39:10592] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:53:15,706 [Thread-39:10592] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:53:15,706 [Thread-39:10592] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:53:15,707 [Thread-39:10592] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:53:37,399 [Thread-40:3796] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:53:37,399 [Thread-40:3796] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:53:37,400 [Thread-40:3796] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:53:37,401 [Thread-40:3796] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:53:37,402 [Thread-40:3796] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:53:41,183 [Thread-41:9472] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:53:41,183 [Thread-41:9472] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:53:41,184 [Thread-41:9472] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:53:41,185 [Thread-41:9472] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:53:41,186 [Thread-41:9472] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:54:24,722 [Thread-42:12128] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:54:24,723 [Thread-42:12128] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:54:24,724 [Thread-42:12128] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:54:24,725 [Thread-42:12128] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:54:24,726 [Thread-42:12128] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:54:29,318 [Thread-43:14488] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:54:29,319 [Thread-43:14488] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:54:29,320 [Thread-43:14488] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:54:29,320 [Thread-43:14488] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:54:29,321 [Thread-43:14488] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:54:47,341 [Thread-44:6776] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:54:47,342 [Thread-44:6776] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:54:47,343 [Thread-44:6776] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:54:47,344 [Thread-44:6776] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:54:47,346 [Thread-44:6776] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:54:49,389 [Thread-45:7060] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:54:49,390 [Thread-45:7060] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:54:49,391 [Thread-45:7060] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:54:49,391 [Thread-45:7060] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:54:49,392 [Thread-45:7060] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:55:07,024 [Thread-46:4856] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:55:07,024 [Thread-46:4856] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:55:07,025 [Thread-46:4856] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:55:07,026 [Thread-46:4856] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:55:07,026 [Thread-46:4856] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:55:09,040 [Thread-47:14424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:55:09,040 [Thread-47:14424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:55:09,041 [Thread-47:14424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:55:09,042 [Thread-47:14424] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:55:09,043 [Thread-47:14424] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:56:00,726 [Thread-48:6920] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:56:00,727 [Thread-48:6920] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:56:00,727 [Thread-48:6920] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:56:00,729 [Thread-48:6920] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:56:00,730 [Thread-48:6920] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:56:03,569 [Thread-49:17312] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:56:03,570 [Thread-49:17312] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:56:03,571 [Thread-49:17312] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:56:03,572 [Thread-49:17312] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:56:03,573 [Thread-49:17312] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:56:36,726 [Thread-50:11240] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:56:36,727 [Thread-50:11240] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:56:36,728 [Thread-50:11240] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:56:36,729 [Thread-50:11240] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:56:36,730 [Thread-50:11240] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:56:38,668 [Thread-51:1484] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:56:38,668 [Thread-51:1484] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:56:38,669 [Thread-51:1484] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:56:38,670 [Thread-51:1484] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:56:38,672 [Thread-51:1484] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:57:12,073 [Thread-52:12824] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:57:12,073 [Thread-52:12824] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:57:12,074 [Thread-52:12824] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:57:12,075 [Thread-52:12824] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:57:12,076 [Thread-52:12824] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:57:14,937 [Thread-53:17036] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:57:14,938 [Thread-53:17036] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:57:14,938 [Thread-53:17036] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:57:14,940 [Thread-53:17036] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:57:14,941 [Thread-53:17036] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:58:14,249 [Thread-54:5792] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:58:14,250 [Thread-54:5792] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:58:14,250 [Thread-54:5792] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:58:14,252 [Thread-54:5792] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:58:14,253 [Thread-54:5792] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 10:58:26,273 [Thread-55:15356] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 10:58:26,274 [Thread-55:15356] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 10:58:26,275 [Thread-55:15356] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 10:58:26,275 [Thread-55:15356] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 10:58:26,276 [Thread-55:15356] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 11:06:13,548 [Thread-56:11200] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:06:13,549 [Thread-56:11200] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:06:13,550 [Thread-56:11200] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 11:06:13,550 [Thread-56:11200] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 11:06:13,553 [Thread-56:11200] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 11:06:16,897 [Thread-57:10660] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:06:16,898 [Thread-57:10660] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:06:16,899 [Thread-57:10660] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 11:06:16,900 [Thread-57:10660] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 11:06:16,901 [Thread-57:10660] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 11:06:21,627 [Thread-58:412] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:06:21,627 [Thread-58:412] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:06:21,629 [Thread-58:412] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 11:06:21,630 [Thread-58:412] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 11:06:21,631 [Thread-58:412] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 11:07:24,140 [Thread-59:18216] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:07:24,140 [Thread-59:18216] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:07:24,141 [Thread-59:18216] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 11:07:24,142 [Thread-59:18216] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 11:07:24,143 [Thread-59:18216] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 11:07:42,428 [Thread-60:152] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:07:42,428 [Thread-60:152] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:07:42,429 [Thread-60:152] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 11:07:42,430 [Thread-60:152] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 11:07:42,431 [Thread-60:152] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 11:09:03,761 [Thread-61:6068] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:09:03,762 [Thread-61:6068] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:09:03,762 [Thread-61:6068] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 11:09:03,764 [Thread-61:6068] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 11:09:03,765 [Thread-61:6068] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 11:10:04,894 [Thread-62:6388] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:10:04,895 [Thread-62:6388] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:10:04,896 [Thread-62:6388] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 11:10:04,898 [Thread-62:6388] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 11:10:04,903 [Thread-62:6388] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 11:11:41,069 [Dummy-1:12928] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:11:41,070 [Dummy-1:12928] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:11:41,071 [Dummy-1:12928] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SHOW FULL TABLES; args=None
+2019-03-18 11:11:41,076 [Dummy-1:12928] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-03-18 11:11:42,965 [Thread-2:17420] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:11:42,966 [Thread-2:17420] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:11:42,966 [Thread-2:17420] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 11:11:42,967 [Thread-2:17420] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 11:11:43,063 [Thread-2:17420] [django.server:124] [basehttp:log_message] [ERROR]- "GET /api/article_list HTTP/1.1" 500 71843
+2019-03-18 11:13:32,453 [Thread-3:15092] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:13:32,454 [Thread-3:15092] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:13:32,454 [Thread-3:15092] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 11:13:32,454 [Thread-3:15092] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 11:13:32,482 [Thread-3:15092] [django.server:124] [basehttp:log_message] [ERROR]- "GET /api/article_list HTTP/1.1" 500 71798
+2019-03-18 11:14:06,276 [Dummy-1:9968] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:14:06,277 [Dummy-1:9968] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:14:06,278 [Dummy-1:9968] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SHOW FULL TABLES; args=None
+2019-03-18 11:14:06,282 [Dummy-1:9968] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-03-18 11:14:40,385 [Dummy-1:17144] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:14:40,386 [Dummy-1:17144] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:14:40,388 [Dummy-1:17144] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SHOW FULL TABLES; args=None
+2019-03-18 11:14:40,392 [Dummy-1:17144] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-03-18 11:14:41,317 [Thread-2:6212] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:14:41,318 [Thread-2:6212] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:14:41,319 [Thread-2:6212] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 11:14:41,320 [Thread-2:6212] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 11:14:41,322 [Thread-2:6212] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 11:15:40,561 [Thread-3:12128] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:15:40,562 [Thread-3:12128] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:15:40,562 [Thread-3:12128] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 11:15:40,563 [Thread-3:12128] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 11:15:40,564 [Thread-3:12128] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 11:49:09,179 [Thread-4:10208] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:49:09,180 [Thread-4:10208] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:49:09,181 [Thread-4:10208] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 11:49:09,182 [Thread-4:10208] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 11:49:09,183 [Thread-4:10208] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
+2019-03-18 11:50:02,140 [Thread-5:4848] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-03-18 11:50:02,141 [Thread-5:4848] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-03-18 11:50:02,142 [Thread-5:4848] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article`; args=()
+2019-03-18 11:50:02,143 [Thread-5:4848] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `article`.`article_id`, `article`.`title`, `article`.`content`, `article`.`look_num`, `article`.`cate_id`, `article`.`status`, `article`.`created_at`, `article`.`updated_at` FROM `article` ORDER BY `article`.`article_id` ASC  LIMIT 15; args=()
+2019-03-18 11:50:02,144 [Thread-5:4848] [django.server:124] [basehttp:log_message] [INFO]- "GET /api/article_list HTTP/1.1" 200 283
