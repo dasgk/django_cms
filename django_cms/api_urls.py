@@ -18,8 +18,10 @@ from django.urls import path
 from django.conf.urls import include, url
 from django_cms.app.Http.Controller.Api.ArticleController import ArticleController
 from django_cms.app.Http.Controller.Api.CateController import CateController
+from django_cms.app.Http.Controller.Api.LabelController import LabelController
 
 urlpatterns = [
     url('article_list', ArticleController.article_list, name='api.article.article_list'),
     url('cate_list', CateController.cate_list, name='api.cate.cate_list'),
+    url('label_list', LabelController.label_list, name='api.label.label_list'),
 ]

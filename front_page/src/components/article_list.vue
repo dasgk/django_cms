@@ -59,12 +59,12 @@
 						</div>
 					</el-col>
 					<div v-for="cate in cate_list">
-					<el-col :span="24" class="type_list">
-						<div class="grid-content bg-purple-dark">
-							<span class="type_font" >{{cate.title}}</span>
-						</div>
-					</el-col>
-					</div>					
+						<el-col :span="24" class="type_list">
+							<div class="grid-content bg-purple-dark">
+								<span class="type_font">{{cate.title}}({{cate.article_count}})</span>
+							</div>
+						</el-col>
+					</div>
 				</el-row>
 				<!--我的分类结束-->
 
@@ -77,7 +77,7 @@
 					</el-col>
 					<el-col :span="24" class="type_list">
 						<div class="grid-content bg-purple-dark">
-							<span>小标签</span>
+							{{labels}}
 						</div>
 					</el-col>
 				</el-row>
@@ -133,7 +133,7 @@
 		float: left;
 		width: 100%;
 		clear: both;
-		text-align: left;		
+		text-align: left;
 		padding-right: 5px;
 		margin-top: 20px;
 		line-height: 1.5;
@@ -246,7 +246,8 @@
 			return {
 				input: '',
 				article_list: [],
-				cate_list:[],
+				cate_list: [],
+				labels: "",
 			}
 		},
 		components: {
@@ -277,4 +278,17 @@
 		}
 	});
 	//我的标签
+	$.ajax({
+		type: "GET",
+		url: "http://127.0.0.1:8000/api/label_list",
+		dataType: "json",
+		success: function(data) {
+			for(var i = 0; i < data.data.length; i++) {
+				if(data.data[i]['title'].length > 0) {
+					vue.labels += data.data[i]['title'] + "("+data.data[i]['article_count']+"),"
+				}
+			}
+
+		}
+	});
 </script>

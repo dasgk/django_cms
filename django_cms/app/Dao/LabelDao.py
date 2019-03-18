@@ -59,3 +59,7 @@ class LabelDao(object):
         label_list = Label.objects.order_by("-label_id").all()[skip:skip + ConstDao.getPageNum()]
         label_count = Label.objects.count()
         return [label_list, label_count]
+
+    def get_all_label():
+        label_list = Label.objects.order_by("-label_id").all()
+        return label_list
