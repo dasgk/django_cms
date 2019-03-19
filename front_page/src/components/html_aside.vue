@@ -47,7 +47,7 @@
 		<!--我的标签结束-->
 
 		<!--我的经常访问开始-->
-		<el-row style="margin-top: 25%;height:37%;    margin-left: -43%;">
+		<el-row style="margin-top: -15px;height:37%;    margin-left: -43%;">
 			<el-col :span="24" style=" text-align:center;height: 29%;    line-height: 400%;">
 				<div class="grid-content bg-purple-dark">
 					<span style='color: black;font-size: 22px;'>经常浏览</span>
@@ -66,11 +66,9 @@
 	<!--占位使用，不做任何处理-->
 	</div>
 </template>
-<script type="text/ecmascript-6">
-	import 'jquery'
+<script type="text/ecmascript-6">	
 	// 引入外部整理好的css文件
-	import "@/css/html_aside.css"
-	
+	import "@/css/html_aside.css"	
 	var vue
 	export default {
 		name: 'html_aside',
@@ -91,7 +89,7 @@
 					},
 					dataType: "json",
 					success: function(data) {
-						this.$emit("change_articles",data.data)
+						vue.$emit("change_articles",data.data)
 					}
 				});
 			},
@@ -104,7 +102,7 @@
 					},
 					dataType: "json",
 					success: function(data) {
-						this.$emit('change_articles',data.data)
+						vue.$emit('change_articles',data.data)
 					}
 				});
 			},
@@ -118,7 +116,7 @@
 					},
 					dataType: "json",
 					success: function(data) {
-						this.$emit('change_articles',data.data)
+						vue.$emit('change_articles',data.data)
 					}
 				});
 			}

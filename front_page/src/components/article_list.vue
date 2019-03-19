@@ -11,7 +11,7 @@
 			<el-aside>
 			</el-aside>
 			<!--占位使用，不做任何处理-->
-			<el-main style="margin-left: -17%;">
+			<el-main style="margin-left: -17%;    margin-top: -50px;">
 
 				<div v-for="article in article_list">
 
