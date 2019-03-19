@@ -1,4 +1,5 @@
 <template>
+
 	<el-container style=" background-color: white;margin-left: 12%;margin-right: 12%;margin-top: 5%;">
 		<el-header style="height:13%;">
 			<h1><a id="Header1_HeaderTitle" class="headermaintitle" >dagsk的文集</a></h1>
@@ -69,15 +70,17 @@
 				<!--我的分类结束-->
 
 				<!--我的标签开始-->
-				<el-row style="margin-top: 25%;height:37%;    margin-left: -43%;">
+				<el-row style="height:37%;margin-left: -43%;    margin-top: -15px;">
 					<el-col :span="24" style=" text-align:center;height: 29%;    line-height: 400%;">
-						<div class="grid-content bg-purple-dark">
+						<div class="grid-content bg-purple-dark" style="margin-left: 10px;">
 							<span style='color: black;font-size: 22px;'>我的标签</span>
 						</div>
 					</el-col>
-					<el-col :span="24" class="type_list">
+					<el-col :span="24" class="type_list" style='margin-left: 40px;'>
 						<div class="grid-content bg-purple-dark">
-							{{labels}}
+							<span id="label_list" v-for="label in label_list" @click='article_list_by_cate(label.label_id)'>
+								{{label.title}}({{label.article_count}}),
+							</span>
 						</div>
 					</el-col>
 				</el-row>
@@ -105,137 +108,13 @@
 		<el-footer style="height:13%;"></el-footer>
 	</el-container>
 </template>
-<style>
-	.postTitle {
-		border-left: 3px solid #21759b;
-		margin-bottom: 10px;
-		font-size: 20px;
-		float: right;
-		width: 100%;
-		clear: both;
-	}
-	
-	.postCon {
-		float: right;
-		line-height: 1.5em;
-		width: 100%;
-		clear: both;
-		padding: 10px 0;
-	}
-	
-	.day .postTitle a {
-		padding-left: 10px;
-	}
-	
-	.postDesc {
-		font-size: 13px;
-		color: #757575;
-		float: left;
-		width: 100%;
-		clear: both;
-		text-align: left;
-		padding-right: 5px;
-		margin-top: 20px;
-		line-height: 1.5;
-	}
-	
-	.dayTitle {
-		display: none;
-		border: 1px solid #21759b;
-		background: azure;
-		border-radius: 50%;
-		font-size: 12px;
-		height: 65px;
-		line-height: 1.5;
-		margin: 15px;
-		text-align: center;
-		width: 63px;
-		margin-left: -100px;
-		clear: both;
-		position: absolute;
-		top: -15px;
-	}
-	
-	.c_b_p_desc {
-		font-size: 14px;
-		line-height: 1.7;
-	}
-	
-	.c_b_p_desc {
-		word-wrap: break-word;
-		word-break: break-all;
-		overflow: hidden;
-		line-height: 1.5;
-	}
-	
-	.day {
-		min-height: 10px;
-		_height: 10px;
-		margin-bottom: 20px;
-		padding-bottom: 5px;
-		position: relative;
-	}
-	
-	.type_list {
-		text-align: center;
-		line-height: 294%;
-	}
-	
-	.type_font {
-		color: grey;
-		font-size: 22px;
-		cursor:pointer
-	}
-	
-	.el-row {
-		margin-left: 0px;
-		margin-right: 0px;
-		margin-top: 10px;
-		height: 30%;
-		background: white;
-		margin-bottom: 20px;
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-	
-	.el-input {
-		height: 10px;
-	}
-	
-	.el-col {
-		border-radius: 4px;
-		margin: auto;
-	}
-	
-	.el-aside {
-		overflow: hidden;
-	}
-	
-	#blogTitle h1 {
-		font-size: 26px;
-		font-weight: bold;
-		line-height: 1.5em;
-		margin-top: 20px;
-	}
-	
-	#app {
-		font-family: 'Avenir', Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
-		margin-top: 60px;
-	}
-	
-	body {
-		font-family: KaiTi;
-	}
-</style>
+
 <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 <script type="text/ecmascript-6">
 	import navigate from '@/components/navigate';
 	import 'jquery'
+	// 引入外部整理好的css文件
+	import "@/css/article_list.css"
 
 	function privateFoo(data) {
 		this.msg = data
@@ -248,7 +127,7 @@
 				input: '',
 				article_list: [],
 				cate_list: [],
-				labels: "",
+				label_list: [],
 			}
 		},
 		components: {
@@ -257,75 +136,81 @@
 		created: function() {
 			vue = this
 		},
-		methods:{
-		   article_list_by_cate(cate_id){
-  $.ajax({
-		type: "GET",
-		url: "http://127.0.0.1:8000/api/article_list",
-		data:{'cate_id': cate_id},
-		dataType: "json",
-		success: function(data) {
-			vue.article_list = data.data
+		methods: {
+			article_list_by_cate(cate_id) {
+				$.ajax({
+					type: "GET",
+					url: "http://127.0.0.1:8000/api/article_list",
+					data: {
+						'cate_id': cate_id
+					},
+					dataType: "json",
+					success: function(data) {
+						vue.article_list = data.data
 
-		}
-	});
-},
-search_article(){
-var title = $("#search").val()
-  $.ajax({
-		type: "GET",
-		url: "http://127.0.0.1:8000/api/article_list",
-		data:{'title': title},
-		dataType: "json",
-		success: function(data) {
-			vue.article_list = data.data
+					}
+				});
+			},
+			article_list_by_cate(label_id) {
+				$.ajax({
+					type: "GET",
+					url: "http://127.0.0.1:8000/api/article_list",
+					data: {
+						'label_id': label_id
+					},
+					dataType: "json",
+					success: function(data) {
+						vue.article_list = data.data
 
-		}
-	});
+					}
+				});
+			},
+			search_article() {
+				var title = $("#search").val()
+				$.ajax({
+					type: "GET",
+					url: "http://127.0.0.1:8000/api/article_list",
+					data: {
+						'title': title
+					},
+					dataType: "json",
+					success: function(data) {
+						vue.article_list = data.data
 
-
-
-}
-
+					}
+				});
+			}
 		}
 	})
 
+	$(document).ready(function() {
+		//请求文章列表
+		$.ajax({
+			type: "GET",
+			url: "http://127.0.0.1:8000/api/article_list",
+			dataType: "json",
+			success: function(data) {
+				vue.article_list = data.data
 
-$(document).ready(function(){
- //请求文章列表
-	$.ajax({
-		type: "GET",
-		url: "http://127.0.0.1:8000/api/article_list",
-		dataType: "json",
-		success: function(data) {
-			vue.article_list = data.data
-
-		}
-	});
-	//请求分类列表
-	$.ajax({
-		type: "GET",
-		url: "http://127.0.0.1:8000/api/cate_list",
-		dataType: "json",
-		success: function(data) {
-			vue.cate_list = data.data
-		}
-	});
-	//我的标签
-	$.ajax({
-		type: "GET",
-		url: "http://127.0.0.1:8000/api/label_list",
-		dataType: "json",
-		success: function(data) {
-			for(var i = 0; i < data.data.length; i++) {
-				if(data.data[i]['title'].length > 0) {
-					vue.labels += data.data[i]['title'] + "("+data.data[i]['article_count']+"),"
-				}
 			}
-
-		}
+		});
+		//请求分类列表
+		$.ajax({
+			type: "GET",
+			url: "http://127.0.0.1:8000/api/cate_list",
+			dataType: "json",
+			success: function(data) {
+				vue.cate_list = data.data
+			}
+		});
+		//我的标签
+		$.ajax({
+			type: "GET",
+			url: "http://127.0.0.1:8000/api/label_list",
+			dataType: "json",
+			success: function(data) {
+				vue.label_list = data.data
+			}
+		});
 	});
-});
-
-
 </script>
