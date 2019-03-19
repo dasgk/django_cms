@@ -54,21 +54,21 @@
 		name: 'App',
 		data() {
 			return {
-				article_list: [],				
+				article_list: [],
 			}
 		},
 		components: {
 			navigate: navigate,
-			html_aside:html_aside
+			html_aside: html_aside
 		},
 		created: function() {
 			vue = this
 		},
-		methods:{
-			article_changed: function(event){
-				this.article_list = event; 
+		methods: {
+			article_changed: function(event) {
+				this.article_list = event;
 			}
-		}		
+		}
 	})
 
 	$(document).ready(function() {
@@ -80,6 +80,6 @@
 			success: function(data) {
 				vue.article_list = data.data
 			}
-		});		
+		});
 	});
 </script>

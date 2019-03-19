@@ -2,11 +2,13 @@
 	text-align: center;
 	line-height: 294%;
 }
+
 .type_font {
 	color: grey;
 	font-size: 22px;
 	cursor: pointer
 }
-#label_list{
+
+#label_list {
 	cursor: pointer;
 }
