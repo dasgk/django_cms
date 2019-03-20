@@ -1,0 +1,2 @@
+1、 @click=article_detail(article.article_id)
+    click这里面的只调用不需要使用{{}}

@@ -12,20 +12,18 @@
 			</el-aside>
 			<!--占位使用，不做任何处理-->
 			<el-main style="margin-left: -17%;    margin-top: -50px;">
-
 				<div v-for="article in article_list">
-
-					<div class="day">
+					<div class="day" @click="article_detail(article.article_id)">
 						<div class="dayTitle">
-							<a id="homepage1_HomePageDays_ctl00_ImageLink" href="https://www.cnblogs.com/haoyifei/">置顶随笔</a>
+							<a href="javascript:void(0)" id="homepage1_HomePageDays_ctl00_ImageLink">置顶随笔</a>
 						</div>
 
 						<div class="postTitle">
-							<a id="homepage1_HomePageDays_ctl00_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/haoyifei/p/5641115.html">{{article.title}}</a>
+							<a href="javascript:void(0)" id="homepage1_HomePageDays_ctl00_DayList_TitleUrl_0" class="postTitle2" >{{article.title}}</a>
 						</div>
 						<div class="postCon">
 							<div class="c_b_p_desc">摘要:{{article.content}}
-								<a href="https://www.cnblogs.com/haoyifei/p/5641115.html" class="c_b_p_desc_readmore">阅读全文</a>
+								<a href="javascript:void(0)" class="c_b_p_desc_readmore">阅读全文</a>
 							</div>
 						</div>
 						<div class="clear"></div>
@@ -67,6 +65,12 @@
 		methods: {
 			article_changed: function(event) {
 				this.article_list = event;
+			},
+			//跳转到文章详情页面
+			article_detail: function(article_id){
+
+			  vue.$router.push('/article_detail')
+			  	  console.log(article_id)
 			}
 		}
 	})
