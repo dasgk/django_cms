@@ -68,8 +68,6 @@ class ArticleDao(object):
     @staticmethod
     def getArticleDetail(article_id):
         article = Article.objects.filter(article_id=article_id).first()
-        logger = logging.getLogger('scripts')
-
         if article is None:
             return []
         article_info = {}
