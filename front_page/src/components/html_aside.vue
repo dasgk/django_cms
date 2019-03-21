@@ -90,6 +90,9 @@
 					},
 					dataType: "json",
 					success: function(data) {
+						//隐藏文章列表，显示文章详情
+						databus.$emit('update_is_show_list',true);
+						databus.$emit('update_is_show_detail',false);
 						databus.$emit('update_article_list', data.data)						
 					}
 				});
@@ -103,6 +106,8 @@
 					},
 					dataType: "json",
 					success: function(data) {
+						databus.$emit('update_is_show_list',true);
+						databus.$emit('update_is_show_detail',false);
 						databus.$emit('update_article_list', data.data)						
 					}
 				});
@@ -117,6 +122,8 @@
 					},
 					dataType: "json",
 					success: function(data) {
+						databus.$emit('update_is_show_list',true);
+						databus.$emit('update_is_show_detail',false);
 						databus.$emit('update_article_list', data.data)						
 					}
 				});
