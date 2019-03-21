@@ -29,3 +29,10 @@ class ArticleController:
                 item['updated_at'] = article.updated_at
             res.append(item)
         return response_json(1,res)
+
+    def article_detail(request):
+        article_id = request.GET.get('article_id',0)
+        article_info = ArticleDao.getArticleDetail(article_id)
+        print(article_info)
+
+        return response_json(1, article_info)

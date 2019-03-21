@@ -3,6 +3,7 @@ from django_cms.app.Dao.TimeDao import TimeDao
 from django_cms.models import Article, LabelArticle,Label
 import time
 import logging
+import datetime
 
 class ArticleDao(object):
     @staticmethod
@@ -63,3 +64,20 @@ class ArticleDao(object):
             logger.info(label_id)
             if not label_count:
                 Label.objects.filter(label_id=label_id).delete()
+
+    @staticmethod
+    def getArticleDetail(article_id):
+        article = Article.objects.filter(article_id=article_id).first()
+        logger = logging.getLogger('scripts')
+
+        if article is None:
+            return []
+        article_info = {}
+        article_info['title'] = article.title
+        article_info['content'] = article.content
+        if isinstance(article.updated_at, datetime.datetime) :
+            article_info['updated_at'] = article.updated_at.strftime('%Y-%m-%d %H:%M:%S')
+        else:
+            article_info['updated_at'] = article.updated_at
+        return article_info
+

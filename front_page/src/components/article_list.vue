@@ -52,6 +52,7 @@
 				//隐藏文章列表，显示文章详情
 				databus.$emit('update_is_show_list',false);
 				databus.$emit('update_is_show_detail',true);
+				databus.$emit('update_article_id',article_id);
 			}
 		}
 	})
