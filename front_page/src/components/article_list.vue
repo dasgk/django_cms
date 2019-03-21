@@ -48,8 +48,7 @@
 				this.article_list = event;
 			},
 			//跳转到文章详情页面
-			article_detail: function(article_id) {
-				console.log(111)
+			article_detail: function(article_id) {				
 				//隐藏文章列表，显示文章详情
 				databus.$emit('update_is_show_list',false);
 				databus.$emit('update_is_show_detail',true);
