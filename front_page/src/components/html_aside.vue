@@ -69,6 +69,7 @@
 <script type="text/ecmascript-6">
 	// 引入外部整理好的css文件
 	import "@/css/html_aside.css"
+	import databus from "@/datacenterbus.js"
 	var vue
 	export default {
 		name: 'html_aside',
@@ -89,7 +90,7 @@
 					},
 					dataType: "json",
 					success: function(data) {
-						vue.$emit("change_articles", data.data)
+						databus.$emit('update_article_list', data.data)						
 					}
 				});
 			},
@@ -102,7 +103,7 @@
 					},
 					dataType: "json",
 					success: function(data) {
-						vue.$emit('change_articles', data.data)
+						databus.$emit('update_article_list', data.data)						
 					}
 				});
 			},
@@ -116,7 +117,7 @@
 					},
 					dataType: "json",
 					success: function(data) {
-						vue.$emit('change_articles', data.data)
+						databus.$emit('update_article_list', data.data)						
 					}
 				});
 			}
