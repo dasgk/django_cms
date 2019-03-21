@@ -11,9 +11,9 @@
 			<el-aside>
 			</el-aside>
 			<!--默认进来是文章列表-->
-			<article_list></article_list>
+			<article_list v-show=is_show_list></article_list>
 			<!--默认进来是文章列表-->
-
+			<article_detail v-show=is_show_detail></article_detail>
 			<html_aside ></html_aside>
 		</el-container>
 		<el-footer style="height:13%;"></el-footer>
@@ -24,22 +24,34 @@
 	import html_aside from '@/components/html_aside';
 	import article_list from '@/components/article_list';
 	import article_detail from '@/components/article_detail';
+	import databus from "@/datacenterbus.js"
+
 	import 'jquery'
 	// 引入外部整理好的css文件
 
 	var vue;
 	export default({
 		name: 'App',
-
+		data(){
+			return{
+				is_show_list:true,
+				is_show_detail:false
+			}
+		},
+		created:function(){
+			vue = this
+			databus.$on('update_is_show_list',function(data){
+				vue.is_show_list= data				
+			}),
+			databus.$on('update_is_show_detail',function(data){
+				vue.is_show_detail= data
+			})
+		},
 		components: {
 			navigate: navigate,
 			html_aside: html_aside,
-			article_list: article_list
-		},
-		methods: {
-			article_changed: function(event) {
-				
-			}			
+			article_list: article_list,
+			article_detail: article_detail
 		}
 	})
 </script>

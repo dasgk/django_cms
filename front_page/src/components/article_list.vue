@@ -29,7 +29,6 @@
 	import "@/css/article_list.css"
 	import 'jquery'
 	import databus from "@/datacenterbus.js"
-
 	var vue;
 	export default({
 		name: 'App',
@@ -49,8 +48,11 @@
 				this.article_list = event;
 			},
 			//跳转到文章详情页面
-			article_detail: function(article_id) {				
-				console.log(article_id)
+			article_detail: function(article_id) {
+				console.log(111)
+				//隐藏文章列表，显示文章详情
+				databus.$emit('update_is_show_list',false);
+				databus.$emit('update_is_show_detail',true);
 			}
 		}
 	})
