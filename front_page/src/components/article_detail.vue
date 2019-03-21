@@ -21,7 +21,7 @@
 
 
 				<section class="comments">
-    <h1>Comments</h1>
+    <h1>评论内容</h1>
     <article class="comment ">
         <div class="meta">
             <img src="/assets/coolboy.jpg" class="avatar">
