@@ -87,7 +87,7 @@ class ArticleDao(object):
             if isinstance(created_at, datetime.datetime):
                 created_at = created_at.strftime('%Y-%m-%d %H:%M:%S')
             item['time'] = created_at
-            item['random_avatar'] = './images/'+str(random.randint(1,6))+".jpg"
+            item['random_avatar'] = "http://127.0.0.1:8000/static/avatar/"+str(random.randint(1,6))+".jpg"
             article_info['comments'].append(item)
         return article_info
 
