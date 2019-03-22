@@ -20,29 +20,19 @@
 
 				<section class="comments">
 					<h1>评论内容</h1>
-					<article class="comment ">
+
+
+
+					<article class="comment" v-for="comment in comment_list">
 						<div class="meta">
-							<img src="/assets/coolboy.jpg" class="avatar">
-							<h3><a href="#" class="author">John Doe</a></h3>
+							<img :src='comment.random_avatar' class="avatar">
+							<h3><a href="#" class="author">{{comment.ip_address}}</a></h3>
 							<a href="#" class="date">
-								<time datetime="2015-01-01">Jan 1, 2015 at 9:18 AM</time>
+								<time datetime="2015-01-01">{{comment.time}}</time>
 							</a>
 						</div>
 						<div class="content">
-							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-						</div>
-					</article>
-					<article class="comment ">
-						<div class="meta">
-							<img src="/assets/coolgirl.jpg" class="avatar">
-							<h3><a href="#" class="author">Jane Doe</a></h3>
-							<a href="#" class="date">
-								<time datetime="2015-01-01">Jan 1, 2015 at 10:24 AM</time>
-							</a>
-						</div>
-						<div class="content">
-							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. </p>
+							<p>{{comment.content}}</p>
 						</div>
 					</article>
 				</section>
@@ -58,7 +48,7 @@
 									<tr>
 
 										<td>
-											<el-input type="textarea" :autosize="{ minRows: 4, maxRows: 4}" placeholder="请输入内容" v-model="comment">
+											<el-input type="textarea" :autosize="{ minRows: 4, maxRows: 4}" placeholder="请输入内容" style="width:100%" >
 											</el-input>
 											<br><span id="dicontent" class="f_red px12"></span>
 										</td>
@@ -89,9 +79,9 @@
 		height: 86px;
 
 		resize: none;
-		width: 600px;
+		width: 100%;
 		height: 100px;
-		max-width: 800px;
+		max-width: 100%;
 		margin-left:5%;
 		max-height: 100px;
 	}
@@ -216,7 +206,7 @@
 				title: '',
 				updated_at: '',
 				content: '',
-				comment: ''
+				comment_list: []
 			}
 		},
 		created: function() {
@@ -237,21 +227,10 @@
 						vue.title = data.data['title']
 						vue.content = data.data['content']
 						vue.updated_at = data.data['updated_at']
+						vue.comment_list = data.data['comments']
 					}
 				});
 			})
 		}
 	})
-
-	$(document).ready(function() {
-		//请求文章列表
-		$.ajax({
-			type: "GET",
-			url: "http://127.0.0.1:8000/api/article_list",
-			dataType: "json",
-			success: function(data) {
-
-			}
-		});
-	});
 </script>

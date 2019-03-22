@@ -1,7 +1,7 @@
 from django_cms.app.Dao.ConstDao import ConstDao
 from django_cms.app.Dao.TimeDao import TimeDao
-from django_cms.models import Article, LabelArticle,Label
-import time
+from django_cms.models import Article, LabelArticle,Label,ArticleComment
+import random
 import logging
 import datetime
 
@@ -73,9 +73,21 @@ class ArticleDao(object):
         article_info = {}
         article_info['title'] = article.title
         article_info['content'] = article.content
-        if isinstance(article.updated_at, datetime.datetime) :
+        if isinstance(article.updated_at, datetime.datetime):
             article_info['updated_at'] = article.updated_at.strftime('%Y-%m-%d %H:%M:%S')
         else:
             article_info['updated_at'] = article.updated_at
+        article_info['comments'] = []
+        comments = ArticleComment.objects.filter(article_id=article_id).filter(status=1)
+        for comment in comments:
+            item = {}
+            item['content'] = comment.comment
+            item['ip_address'] = comment.remote_addr
+            created_at = comment.created_at
+            if isinstance(created_at, datetime.datetime):
+                created_at = created_at.strftime('%Y-%m-%d %H:%M:%S')
+            item['time'] = created_at
+            item['random_avatar'] = 'http://127.0.0.1:8081/images/'+str(random.randint(1,6))+".jpg"
+            article_info['comments'].append(item)
         return article_info
 

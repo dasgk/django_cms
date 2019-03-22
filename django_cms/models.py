@@ -52,6 +52,17 @@ class LabelArticle(models.Model):
     article_id = models.IntegerField(help_text="文章id", null=True, default=0)
     created_at = models.DateTimeField(help_text="创建时间", null=True, default="2019-01-29 12:13:00", blank=True)
     updated_at = models.DateTimeField(help_text="更新时间", null=True, default="2019-01-29 12:13:00")
-
     class Meta:
         db_table = "label_article"
+
+class ArticleComment(models.Model):
+    article_comment_id = models.AutoField(primary_key=True,help_text="主键")
+    article_id = models.IntegerField(help_text="文章id", default=0)
+    status = models.IntegerField(help_text="状态0表示草稿 1表示已经审核通过", default=0)
+    comment = models.CharField(max_length=200, default="")
+    remote_addr = models.CharField(max_length=30,help_text="远程ip")
+    locate_area = models.CharField(max_length=20, help_text="所在区域")
+    created_at = models.DateTimeField(help_text="创建时间", null=True, default="2019-01-29 12:13:00", blank=True)
+    class Meta:
+        db_table = "article_comment"
+
