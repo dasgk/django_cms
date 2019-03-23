@@ -70,6 +70,9 @@
 <script>
 	import 'jquery'
 	import databus from "@/datacenterbus.js"
+	import "@/css/article_detail.css"
+	import "@/js/layer/layer.js"
+
 	var vue;
 	export default({
 		name: 'App',
@@ -118,10 +121,11 @@
 					},
 					dataType: "json",
 					success: function(data) {
-						vue.title = data.data['title']
-						vue.content = data.data['content']
-						vue.updated_at = data.data['updated_at']
-						vue.comment_list = data.data['comments']
+
+					alert('操作成功')
+          vue.textarea = '';
+
+
 					}
 				});
 
@@ -133,123 +137,6 @@
 
 
 <style>
-	.el-textarea__inner {
-		min-height: 86px;
-		height: 86px;
 
-		resize: none;
-		width: 100%;
-		height: 100px;
-		max-width: 100%;
-		margin-left:5%;
-		max-height: 100px;
-	}
-	
-	.radius {
-		height: 60px;
-		width: 70%;
-		border: 1px solid #d7dae2;
-		border-radius: 0;
-		margin-top: 20px;
-	}
-	
-	@import url(http://fonts.googleapis.com/css?family=Merriweather:700|Open+Sans);
-	body {
-		background-color: #f8f8f8;
-		color: #333;
-		font-family: 'Open Sans', sans-serif;
-		font-size: 16px;
-		line-height: 25px;
-	}
-	
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-family: 'Merriweather', serif;
-		font-weight: 700;
-	}
-	
-	.comments {
-		padding: 20px;
-	}
-	
-	.comments article.comment {
-		position: relative;
-		margin-bottom: 30px;
-	}
-	
-	.comments article.comment .meta {
-		height: 60px;
-		margin-bottom: 17px;
-		position: relative;
-	}
-	
-	.comments article.comment .meta img.avatar {
-		position: absolute;
-		border-radius: 30px;
-		width: 60px;
-		height: 60px;
-		left: 0px;
-		top: 0px;
-	}
-	
-	.comments article.comment .meta a.author,
-	.comments article.comment .meta a.date {
-		text-decoration: none;
-		position: absolute;
-	}
-	
-	.comments article.comment .meta a.author {
-		color: inherit;
-		left: 73px;
-		line-height: 29px;
-		padding: 0px 7px;
-		top: 3px;
-	}
-	
-	.comments article.comment .meta a.date {
-		font-size: 14px;
-		line-height: 19px;
-		color: #666;
-		left: 80px;
-		top: 35px;
-	}
-	
-	.comments article.comment .content {
-		background-color: #fff;
-		border: 1px solid #dadada;
-		border-radius: 4px;
-		padding: 22px 25px;
-		position: relative;
-	}
-	
-	.comments article.comment .content:after,
-	.comments article.comment .content:before {
-		bottom: 100%;
-		left: 30px;
-		border: solid transparent;
-		content: " ";
-		height: 0;
-		width: 0;
-		position: absolute;
-		pointer-events: none;
-	}
-	
-	.comments article.comment .content:after {
-		border-color: rgba(255, 255, 255, 0);
-		border-bottom-color: #fff;
-		border-width: 12px;
-		margin-left: -12px;
-	}
-	
-	.comments article.comment .content:before {
-		border-color: rgba(245, 47, 47, 0);
-		border-bottom-color: #dadada;
-		border-width: 13px;
-		margin-left: -13px;
-	}
 </style>
 

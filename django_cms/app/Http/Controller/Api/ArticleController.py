@@ -46,8 +46,11 @@ class ArticleController:
         if 'HTTP_X_FORWARDED_FOR' in request.META:
             ip = request.META['HTTP_X_FORWARDED_FOR']
         else:
-            ip = request.META['REMOTE_ADDR']
-        article_comment.remot_addr = ip
+            if 'REMOTE_ADDR' in request.META and len(str(request.META['REMOTE_ADDR']))>0:
+                ip = request.META['REMOTE_ADDR']
+            else:
+                ip = '未知用户'
+        article_comment.remote_addr = ip
         article_comment.locate_area = "中国"
         article_comment.save()
         return response_json(1,[])
