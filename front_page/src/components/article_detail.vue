@@ -21,8 +21,6 @@
 				<section class="comments">
 					<h1>评论内容</h1>
 
-
-
 					<article class="comment" v-for="comment in comment_list">
 						<div class="meta">
 							<img :src='comment.random_avatar' class="avatar">
@@ -39,25 +37,22 @@
 
 				<div style="background-color: #fff;border: 1px solid #dadada;height: 185px;border-radius: 4px;padding: 22px 25px;position: relative;margin-left: 22px;margin-right: 22px;">
 					<div class="grid-content bg-purple-dark">我来回答</div>
-					<form method="post" action="answer.php" target="_send" id="dform" onsubmit="return check();">
+					<form method="post" action="" target="_send" id="dform">
 						<input type="hidden" name="qid" value="1407844">
 						<input type="hidden" name="qtype" value="fanyi">
 						<div class="px14">
 							<table width="100%" cellpadding="8" cellspacing="1">
 								<tbody>
 									<tr>
-
 										<td>
-											<el-input type="textarea" :autosize="{ minRows: 4, maxRows: 4}" placeholder="请输入内容" style="width:100%" >
+											<el-input  type="textarea" v-model="textarea" :autosize="{ minRows: 4, maxRows: 4}" placeholder="请输入内容" style="width:100%" >
 											</el-input>
 											<br><span id="dicontent" class="f_red px12"></span>
 										</td>
 									</tr>
-
 									<tr>
-										
 										<td class="px12">
-											<el-button plain style="margin-left:5%">提交评论</el-button>
+											<el-button plain style="margin-left:5%" @click="monisubmit()" >提交评论</el-button>
 										</td>
 									</tr>
 								</tbody>
@@ -70,6 +65,70 @@
 		</div>
 	</el-main>
 </template>
+
+
+<script>
+	import 'jquery'
+	import databus from "@/datacenterbus.js"
+	var vue;
+	export default({
+		name: 'App',
+		data() {
+			return {
+				article_id: 0,
+				title: '',
+				updated_at: '',
+				content: '',
+				comment_list: [],
+				textarea:'',
+			}
+		},
+		created: function() {
+			vue = this
+			databus.$on('update_article_list', function(data) {
+				vue.article_list = data
+			})
+			databus.$on('update_article_id', function(data) {
+				vue.article_id = data
+				$.ajax({
+					type: "GET",
+					url: "http://127.0.0.1:8000/api/article_detail",
+					data: {
+						'article_id': vue.article_id
+					},
+					dataType: "json",
+					success: function(data) {
+						vue.title = data.data['title']
+						vue.content = data.data['content']
+						vue.updated_at = data.data['updated_at']
+						vue.comment_list = data.data['comments']
+					}
+				});
+			})
+		},
+		methods:{
+	  	monisubmit:function(){
+      var comments = vue.textarea
+	  		$.ajax({
+					type: "GET",
+					url: "http://127.0.0.1:8000/api/comment_update",
+					data: {
+						'article_id': vue.article_id,
+						'comment':comments
+					},
+					dataType: "json",
+					success: function(data) {
+						vue.title = data.data['title']
+						vue.content = data.data['content']
+						vue.updated_at = data.data['updated_at']
+						vue.comment_list = data.data['comments']
+					}
+				});
+
+	  	}
+		}
+	})
+</script>
 
 
 
@@ -194,43 +253,3 @@
 	}
 </style>
 
-<script>
-	import 'jquery'
-	import databus from "@/datacenterbus.js"
-	var vue;
-	export default({
-		name: 'App',
-		data() {
-			return {
-				article_id: 0,
-				title: '',
-				updated_at: '',
-				content: '',
-				comment_list: []
-			}
-		},
-		created: function() {
-			vue = this
-			databus.$on('update_article_list', function(data) {
-				vue.article_list = data
-			})
-			databus.$on('update_article_id', function(data) {
-				vue.article_id = data
-				$.ajax({
-					type: "GET",
-					url: "http://127.0.0.1:8000/api/article_detail",
-					data: {
-						'article_id': vue.article_id
-					},
-					dataType: "json",
-					success: function(data) {
-						vue.title = data.data['title']
-						vue.content = data.data['content']
-						vue.updated_at = data.data['updated_at']
-						vue.comment_list = data.data['comments']
-					}
-				});
-			})
-		}
-	})
-</script>

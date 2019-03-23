@@ -1,4 +1,4 @@
-from django_cms.models import Article
+from django_cms.models import Article,ArticleComment
 from django_cms.app.Dao.ArticleDao import ArticleDao
 from django_cms.app.utility.helps import response_json
 from datetime import datetime
@@ -34,3 +34,20 @@ class ArticleController:
         article_id = request.GET.get('article_id',0)
         article_info = ArticleDao.getArticleDetail(article_id)
         return response_json(1, article_info)
+
+    def comment_update(request):
+        param = request.GET
+        article_id = param.get('article_id', 0)
+        comments = param.get('comment', "")
+        article_comment = ArticleComment()
+        article_comment.article_id = article_id;
+        article_comment.comment = comments;
+        ip = ""
+        if 'HTTP_X_FORWARDED_FOR' in request.META:
+            ip = request.META['HTTP_X_FORWARDED_FOR']
+        else:
+            ip = request.META['REMOTE_ADDR']
+        article_comment.remot_addr = ip
+        article_comment.locate_area = "中国"
+        article_comment.save()
+        return response_json(1,[])
