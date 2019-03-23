@@ -71,7 +71,6 @@
 	import 'jquery'
 	import databus from "@/datacenterbus.js"
 	import "@/css/article_detail.css"
-	import "@/js/layer/layer.js"
 
 	var vue;
 	export default({
