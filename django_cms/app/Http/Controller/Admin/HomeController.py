@@ -16,7 +16,7 @@ class HomeController(View):
             html = t.render({'user':admin_user,'cate_count':cate_count,'label_count':label_count})
             return HttpResponse(html)
         else:
-            return HttpResponseRedirect('/user/login')
+            return HttpResponseRedirect('admin/user/login')
 
     def jump2Index(request):
-        return HttpResponseRedirect('/admin/index')
+        return HttpResponseRedirect('admin/index')

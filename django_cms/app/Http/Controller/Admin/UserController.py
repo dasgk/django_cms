@@ -16,7 +16,7 @@ class UserController(TemplateView):
         if request.method == 'GET':
             admin_user = is_login(request)
             if admin_user != False:
-                return HttpResponseRedirect('/index')
+                return HttpResponseRedirect('admin/index')
             else:
                 return render(request, 'admin/login.html')
         else:
@@ -26,7 +26,7 @@ class UserController(TemplateView):
             login_admin_user = AdminUserDao.getUser(username, password)
             if type(login_admin_user) == AdminUser:
                 set_login(request, username, password)
-                return HttpResponseRedirect('/index')
+                return HttpResponseRedirect('admin/index')
             else:
                 return HttpResponse('error')
     '''
