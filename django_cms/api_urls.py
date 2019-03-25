@@ -21,10 +21,10 @@ from django_cms.app.Http.Controller.Api.CateController import CateController
 from django_cms.app.Http.Controller.Api.LabelController import LabelController
 
 urlpatterns = [
-    url('article_list', ArticleController.article_list, name='api.article.article_list'),
-    url('article_detail', ArticleController.article_detail, name='api.article.article_detail'),
-    url('cate_list', CateController.cate_list, name='api.cate.cate_list'),
-    url('label_list', LabelController.label_list, name='api.label.label_list'),
-    url('comment_update', ArticleController.comment_update, name='api.comment.comment_update'),
+    url('/article_list', ArticleController.article_list, name='api.article.article_list'),
+    url('/article_detail', ArticleController.article_detail, name='api.article.article_detail'),
+    url('/cate_list', CateController.cate_list, name='api.cate.cate_list'),
+    url('/label_list', LabelController.label_list, name='api.label.label_list'),
+    url('/comment_update', ArticleController.comment_update, name='api.comment.comment_update'),
 
 ]
