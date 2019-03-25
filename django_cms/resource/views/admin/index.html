@@ -137,8 +137,9 @@ $('#logout').click(function(){
             {
                 url: "{% url 'admin.user.logout' %}",
                 data: {},
+                rsync:false,
                 success: function(data){
-                    if(data.statusCode){
+                    if(data.status){
                         window.location.href="{% url 'admin.user.login' %}"
                     }
                 }
