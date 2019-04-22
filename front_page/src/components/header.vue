@@ -1,22 +1,12 @@
 <template>
-	<el-menu class="el-menu-demo" mode="horizontal">
-		<el-menu-item index="1">文章数80篇；评论20条</el-menu-item>		
-	</el-menu>
+	<div id="author_desc">
+	  <h1>坚持应该坚持的</h1>
+	</div>
+	<div id="navigate">
+	  <h2>坚持学习</h2>
+	</div>
 </template>
-<style>
-	.el-menu-item,.el-menu{
-		cursor: auto;
-	}
-	.el-menu.el-menu--horizontal{
-		cursor: auto;
-		margin-left:79%;
-		border-bottom: solid 0px #e6e6e6;
-	}
-	.el-menu--horizontal>.el-menu-item.is-active{
-		
-		border-bottom: solid 0px #e6e6e6;	
-	}
-</style>
+
 <script>
 	export default {
 		name: 'navigate',
