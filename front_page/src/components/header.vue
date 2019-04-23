@@ -3,7 +3,7 @@
 
 		<el-row>
 			<el-col :span="8"><img src="@/images/index.png" alt="猪宝宝" style="width:50px;height:50px;margin-right: 14%;margin-bottom: 55px;"></el-col>
-			<el-col :span="5" style="margin-left: -20%;margin-top: -0.2%;color:#FC326F;font-family:KaiTi">
+			<el-col :span="5" style="margin-left: 10%;margin-top: -0.2%;color:#FC326F;font-family:KaiTi">
 				<h1>记录点滴，成就不凡</h1></el-col>
 			<el-col :span="5">
 				<el-row class="demo-autocomplete" style="margin-top: 1.6%;">
