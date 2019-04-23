@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import ElementUI from 'element-ui';
-import App from './components/article_list';
+import App from './components/index';
 Vue.use(ElementUI);
 
 new Vue({
