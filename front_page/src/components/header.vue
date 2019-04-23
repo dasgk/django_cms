@@ -8,7 +8,9 @@
 			<el-col :span="5">
 				<el-row class="demo-autocomplete" style="margin-top: 1.6%;">
 					<el-col :span="12">						
-						<el-autocomplete class="inline-input" v-model="state1" :fetch-suggestions="querySearch" placeholder="请输入内容" @select="handleSelect"></el-autocomplete>
+						<el-autocomplete class="inline-input" v-model="state1" :fetch-suggestions="querySearch" placeholder="请输入内容" @select="handleSelect">
+							 <i slot="suffix" class="el-input__icon el-icon-search"></i>
+						</el-autocomplete>
 					</el-col>
 				</el-row>
 			</el-col>
