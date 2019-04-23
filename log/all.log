@@ -1192,3 +1192,29 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [content] in No
 2019-04-22 22:14:15,997 [Dummy-1:123145325469696] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
 2019-04-22 22:14:16,003 [Dummy-1:123145325469696] [django.db.backends:111] [utils:execute] [DEBUG]- (0.005) SHOW FULL TABLES; args=None
 2019-04-22 22:14:16,011 [Dummy-1:123145325469696] [django.db.backends:111] [utils:execute] [DEBUG]- (0.005) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-04-23 14:44:23,415 [Dummy-1:9136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-23 14:44:23,417 [Dummy-1:9136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-23 14:44:23,471 [Dummy-1:9136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.049) SHOW FULL TABLES; args=None
+2019-04-23 14:44:23,501 [Dummy-1:9136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.013) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-04-23 14:44:57,968 [Thread-2:14592] [django.server:124] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+2019-04-23 14:44:57,976 [Thread-3:2368] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-23 14:44:57,977 [Thread-3:2368] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-23 14:44:57,993 [Thread-3:2368] [django.db.backends:111] [utils:execute] [DEBUG]- (0.016) SELECT `admin_user`.`admin_user_id`, `admin_user`.`username`, `admin_user`.`password`, `admin_user`.`api_token`, `admin_user`.`status`, `admin_user`.`created_at`, `admin_user`.`updated_at` FROM `admin_user` WHERE (`admin_user`.`password` IS NULL AND `admin_user`.`username` IS NULL) ORDER BY `admin_user`.`admin_user_id` ASC  LIMIT 1; args=()
+2019-04-23 14:44:58,010 [Thread-3:2368] [django.server:124] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-04-23 14:44:58,016 [Thread-4:8092] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-23 14:44:58,016 [Thread-4:8092] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-23 14:44:58,017 [Thread-4:8092] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `admin_user`.`admin_user_id`, `admin_user`.`username`, `admin_user`.`password`, `admin_user`.`api_token`, `admin_user`.`status`, `admin_user`.`created_at`, `admin_user`.`updated_at` FROM `admin_user` WHERE (`admin_user`.`password` IS NULL AND `admin_user`.`username` IS NULL) ORDER BY `admin_user`.`admin_user_id` ASC  LIMIT 1; args=()
+2019-04-23 14:44:58,110 [Thread-4:8092] [django.server:124] [basehttp:log_message] [INFO]- "GET /admin/admin/user/login HTTP/1.1" 200 2124
+2019-04-23 14:44:58,198 [Thread-8:8864] [django.server:124] [basehttp:log_message] [INFO]- "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 37045
+2019-04-23 14:44:58,211 [Thread-7:16944] [django.server:124] [basehttp:log_message] [INFO]- "GET /static/css/style.min.css HTTP/1.1" 200 132384
+2019-04-23 14:44:58,211 [Thread-6:16352] [django.server:124] [basehttp:log_message] [INFO]- "GET /static/font-awesome-4.7.0/css/font-awesome.css HTTP/1.1" 200 37414
+2019-04-23 14:44:58,216 [Thread-5:5240] [django.server:124] [basehttp:log_message] [INFO]- "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 121200
+2019-04-23 14:44:59,204 [Thread-9:2812] [django.server:124] [basehttp:log_message] [INFO]- "GET /favicon.ico HTTP/1.1" 302 0
+2019-04-23 14:44:59,211 [Thread-10:13692] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-23 14:44:59,213 [Thread-10:13692] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-23 14:44:59,214 [Thread-10:13692] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `admin_user`.`admin_user_id`, `admin_user`.`username`, `admin_user`.`password`, `admin_user`.`api_token`, `admin_user`.`status`, `admin_user`.`created_at`, `admin_user`.`updated_at` FROM `admin_user` WHERE (`admin_user`.`password` IS NULL AND `admin_user`.`username` IS NULL) ORDER BY `admin_user`.`admin_user_id` ASC  LIMIT 1; args=()
+2019-04-23 14:44:59,215 [Thread-10:13692] [django.server:124] [basehttp:log_message] [INFO]- "GET /admin/index HTTP/1.1" 302 0
+2019-04-23 14:44:59,221 [Thread-11:4220] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-23 14:44:59,221 [Thread-11:4220] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-23 14:44:59,222 [Thread-11:4220] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `admin_user`.`admin_user_id`, `admin_user`.`username`, `admin_user`.`password`, `admin_user`.`api_token`, `admin_user`.`status`, `admin_user`.`created_at`, `admin_user`.`updated_at` FROM `admin_user` WHERE (`admin_user`.`password` IS NULL AND `admin_user`.`username` IS NULL) ORDER BY `admin_user`.`admin_user_id` ASC  LIMIT 1; args=()
+2019-04-23 14:44:59,225 [Thread-11:4220] [django.server:124] [basehttp:log_message] [INFO]- "GET /admin/admin/user/login HTTP/1.1" 200 2124
