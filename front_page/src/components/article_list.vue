@@ -1,9 +1,9 @@
 <template>
   <div>
-  <el-card class="box-card">
+    <el-card class="box-card">
 
 
-</el-card>
+    </el-card>
 
   </div>
 </template>
