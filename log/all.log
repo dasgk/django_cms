@@ -1218,3 +1218,182 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [content] in No
 2019-04-23 14:44:59,221 [Thread-11:4220] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
 2019-04-23 14:44:59,222 [Thread-11:4220] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `admin_user`.`admin_user_id`, `admin_user`.`username`, `admin_user`.`password`, `admin_user`.`api_token`, `admin_user`.`status`, `admin_user`.`created_at`, `admin_user`.`updated_at` FROM `admin_user` WHERE (`admin_user`.`password` IS NULL AND `admin_user`.`username` IS NULL) ORDER BY `admin_user`.`admin_user_id` ASC  LIMIT 1; args=()
 2019-04-23 14:44:59,225 [Thread-11:4220] [django.server:124] [basehttp:log_message] [INFO]- "GET /admin/admin/user/login HTTP/1.1" 200 2124
+2019-04-24 20:58:55,852 [Dummy-1:123145327955968] [django.db.backends:111] [utils:execute] [DEBUG]- (0.004) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-24 20:58:55,852 [Dummy-1:123145327955968] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 20:58:55,863 [Dummy-1:123145327955968] [django.db.backends:111] [utils:execute] [DEBUG]- (0.011) SHOW FULL TABLES; args=None
+2019-04-24 20:58:55,875 [Dummy-1:123145327955968] [django.db.backends:111] [utils:execute] [DEBUG]- (0.008) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-04-24 20:59:23,374 [Thread-2:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-24 20:59:23,375 [Thread-3:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-24 20:59:23,375 [Thread-2:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 20:59:23,375 [Thread-3:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 20:59:23,377 [Thread-2:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 20:59:23,378 [Thread-3:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 20:59:23,387 [Thread-2:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.008) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 20:59:23,387 [Thread-3:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.007) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 20:59:23,389 [Thread-2:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 20:59:23,390 [Thread-3:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 20:59:23,390 [Thread-2:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:09:30,715 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-24 21:09:30,716 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-24 21:09:30,716 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:09:30,717 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:09:30,717 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:09:30,719 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:09:30,719 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:09:30,721 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:09:30,721 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:09:30,722 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:09:30,722 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:11:54,898 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:11:54,899 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:11:54,903 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:11:54,903 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:11:54,906 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:11:54,906 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:11:54,907 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:11:54,909 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:11:54,910 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:15:55,660 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:15:55,661 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:15:55,661 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:15:55,662 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:15:55,662 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:15:55,664 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:15:55,665 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:15:55,666 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:15:55,666 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:16:13,502 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:16:13,503 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:16:13,505 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:16:13,506 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:16:13,507 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:16:13,508 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:16:13,509 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:16:13,510 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:16:13,510 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:16:47,132 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:16:47,133 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:16:47,133 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:16:47,134 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:16:47,136 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:16:47,136 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:16:47,138 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:16:47,139 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:16:47,140 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:19:09,951 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.007) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:19:09,951 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.007) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:19:09,955 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:19:09,956 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:19:09,959 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:19:09,960 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:19:09,960 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:19:09,963 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:19:09,963 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:21:15,462 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:21:15,462 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:21:15,465 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:21:15,466 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:21:15,469 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.004) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:21:15,471 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:21:15,472 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.005) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:21:15,474 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:21:15,475 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:21:55,607 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:21:55,608 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:21:55,610 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:21:55,612 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:21:55,613 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:21:55,617 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:21:55,618 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:21:55,619 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:21:55,620 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:26:04,533 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:26:04,533 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:26:04,536 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:26:04,537 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:26:04,538 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:26:04,540 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:26:04,540 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:26:04,542 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:26:04,544 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:27:02,756 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:27:02,757 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:27:02,757 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:27:02,759 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:27:02,760 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:27:02,760 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:27:02,762 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:27:02,762 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:27:02,763 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:27:29,162 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:27:29,162 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:27:29,166 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:27:29,167 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.004) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:27:29,169 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:27:29,170 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:27:29,171 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:27:29,171 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:27:29,172 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:28:04,668 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:28:04,670 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:28:04,672 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:28:04,672 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:28:04,674 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:28:04,675 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:28:04,675 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:28:04,676 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:28:04,678 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:28:49,001 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:28:49,004 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:28:49,004 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:28:49,007 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:28:49,008 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:28:49,009 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:28:49,010 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:28:49,011 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:28:49,012 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:29:13,292 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:29:13,294 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:29:13,302 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:29:13,303 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:29:13,305 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:29:13,306 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:29:13,307 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:29:13,307 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:29:13,308 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:29:46,044 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:29:46,044 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:29:46,048 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.004) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:29:46,049 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.005) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:29:46,054 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.005) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:29:46,057 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.004) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:29:46,058 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:29:46,060 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:29:46,061 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:30:49,408 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:30:49,410 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:30:49,412 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:30:49,414 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:30:49,416 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:30:49,417 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:30:49,418 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:30:49,421 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:30:49,422 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:31:41,080 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:31:41,083 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:31:41,084 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:31:41,086 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:31:41,086 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:31:41,088 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:31:41,089 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
+2019-04-24 21:31:41,090 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:31:41,090 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:32:34,782 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:32:34,782 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2019-04-24 21:32:34,789 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.007) SELECT `label`.`label_id`, `label`.`title`, `label`.`created_at`, `label`.`updated_at` FROM `label` ORDER BY `label`.`label_id` DESC; args=()
+2019-04-24 21:32:34,790 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.008) SELECT `cate`.`cate_id`, `cate`.`title`, `cate`.`created_at`, `cate`.`updated_at` FROM `cate` ORDER BY `cate`.`cate_id` ASC; args=()
+2019-04-24 21:32:34,793 [Thread-4:123145333211136] [django.db.backends:111] [utils:execute] [DEBUG]- (0.002) SELECT COUNT(*) AS `__count` FROM `label_article` WHERE `label_article`.`label_id` = 3; args=(3,)
+2019-04-24 21:32:34,793 [Thread-4:123145333211136] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/label_list HTTP/1.1" 200 97
+2019-04-24 21:32:34,794 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.003) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 1; args=(1,)
+2019-04-24 21:32:34,796 [Thread-5:123145338466304] [django.db.backends:111] [utils:execute] [DEBUG]- (0.001) SELECT COUNT(*) AS `__count` FROM `article` WHERE `article`.`cate_id` = 2; args=(2,)
+2019-04-24 21:32:34,797 [Thread-5:123145338466304] [django.server:154] [basehttp:log_message] [INFO]- "GET /api/cate_list HTTP/1.1" 200 153
