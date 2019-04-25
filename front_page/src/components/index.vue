@@ -5,7 +5,7 @@
 			<html_header></html_header>
 			<!-- 页面头部结束 -->
 		</el-header>
-		<el-container>
+		<el-container style="height:100%">
 
 
 			<!--占位使用-->
@@ -22,7 +22,7 @@
 			<!----  文章列表结束  -->
 
 
-			<el-aside  height="100%" style="width:20%;background-color: white;">
+			<el-aside  style="width:20%;background-color: white;height:100%">
 				<!--这里是侧边栏-->
 				<html_aside></html_aside>
 				<!-- 这里是侧边栏 -->

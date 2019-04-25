@@ -2,11 +2,11 @@
 	<div>
 		<el-row>
 			<el-col :span="8">
-			  <img src= ''>
+				<img src=''>
 
 			</el-col>
 
-<el-col :span="2.3" style="margin-left: -9%;margin-top: -0.3%;color:#FC326F;font-family:KaiTi">
+			<el-col :span="2.3" style="margin-left: -9%;margin-top: -0.3%;color:#FC326F;font-family:KaiTi">
 				<h1>一个被动向前码农的自述</h1></el-col>
 			<el-col :span="2.3" style="margin-left: 10%;margin-top: 1%;color:rgb(50, 112, 252);;font-family:KaiTi">
 				<h3>记录点滴，慢慢成长</h3></el-col>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
- import "@/css/header.css"
+	import "@/css/header.css"
 	export default {
 		name: 'html_header',
 		data() {

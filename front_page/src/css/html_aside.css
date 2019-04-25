@@ -12,3 +12,7 @@
 #label_list {
 	cursor: pointer;
 }
+.el-aside{
+	width:200px;
+	height:100px;
+}

@@ -1,13 +1,7 @@
 <template>
 	<div>
-		<el-aside>
-			<!--搜索内容开始-->
-
-		</el-aside>
-		<!--占位使用，不做任何处理-->
-		<el-aside style="width:100px">
-		</el-aside>
-		<!--占位使用，不做任何处理-->
+		<el-card class="box-card" style="margin-top: 5%;margin-left: 9%;width:84%">
+		</el-card>
 	</div>
 </template>
 <script type="text/ecmascript-6">
@@ -18,12 +12,9 @@
 	export default {
 		name: 'html_aside',
 		data() {
-			return {
-			};
+			return {};
 		},
-		methods: {
-		}
+		methods: {}
 
 	}
-
 </script>
