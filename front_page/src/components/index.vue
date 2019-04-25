@@ -2,6 +2,7 @@
 	<el-container style="height:100%">
 		<el-header style="height:63px;background-color: white;">
 			<!-- 页面头部 -->
+			
 			<html_header></html_header>
 			<!-- 页面头部结束 -->
 		</el-header>
@@ -37,7 +38,7 @@
 
 		</el-container>
 	</el-container>
-</template>
+</template> 
 <script type="text/ecmascript-6">
 	import "@/css/layout.css"
 	import databus from "@/datacenterbus.js"
