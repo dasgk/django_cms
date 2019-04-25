@@ -26,6 +26,8 @@
 				</div>
 				<!---  文章摘要    结束--->
 			</div>
+			
+		  <!---  文章元數據信息  開始--->
 			<div class="article_num_info">
 
 				<span class="visible-lg visible-md visible-sm pull-left">
@@ -49,6 +51,7 @@
 		</span>
 
 			</div>
+			<!---  文章元數據信息  結束--->
 		</el-card>
 
 	</div>
