@@ -24,7 +24,6 @@
 	margin-left: 3%;
 	height: 170px;
 	float: left;
-	
 }
 
 .article_title {
@@ -33,20 +32,20 @@
 	margin-left: 0px;
 	margin-top: 0px;
 	width: 100%;
-	height: 20%;
+	height: 30px;
 	display: block;
-	
 	color: #000000;
 }
 
 .article_title>a {
-	font-weight:bold;
+	font-weight: bold;
 	margin-top: 1%;
-	float: left;;
+	float: left;
+	;
 }
 
-.article_title>h2{
-	font-weight:bold;
+.article_title>h2 {
+	font-weight: bold;
 	margin-top: 2.5%;
 	margin-left: 6%;
 	float: left;
@@ -54,8 +53,9 @@
 	font-size: 21px;
 	display: inline;
 }
-.article_title>h2>a{
-	color: #333;	
+
+.article_title>h2>a {
+	color: #333;
 }
 
 .label {
@@ -75,22 +75,58 @@
 	border-radius: 0;
 }
 
-.label-arrow{
-    position: absolute;
-    width: 0;
-    height: 0;
-    vertical-align: top;
-    content: "";
-    top: 6px;
-    right: -4px;
-    border-left: 4px solid #00a2ff;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
+.label-arrow {
+	position: absolute;
+	width: 0;
+	height: 0;
+	vertical-align: top;
+	content: "";
+	top: 6px;
+	right: -4px;
+	border-left: 4px solid #00a2ff;
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
 }
+
+.article_abstract {
+	height: 124px;
+	line-height: 24px;
+}
+
+
+/******    文章元數據信息   *****/
+
+.article_num_info {
+	width: 62%;
+	margin-left: 0%;
+	height: 30px;
+	margin-top: 3%;
+	float: left;	
+	width:100%;
+	
+}
+.article_num_info>span>a{
+	color: #333;
+}
+.pull-left {
+	float: left!important;
+	font-size: 12px;
+	;
+}
+
+.pull-right {
+	font-size: 12px;
+	float: right!important;
+	margin-right: 3%;
+}
+
+
 /***   去掉a标签的下划线  ***/
-a{
-	text-decoration:none;
+
+a {
+	text-decoration: none;
 }
+
 
 /****   文章详情相关信息   结束 **/
 
