@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<el-row>
-			<el-col :span="8"><img src="@/images/index.png" alt="猪宝宝" style="width:50px;height:50px;margin-right: -41%;margin-bottom: 55px;"></el-col>
+			<el-col :span="8"><img src="@/images/index.png" alt="logo" style="width:50px;height:50px;margin-right: -41%;margin-bottom: 55px;"></el-col>
 			<el-col :span="5" style="margin-left: 10%;margin-top: -0.2%;color:#FC326F;font-family:KaiTi">
 				<h1>记录点滴，成就不凡</h1></el-col>
 			<el-col :span="5">
@@ -17,51 +17,8 @@
 	</div>
 </template>
 
-<style>
-	.el-row {
-		margin-bottom: 20px;
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-	
-	.el-input__inner {
-		border-radius: 30px
-	}
-	
-	.el-header {
-		line-height: 18px;
-	}
-	
-	.el-col {
-		border-radius: 4px;
-		height: 63px;
-	}
-	
-	.bg-purple-dark {
-		background: #99a9bf;
-	}
-	
-	.bg-purple {
-		background: #d3dce6;
-	}
-	
-	.bg-purple-light {
-		background: #e5e9f2;
-	}
-	
-	.grid-content {
-		border-radius: 4px;
-		min-height: 36px;
-	}
-	
-	.row-bg {
-		padding: 10px 0;
-		background-color: #f9fafc;
-	}
-</style>
-
 <script>
+ import "@/css/header.css"
 	export default {
 		name: 'html_header',
 		data() {
