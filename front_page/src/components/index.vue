@@ -1,5 +1,5 @@
 <template>
-	<el-container>
+	<el-container style="height:100%">
 		<el-header style="height:63px;background-color: white;">
 			<!-- 页面头部 -->
 			<html_header></html_header>
@@ -9,7 +9,7 @@
 
 
 			<!--占位使用-->
-			<el-aside height="100%" style="background-color: white;;width:10%"></el-aside>
+			<el-aside height="100%" style="background-color: white;;width:22%"></el-aside>
 			<!-- 占位结束 -->
 
 
@@ -30,7 +30,7 @@
 
 
 			<!--占位使用-->
-			<el-aside  height="100%" style="width:10%;background-color: white;">
+			<el-aside  height="100%" style="width:19%;background-color: white;">
     	</el-aside>
     	<!-- 占位结束 -->
 
