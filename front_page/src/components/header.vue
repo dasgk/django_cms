@@ -10,15 +10,7 @@
 				<h1>一个被动向前码农的自述</h1></el-col>
 			<el-col :span="2.3" style="margin-left: 10%;margin-top: 1%;color:rgb(50, 112, 252);;font-family:KaiTi">
 				<h3>记录点滴，慢慢成长</h3></el-col>
-			<el-col :span="5" style="    margin-left: 6%;">
-				<el-row class="demo-autocomplete" style="margin-top: 1.6%;">
-					<el-col :span="12">
-						<el-autocomplete class="inline-input" v-model="state1" :fetch-suggestions="querySearch" placeholder="请输入内容" @select="handleSelect">
-							<i slot="suffix" class="el-input__icon el-icon-search"></i>
-						</el-autocomplete>
-					</el-col>
-				</el-row>
-			</el-col>
+			
 		</el-row>
 	</div>
 </template>
