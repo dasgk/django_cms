@@ -16,10 +16,17 @@
 	width:200px;
 }
 
+#input_search_in_site{
+  margin-left: -17%;
+      width: 113%;
+}
+
 #search_in_site>.el-card__body{
   height: 18px;
 }
-
+.el-input__icon_el-icon-search{
+  margin-left: -80%;
+}
 .tag_clouds a {
     display: inline-block;
     margin: 0 2px 4px 0;
@@ -30,6 +37,8 @@
     line-height: 19px;
     font-size: 13px!important;
 }
-#label_all_in_site>.el-card__body{
-  
+#label_all_in_site .el-card__body{
+   width: 84%;
+   height:100%;
 }
+

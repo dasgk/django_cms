@@ -10,7 +10,7 @@
 
 
 			<!--占位使用-->
-			<el-aside height="100%" style="background-color: white;;width:22%"></el-aside>
+			<el-aside height="100%" style="background-color: white;;width:10%"></el-aside>
 			<!-- 占位结束 -->
 
 
@@ -23,7 +23,7 @@
 			<!----  文章列表结束  -->
 
 
-			<el-aside  style="width:20%;background-color: white;height:100%">
+			<el-aside  style="width:25%;background-color: white;height:100%">
 				<!--这里是侧边栏-->
 				<html_aside></html_aside>
 				<!-- 这里是侧边栏 -->
@@ -31,7 +31,7 @@
 
 
 			<!--占位使用-->
-			<el-aside  height="100%" style="width:19%;background-color: white;">
+			<el-aside  height="100%" style="width:10%;background-color: white;">
     	</el-aside>
     	<!-- 占位结束 -->
 
