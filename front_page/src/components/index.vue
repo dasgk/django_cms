@@ -38,7 +38,8 @@
 
 		</el-container>
 	</el-container>
-</template> 
+</template>
+
 <script type="text/ecmascript-6">
 	import "@/css/layout.css"
 	import databus from "@/datacenterbus.js"
