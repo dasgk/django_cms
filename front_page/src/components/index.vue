@@ -26,6 +26,7 @@
 			<el-aside  style="width:25%;background-color: white;">
 				<!--这里是侧边栏-->
 				<html_aside></html_aside>
+        <!---    npm install ele-calendar  -->
 				<!-- 这里是侧边栏 -->
 			</el-aside>
 
