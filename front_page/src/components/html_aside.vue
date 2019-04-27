@@ -30,11 +30,14 @@
 		<!--  站內搜索结束  -->
 
 
-    		<!--  文章归档  -->
+    <!--  文章归档  -->
 		<div>
-			<el-card id="article_zips" class="box-card" style="margin-top: 20%;margin-left: 9%;width:84%; text-align: center;">
-				<el-calendar v-model="value">
-        </el-calendar>
+			<el-card id="article_zips" class="box-card" style="margin-top: 20%;height:100%;margin-left: 9%;width:84%; text-align: center;padding: 0px;">
+      <ele-calendar
+                  :render-content="renderContent"
+                  :data="datedef"
+                  :prop="prop"
+            ></ele-calendar>
 			</el-card>
 		</div>
 		<!--  文章归档  -->
@@ -45,16 +48,37 @@
 <script type="text/ecmascript-6">
 	// 引入外部整理好的css文件
 	import "@/css/html_aside.css"
-	import databus from "@/datacenterbus.js"
-	var vue
+    import eleCalendar from 'ele-calendar'
+    import 'ele-calendar/dist/vue-calendar.css'
 	export default {
 		name: 'html_aside',
 		data() {
-			return {
-			   value: new Date()
-      };
+			return{
+                datedef:[
+                    {"date":"2018-06-30","content":null,"cid":null},
+                    {"date":"2018-06-26","content":null,"cid":null},
+                ],
+                prop:'date' //对应日期字段名
+            }
 		},
-		methods: {}
-
+     components: {
+            eleCalendar
+        },
+		methods: {
+		  renderContent(h,parmas) {
+            const loop = data =>{
+              return (
+                data.defvalue.value ? (<div><div>{data.defvalue.text}</div>
+                <span  >备选项</span>
+                </div>) : <div>{data.defvalue.text}</div>
+              )
+           }
+           return (
+            <div  style="min-height:60px;">
+             {loop(parmas)}
+            </div>
+            );
+             },
+    },
 	}
 </script>
