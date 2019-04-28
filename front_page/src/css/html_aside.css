@@ -48,9 +48,12 @@
 }
 
 .el-picker-panel-calendar__body div:nth-child(2){
-  height: 310px;
+  height: 180px;
 }
 
 tr:nth-child(n+2){
   line-height: 3px;
+}
+td>div{
+  min-height: 30px !important;
 }
