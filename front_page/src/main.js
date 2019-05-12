@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import App from './components/index'
+import App from './components/article_detail'
+
 Vue.use(ElementUI);
 Vue.config.productionTip=false;
 new Vue({
