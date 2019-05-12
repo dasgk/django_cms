@@ -17,10 +17,9 @@
 			<!--这里是文章详情-->
 			<el-main style="background-color: white;width:60%">
          <div id="test-editormd">
-
-        <textarea style="display:none;">
-        1. 测试文件
-        </textarea>
+            <textarea>
+              1. 测试文件
+            </textarea>
          </div>
 
 			</el-main>
@@ -45,6 +44,8 @@
 	</el-container>
 </template>
 
+<script src="./js/editor.md-master/js/editormd.js"></script>
+<link rel="stylesheet" type="text/css" href="./js/editor.md-master/css/editormd.css" />
 <script>
   import "@/css/layout.css"
   import "@/js/editor.md-master/css/editormd.css"
@@ -69,7 +70,8 @@
             tex             : true,  // 默认不解析
             flowChart       : true,  // 默认不解析
             sequenceDiagram : true,  // 默认不解析
+            marked : true,  // 默认不解析
             path:'./js/editor.md-master/lib'
-        });
+    });
   });
 </script>
