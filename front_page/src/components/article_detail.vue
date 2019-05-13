@@ -429,6 +429,7 @@ Andrew->>China: I am good thanks!
 	var testEditor;
 	
 	$(function() {
+	    // You can custom Emoji's graphics files url path
 		editormd.markdownToHTML("test-editormd", {
 			htmlDecode: "style,script,iframe", // you can filter tags decode
 			emoji: true,
