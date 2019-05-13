@@ -1,5 +1,5 @@
 <template>
-	<el-container style="height:100%">
+	<el-container >
 		<el-header style="height:63px;background-color: white;">
 			<!-- 页面头部 -->
 
@@ -7,17 +7,16 @@
 			<!-- 页面头部结束 -->
 		</el-header>
 
-
 		<el-container style="height:100%">
 			<!--占位使用-->
 			<el-aside height="100%" style="background-color: white;;width:10%"></el-aside>
 			<!-- 占位结束 -->
 
-
 			<!--这里是文章详情-->
-			<el-main style="background-color: white;width:60%">
-         <div id="test-editormd">
-            <textarea>
+			<el-main id="article_main" style="background-color: white;width:60%;overflow-x: hidden;overflow-y: hidden;">
+				<div id="test-editormd">
+
+					<textarea>
               # Editor.md
 
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
@@ -384,25 +383,24 @@ Andrew->>China: I am good thanks!
 
 ### End
             </textarea>
-         </div>
+				</div>
+<br style="clear:both;" />
 
 			</el-main>
 			<!----  文章详情结束  -->
 
-			<el-aside  style="width:25%;background-color: white;">
-
+			<el-aside style="width:25%;height:200%;background-color: white;overflow-x: hidden;overflow-y: hidden;">
 
 				<!--这里是侧边栏-->
 				<html_aside></html_aside>
-        <!---    npm install ele-calendar  -->
+				<!---    npm install ele-calendar  -->
 				<!-- 这里是侧边栏 -->
-
 
 			</el-aside>
 			<!--占位使用-->
-			<el-aside  height="100%" style="width:8%;background-color: white;">
-    	</el-aside>
-    	<!-- 占位结束 -->
+			<el-aside height="100%" style="width:8%;background-color: white;">
+			</el-aside>
+			<!-- 占位结束 -->
 
 		</el-container>
 	</el-container>
@@ -411,32 +409,37 @@ Andrew->>China: I am good thanks!
 <script src="./js/editor.md-master/js/editormd.js"></script>
 <link rel="stylesheet" type="text/css" href="./js/editor.md-master/css/editormd.css" />
 <script>
-  import "@/css/layout.css"
-  import "@/js/editor.md-master/css/editormd.css"
-  import "@/js/editor.md-master/editormd.min.js"
-  import "@/js/editor.md-master/lib/marked.min.js"
-  import html_header from "@/components/header"
-	import html_aside from "@/components/html_aside"
 	import 'jquery'
-  export default {
-    components: {
+	import "@/css/layout.css"
+	import "@/js/editor.md-master/css/editormd.css"
+	import "@/js/editor.md-master/editormd.min.js"
+	import "@/js/editor.md-master/lib/marked.min.js"
+	import "@/js/editor.md-master/lib/prettify.min.js"
+
+	import html_header from "@/components/header"
+	import html_aside from "@/components/html_aside"
+
+	export default {
+		components: {
 			html_header: html_header,
 			html_aside: html_aside,
 		}
-  }
+	}
 
-  var testEditor;
-  $(function() {
-  	
-    editormd.markdownToHTML("test-editormd", {
-            htmlDecode      : "style,script,iframe",  // you can filter tags decode
-            emoji           : true,
-            taskList        : true,
-            tex             : true,  // 默认不解析
-            flowChart       : true,  // 默认不解析
-            sequenceDiagram : true,  // 默认不解析
-            marked : true,  // 默认不解析
-            path:'./js/editor.md-master/lib'
-    });
-  });
+	var testEditor;
+	
+	$(function() {
+		editormd.markdownToHTML("test-editormd", {
+			htmlDecode: "style,script,iframe", // you can filter tags decode
+			emoji: true,
+			taskList: true,
+			tex: true, // 默认不解析
+
+			sequenceDiagram: false, // 默认不解析
+			marked: true, // 默认不解析
+			path: './js/editor.md-master/lib'
+		});
+
+	});
+
 </script>
