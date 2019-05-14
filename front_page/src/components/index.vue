@@ -1,5 +1,5 @@
 <template>
-	<el-container style="height:100%">
+	<el-container >
 		<el-header style="height:63px;background-color: white;">
 			<!-- 页面头部 -->
 			

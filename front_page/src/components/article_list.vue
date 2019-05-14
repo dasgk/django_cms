@@ -58,5 +58,31 @@
 </template>
 <script type="text/ecmascript-6">
 	import "@/css/article_list.css"
-	
+	import "jquery"
+	var vue;
+	export default({
+		name: 'App',
+		data() {
+			return {
+			}
+		},
+		init: function() {
+			axios.get('./static/login.json').then((response) => {
+					console.log(response); //请求正确时执行的代码 
+					user = response.data;
+					for(var i = 0; i < user.length; i++) {
+						if(user[i].name == this.name) {
+							if(user[i].pwd == this.pwd) {
+								this.$router.push('/Main');
+							} else {
+								alert("密码错误");
+							}
+						}
+					}
+				}).catch(function(response) {
+					console.log(response); //发生错误时执行的代码  
+				});
+
+		}		
+	})
 </script>
