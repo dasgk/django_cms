@@ -59,6 +59,7 @@
 <script type="text/ecmascript-6">
 	import "@/css/article_list.css"
 	import axios from 'axios'
+  import "@/request/request.js"
 	import "jquery"
 	var vue;
 	export default({
@@ -69,7 +70,8 @@
 		},
 
 		created: function() {
-			axios.get('./static/login.json').then((response) => {
+
+			axios.get('/article_list').then((response) => {
 					console.log(response); //请求正确时执行的代码
 					user = response.data;
 					for(var i = 0; i < user.length; i++) {
