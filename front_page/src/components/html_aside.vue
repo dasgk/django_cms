@@ -22,8 +22,8 @@
 					<span style="text-align:center">标签聚合</span>
 				</div>
 				<div style=" width:87%;" class="tag_clouds">
-					<a href="https://www.qdtalk.com/tag/%e6%9e%84%e9%80%a0%e5%87%bd%e6%95%b0/" class="tag-cloud-link tag-link-48 tag-link-position-1" style="font-size: 14px;">构造函数</a>
-          <a href="https://www.qdtalk.com/tag/%e4%bd%9c%e7%94%a8%e5%9f%9f/" class="tag-cloud-link tag-link-59 tag-link-position-2" style="font-size: 14px;">作用域</a>
+					<a href="https://www.qdtalk.com/tag/%e6%9e%84%e9%80%a0%e5%87%bd%e6%95%b0/" class="tag-cloud-link tag-link-48 tag-link-position-1" style="text-decoration:none;font-size: 14px;">构造函数</a>
+          
         </div>
 			</el-card>
 		</div>
