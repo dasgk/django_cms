@@ -26,7 +26,7 @@
 				</div>
 				<!---  文章摘要    结束--->
 			</div>
-			
+
 		  <!---  文章元數據信息  開始--->
 			<div class="article_num_info">
 
@@ -58,6 +58,7 @@
 </template>
 <script type="text/ecmascript-6">
 	import "@/css/article_list.css"
+	import axios from 'axios'
 	import "jquery"
 	var vue;
 	export default({
@@ -66,9 +67,10 @@
 			return {
 			}
 		},
-		init: function() {
+
+		created: function() {
 			axios.get('./static/login.json').then((response) => {
-					console.log(response); //请求正确时执行的代码 
+					console.log(response); //请求正确时执行的代码
 					user = response.data;
 					for(var i = 0; i < user.length; i++) {
 						if(user[i].name == this.name) {
@@ -80,9 +82,11 @@
 						}
 					}
 				}).catch(function(response) {
-					console.log(response); //发生错误时执行的代码  
+					console.log(response); //发生错误时执行的代码
 				});
 
-		}		
+
+		}
+
 	})
 </script>
