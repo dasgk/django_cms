@@ -21,9 +21,8 @@
 				<div slot="header" class="clearfix">
 					<span style="text-align:center">标签聚合</span>
 				</div>
-				<div style=" width:87%;" class="tag_clouds">
-					<a href="https://www.qdtalk.com/tag/%e6%9e%84%e9%80%a0%e5%87%bd%e6%95%b0/" class="tag-cloud-link tag-link-48 tag-link-position-1" style="text-decoration:none;font-size: 14px;">构造函数</a>
-          
+				<div style=" width:87%;" class="tag_clouds"  v-for="label in label_list">
+					<a href="https://www.baidu.com" class="tag-cloud-link tag-link-48 tag-link-position-1" style="text-decoration:none;font-size: 14px;">{{label.title}}</a>
         </div>
 			</el-card>
 		</div>
@@ -50,6 +49,7 @@
 	import "@/css/html_aside.css"
     import eleCalendar from 'ele-calendar'
     import 'ele-calendar/dist/vue-calendar.css'
+    import axios from 'axios'
 	export default {
 		name: 'html_aside',
 		data() {
@@ -58,11 +58,21 @@
                     {"date":"2018-06-30","content":null,"cid":null},
                     {"date":"2018-06-26","content":null,"cid":null},
                 ],
-                prop:'date' //对应日期字段名
+                prop:'date',//对应日期字段名
+                label_list:[]
             }
 		},
      components: {
             eleCalendar
+        },
+        created:function(){
+        axios.get('/label_list').then((response) => {
+					console.log(response); //请求正确时执行的代码
+					this.label_list = response.data.data
+
+				}).catch(function(response) {
+					console.log(response); //发生错误时执行的代码
+				});
         },
 		methods: {
 		  renderContent(h,parmas) {
