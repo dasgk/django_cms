@@ -49,7 +49,6 @@
 	import article_list from "@/components/article_list"
 	import 'jquery'
 	// 引入外部整理好的css文件
-	var vue;
 	export default({
 		name: 'App',
 		data() {
@@ -57,6 +56,7 @@
 			}
 		},
 		created: function() {
+
 			
 		},
 		components: {

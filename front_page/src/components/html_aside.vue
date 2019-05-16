@@ -67,7 +67,6 @@
         },
         created:function(){
         axios.get('/label_list').then((response) => {
-					console.log(response); //请求正确时执行的代码
 					this.label_list = response.data.data
 
 				}).catch(function(response) {

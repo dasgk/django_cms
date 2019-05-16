@@ -59,11 +59,11 @@
 	</div>
 </template>
 <script type="text/ecmascript-6">
- import Vue from "vue"
-    import VueRouter from 'vue-router'
 	import "@/css/article_list.css"
 	import axios from 'axios'
   import "@/request/request.js"
+
+  var vue;
 	export default({
 		name: 'App',
 		data() {
@@ -72,16 +72,16 @@
 			}
 		},
     methods:{
-        jump(){
-        	console.log(this)
-            this.$router.push({
-            	path: '/article_detail'
+        jump:function(){
+          debugger
+            vue.$router.push({
+            	name: 'article_detail'
             })
         }
     },
 		created: function() {
+		  vue = this
 			axios.get('/article_list').then((response) => {
-					console.log(response); //请求正确时执行的代码
 					this.article_list = response.data.data
 
 				}).catch(function(response) {
