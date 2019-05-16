@@ -30,7 +30,8 @@ class CateController(View):
         parm = request.POST
         cate_id = parm.get('cate_id', 0)
         title = parm.get('title', '')
-        cate = CateDao.createOrUpdate(cate_id, title)
+        picture = parm.get('picture','')
+        cate = CateDao.createOrUpdate(cate_id, title,picture)
         if type(cate) == Cate:
             return response_json(1, [], "保存成功", reverse('admin.cate.index'))
         else:

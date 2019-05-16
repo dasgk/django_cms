@@ -49,3 +49,13 @@ def response_json(statusCode, data, msg='', url=''):
     return HttpResponse(json.dumps(res, ensure_ascii=False), content_type="application/json,charset=utf-8")
 
 
+
+'''
+ 获得文件完整得到url 
+'''
+
+
+def get_file_url(request,path):
+    if len(path) ==0:
+        return ""
+    return request.get_host()+"/"+path

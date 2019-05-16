@@ -57,7 +57,8 @@
 							<div class="form-group">
 								<label class="col-sm-2 control-label">分类图片</label>
 								<div class="col-sm-4">
-									<div class="webuploader-pick" onclick="upload_resource('{% url 'admin.show_file_upload' %}','分类图片','FT_ONE_RESOURCE','map_icon',1,'map_icon',1);" style=" float: left; display: inline-block; width: auto;">点击上传图片
+									<div class="webuploader-pick" onclick="upload_resource('{% url 'admin.show_file_upload' %}',
+									'分类图片','FT_ONE_RESOURCE','picture',1,'picture',1);" style=" float: left; display: inline-block; width: auto;">点击上传图片
 									</div>
 								</div>
 							</div>
@@ -65,7 +66,7 @@
 							<div class="form-group">
 								<label class="col-sm-2 control-label"></label>
 								<div class="col-sm-4" style="overflow: auto;width: 80%;">
-									<div id="map_icon">
+									<div id="picture">
 										{% if cate and cate.picture %}
 										<div class="img-div">
 											<img src="{{cate.picture}}">

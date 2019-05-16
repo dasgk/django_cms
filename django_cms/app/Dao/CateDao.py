@@ -7,19 +7,21 @@ import time
 
 class CateDao(object):
     @staticmethod
-    def createOrUpdate(cate_id, title):
+    def createOrUpdate(cate_id, title,picture):
         filter_dict = dict()
         filter_dict['cate_id'] = cate_id
         cate = Cate.objects.filter(**filter_dict).first()
         if cate:
             cate.title = title
+            cate.picture = picture
             cate.updated_at = TimeDao.get_current_time()
         else:
             cate = Cate()
             cate.title = title
+            cate.picture = picture
             cate.updated_at = TimeDao.get_current_time()
             cate.created_at = TimeDao.get_current_time()
-            cate.save()
+        cate.save()
         return cate
 
     @staticmethod
