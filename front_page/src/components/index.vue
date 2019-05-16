@@ -1,5 +1,5 @@
 <template>
-	<el-container >
+	<el-container>
 		<el-header style="height:63px;background-color: white;">
 			<!-- 页面头部 -->
 			
@@ -57,6 +57,7 @@
 			}
 		},
 		created: function() {
+			
 		},
 		components: {
 			html_header: html_header,

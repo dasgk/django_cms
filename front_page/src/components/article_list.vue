@@ -4,8 +4,6 @@
 			<div class="article_list_img">
 				<img :src="article.cate_url" />
 			</div>
-
-
 			<div class='article_list_relative_info'>
 
 				<div class="article_title">
@@ -15,7 +13,9 @@
 					<!--   这是文章所属分类 结束-->
 
 					<!---  文章标题   -->
-					<h2><a href="http://www.baidu.com">{{article.title}}</a></h2>
+					<h2>
+					  <a href="javascript:void(0)"  @click="jump">{{article.title}}</a>
+					</h2>
 					<!---  文章标题    结束--->
 
 				</div>
@@ -59,11 +59,11 @@
 	</div>
 </template>
 <script type="text/ecmascript-6">
+ import Vue from "vue"
+    import VueRouter from 'vue-router'
 	import "@/css/article_list.css"
 	import axios from 'axios'
   import "@/request/request.js"
-	import "jquery"
-	var vue;
 	export default({
 		name: 'App',
 		data() {
@@ -71,7 +71,14 @@
 			article_list:[]
 			}
 		},
-
+    methods:{
+        jump(){
+        	console.log(this)
+            this.$router.push({
+            	path: '/article_detail'
+            })
+        }
+    },
 		created: function() {
 			axios.get('/article_list').then((response) => {
 					console.log(response); //请求正确时执行的代码
@@ -80,8 +87,6 @@
 				}).catch(function(response) {
 					console.log(response); //发生错误时执行的代码
 				});
-
-
 		}
 
 	})
