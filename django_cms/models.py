@@ -30,6 +30,7 @@ class Article(models.Model):
 class Cate(models.Model):
     cate_id = models.AutoField(primary_key=True, help_text="主键")
     title = models.CharField(max_length=200, help_text="类别描述", null=True, default="")
+    picture = models.CharField(max_length=200, help_text="类别图片", null=True, default="")
     created_at = models.DateTimeField(help_text="创建时间", null=True, default="2019-01-29 12:13:00", blank=True)
     updated_at = models.DateTimeField(help_text="更新时间", null=True, default="2019-01-29 12:13:00")
 

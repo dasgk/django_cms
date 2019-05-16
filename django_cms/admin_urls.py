@@ -21,6 +21,7 @@ from django_cms.app.Http.Controller.Admin.UserController import UserController
 from django_cms.app.Http.Controller.Admin.ArticleController import ArticleController
 from django_cms.app.Http.Controller.Admin.CateController import CateController
 from django_cms.app.Http.Controller.Admin.LabelController import LabelController
+from django_cms.app.Http.Controller.Admin.FileController import FileController
 
 urlpatterns = [
     url('/user/login', UserController.login, name='admin.user.login'),
@@ -38,4 +39,7 @@ urlpatterns = [
 
     # ????
     url('/label_list', LabelController.index, name='admin.label.index'),
+    # ????
+    url('/show_file_upload', FileController.show_file_upload, name='admin.show_file_upload'),
+    url('/file_upload', FileController.file_upload, name='admin.file_upload'),
 ]

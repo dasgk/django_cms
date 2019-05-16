@@ -1,74 +1,108 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-    <meta charset="utf-8"/>
-    <title>文章内容</title>
-    {%load staticfiles%}
-    <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
-    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.css' %}">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>文章内容</title>
+		{%load staticfiles%}
+		<link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+		<link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'js/webuploader/single.css' %}">
+
+		<link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+	</head>
+
+	<body style="color:#9c9c9c;background-color:#1c232f;">
+		<style>
+			.form-group {
+				margin-left: -10% !important
+			}
+		</style>
+		<div id="layout">
+
+			<div class="row m-b">
+				<div class="col-sm-12">
+					<div class="tabs-container">
+						<ul class="nav nav-tabs">
+							<li>
+								<a url-data="{% url 'admin.cate.index' %}" onclick="sub_page_jump(this)" style="color:#9c9c9c;background-color:#1c232f;" href="javascript:void(0)">分类列表</a>
+							</li>
+							<li class="active">
+								<a url-data="{% url 'admin.cate.show_cate_form' 0 %}" onclick="sub_page_jump(this)" style="color:#9c9c9c;background-color:#1c232f;" href="javascript:void(0)">添加分类</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 3%;">
+				<div class="col-sm-12">
+					<div class="ibox float-e-margins">
+						<form action="{% url 'admin.cate.save_cate' %}" enctype="multipart/form-data" method="post" class="form-horizontal ajaxForm">
+							{% csrf_token %}
+							<div class="form-group">
+								<label class="col-sm-2 control-label">分类名称</label>
+								<div class="col-sm-4">
+
+									{% if cate %}
+									<input type="text" class="form-control" autocomplete="off" style="background-color:#1c232f;" name="title" value="{{cate.title}}" />
+									<input type="hidden" name="cate_id" autocomplete="off" value="{{cate.cate_id}}" /> {% else %}
+									<input type="text" class="form-control" autocomplete="off" style="background-color:#1c232f;" name="title" placeholder="类别名称" />
+									<input type="hidden" name="cate_id" autocomplete="off" value="0" /> {% endif %}
+								</div>
+							</div>
+
+							<!---类别图片-->
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label">分类图片</label>
+								<div class="col-sm-4">
+									<div class="webuploader-pick" onclick="upload_resource('{% url 'admin.show_file_upload' %}','分类图片','FT_ONE_RESOURCE','map_icon',1,'map_icon',1);" style=" float: left; display: inline-block; width: auto;">点击上传图片
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label"></label>
+								<div class="col-sm-4" style="overflow: auto;width: 80%;">
+									<div id="map_icon">
+										{% if cate and cate.picture %}
+										<div class="img-div">
+											<img src="{{cate.picture}}">
+											<span onclick="del_img($(this))">×</span>
+											<input type="hidden" name="picture" value="{{cate.picture}}">
+										</div>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+							<!---类别图片结束-->
+
+							<br>
+							<div class="hr-line-dashed"></div>
+							<div style="margin-top: 2%;margin-left: 13%;">
+								<input type="submit" value="发布类别" class="button button-pill button-primary">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/upload_resource/upload_resource.js' %}"></script>
+
+		<script src="{% static 'layer/layer.js' %}"></script>
+		<script src="{% static 'js/public.js' %}"></script>
+		<script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+
+		<script>
+			function sub_page_jump(obj) {
+				url = obj.getAttribute('url-data')
+				location.href = url
+			}
+		</script>
+	</body>
 
 
-    <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
-</head>
-<body style="color:#9c9c9c;background-color:#1c232f;">
-<div id="layout">
-
-    <div class="row m-b">
-        <div class="col-sm-12">
-            <div class="tabs-container">
-                <ul class="nav nav-tabs">
-                    <li><a  url-data="{% url 'admin.cate.index' %}" onclick="sub_page_jump(this)" style="color:#9c9c9c;background-color:#1c232f;"
-                                          href="javascript:void(0)">分类列表</a></li>
-                    <li  class="active"><a url-data="{% url 'admin.cate.show_cate_form' 0 %}" onclick="sub_page_jump(this)"
-                           style="color:#9c9c9c;background-color:#1c232f;" href="javascript:void(0)">添加分类</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="row"  style="margin-top: 3%;">
-        <div class="col-sm-12">
-            <div class="ibox float-e-margins">
-                <form action="{% url 'admin.cate.save_cate' %}" enctype="multipart/form-data" method="post" class="form-horizontal ajaxForm" >
-                     {% csrf_token %}
-                    <div class="form-group" style="margin-left:4%">
-                        <div class="col-sm-4">
-
-                            {% if cate %}
-                            <input type="text" class="form-control"  autocomplete="off"  style="background-color:#1c232f;" name="title"
-                                   value="{{cate.title}}"/>
-                             <input type="hidden" name="cate_id" autocomplete="off"value="{{cate.cate_id}}"/>
-                            {% else %}
-                            <input type="text" class="form-control"  autocomplete="off"  style="background-color:#1c232f;" name="title"
-                                   placeholder="类别名称"/>
-                            <input type="hidden" name="cate_id" autocomplete="off"  value="0"/>
-                            {% endif %}
-                        </div>
-                    </div>
-                    <br>
-                    <div class="hr-line-dashed"></div>
-                    <div class="form-group" style="margin-top: 2%;margin-left: 5%;">
-                        <input type="submit" value="发布类别" class="button button-pill button-primary">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script src="{% static 'js/jquery.min.js' %}"></script>
-<script src="{% static 'layer/layer.js' %}"></script>
-<script src="{% static 'js/public.js' %}"></script>
-<script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
-
-<script>
-    function sub_page_jump(obj){
-    url =obj.getAttribute('url-data')
-    location.href = url
-}
-</script>
-</body>
-{%block css%}
-{%endblock css%}
 </html>
