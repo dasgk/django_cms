@@ -14,7 +14,7 @@
 
 					<!---  文章标题   -->
 					<h2>
-					  <a href="javascript:void(0)"  @click="jump">{{article.title}}</a>
+            <router-link  to="/detail" >{{article.title}}</router-link>
 					</h2>
 					<!---  文章标题    结束--->
 
@@ -73,7 +73,6 @@
 		},
     methods:{
         jump:function(){
-          debugger
             vue.$router.push({
             	name: 'article_detail'
             })
