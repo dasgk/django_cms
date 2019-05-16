@@ -18,6 +18,8 @@ class Article(models.Model):
     title = models.CharField(max_length=200, help_text="文章标题", null=True, default="")
     content = models.TextField(help_text="文章内容", null=True)
     look_num = models.IntegerField(help_text="浏览数量", default=0, null=True)
+    like_num = models.IntegerField(help_text="点赞数量", default=0, null=True)
+    comment_num = models.IntegerField(help_text="评论数量", default=0, null=True)
     cate_id = models.IntegerField(help_text="文章类别", default=0, null=True)
     status = models.IntegerField(help_text="1 表示草稿 2表示已经发表", default=1, null=True)
     created_at = models.CharField(help_text="创建时间", null=True, default="", max_length=20, blank=True)

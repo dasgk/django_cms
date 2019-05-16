@@ -24,8 +24,16 @@ class ArticleController:
             item['title'] = article.title
             item['content'] = article.content[0:138]
             item['look_num'] = article.look_num
+            item['like_num'] = article.like_num
+            item['comment_num'] = article.comment_num
             item['cate_id'] = article.cate_id
-            item['cate_url'] = get_file_url(request,Cate.objects.filter(cate_id=article.cate_id).first().picture)
+            cate = Cate.objects.filter(cate_id=article.cate_id).first()
+            if cate:
+                item['cate_url'] = get_file_url(request,cate.picture)
+                item['cate_title'] = cate.title
+            else:
+                item['cate_url'] = ''
+                item['cate_title'] = ''
             if type(article.updated_at) == datetime:
                 item['updated_at'] = article.updated_at.strftime('%Y-%m-%d %H:%M:%S')
             else:
