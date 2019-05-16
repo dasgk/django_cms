@@ -1,7 +1,8 @@
-from django_cms.models import Article,ArticleComment
+from django_cms.models import Article,ArticleComment,Cate
 from django_cms.app.Dao.ArticleDao import ArticleDao
 from django_cms.app.utility.helps import response_json
 from datetime import datetime
+from django_cms.app.utility.helps import get_file_url
 class ArticleController:
     def article_list(request):
         # 获得所有数据
@@ -23,6 +24,8 @@ class ArticleController:
             item['title'] = article.title
             item['content'] = article.content[0:138]
             item['look_num'] = article.look_num
+            item['cate_id'] = article.cate_id
+            item['cate_url'] = get_file_url(request,Cate.objects.filter(cate_id=article.cate_id).first().picture)
             if type(article.updated_at) == datetime:
                 item['updated_at'] = article.updated_at.strftime('%Y-%m-%d %H:%M:%S')
             else:
