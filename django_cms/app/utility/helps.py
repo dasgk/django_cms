@@ -58,4 +58,6 @@ def response_json(statusCode, data, msg='', url=''):
 def get_file_url(request,path):
     if len(path) ==0:
         return ""
-    return request.get_host()+"/"+path
+    if path[0] == '/':
+        return "http://"+request.get_host()+path
+    return "http://" + request.get_host() + "/" + path

@@ -16,10 +16,10 @@ Including another URLconf
 
 from django.conf.urls import include, url
 from django_cms.app.Http.Controller.Admin.HomeController import HomeController
-
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin',include('django_cms.admin_urls')),
     url(r'^api', include('django_cms.api_urls')),
     url(r'', HomeController.jump2Index, name='index'),
-
 ]
