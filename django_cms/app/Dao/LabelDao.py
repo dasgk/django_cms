@@ -9,6 +9,8 @@ class LabelDao(object):
         labels = tagsinput.split(',')
         for label in labels:
             tag_filter = dict()
+            if len(label) == 0:
+                continue;
             tag_filter['title'] = label
             tag_model = Label.objects.filter(**tag_filter).first()
             if tag_model == None:
