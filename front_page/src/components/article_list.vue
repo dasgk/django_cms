@@ -36,7 +36,7 @@
 					<a href="javascript:void(0)" @click="get_article_list_by_post_date(article.updated_at)">
 						<i class="el-icon-date"></i>{{article.updated_at}}</a>
 						&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="http://www.baidu.com">
+					<a href="javascript:void(0)" @click="jump(article.article_id)">
 						<i class="el-icon-upload"></i> {{article.comment_num}}条评论</a>
 					</span>
 

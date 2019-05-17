@@ -73,6 +73,7 @@ class ArticleDao(object):
         article_info = {}
         article_info['title'] = article.title
         article_info['content'] = article.content
+        article_info['updated_at'] = article.updated_at
         if isinstance(article.updated_at, datetime.datetime):
             article_info['updated_at'] = article.updated_at.strftime('%Y-%m-%d %H:%M:%S')
         else:
@@ -89,5 +90,6 @@ class ArticleDao(object):
             item['time'] = created_at
             item['random_avatar'] = "http://127.0.0.1:8000/static/avatar/"+str(random.randint(1,6))+".jpg"
             article_info['comments'].append(item)
+        article_info['comment_num'] = len(article_info['comments'])
         return article_info
 

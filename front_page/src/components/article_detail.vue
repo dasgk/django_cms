@@ -1,7 +1,26 @@
 <!--这里是文章详情-->
 <template id="article_main" style="background-color: white;width:60%;overflow-x: hidden;overflow-y: hidden;">
-	<div id="test-editormd">
-		<textarea v-model="article_content"></textarea>
+	<!--文章标题开始--->
+	<div>
+		<div class="title" style="    line-height: 10px;font-size: 22px;">
+			<h1>{{article_title}}</h1>
+		</div>
+		<!--文章标题结束-->
+
+		<!--文章内容开始i --->
+		<div id="test-editormd">
+			<textarea v-model="article_content"></textarea>
+		</div>
+		<!--文章内容结束--->
+
+		<!----显示评论输入框 -->
+		<div style="text-align: left;">
+			<h4 name="a1" style="    line-height: 20px;font-size: 22px;">讨论这个项目（{{comment_num}}）</h4>
+			<el-input  style="    width: 80%;margin-left: 5%;display: block;"type="textarea" :rows="4" placeholder="请输入您的高见">
+			</el-input>
+			  <el-button type="success" icon="el-icon-chat-line-square" plain></el-button>
+		</div>
+		<!----显示评论输入框结束 -->
 
 	</div>
 </template>
@@ -21,7 +40,9 @@
 	export default {
 		data() {
 			return {
-				article_content: ""
+				article_content: "",
+				article_title: "",
+				comment_num:0
 			}
 		},
 		created: function() {
@@ -44,6 +65,8 @@
 					}
 				}).then((response) => {
 					vue.article_content = response.data.data.content
+					vue.article_title = response.data.data.title
+					vue.comment_num = response.data.data.comment_num
 					vue.$nextTick(function() {
 						// 等待数据更新同步到DOM之后进行渲染
 						editormd.markdownToHTML("test-editormd", {
