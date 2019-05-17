@@ -49,16 +49,12 @@
 							marked: true, // 默认不解析
 							path: './js/editor.md-master/lib'
 						});
-						this.$root.databus.$emit('article_detail_show',1);		
+						this.$root.databus.$emit('article_detail_show', 1);
 					})
 				}).catch(function(response) {
 					console.log(response); //发生错误时执行的代码
 				});
 			})
 		},
-	}
-
-	function render_md() {
-
 	}
 </script>
