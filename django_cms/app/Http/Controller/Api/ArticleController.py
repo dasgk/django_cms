@@ -10,11 +10,17 @@ class ArticleController:
         cate_id = param.get('cate_id',0)
         title = param.get('title','')
         label_id = param.get('label_id',0)
+        post_date = param.get('post_date','')
         filter_dict = dict()
         if len(title)>0:
             filter_dict['title__icontains'] = title
         if cate_id:
             filter_dict['cate_id'] = cate_id
+        if len(post_date)>0:
+            #发表时间大于当天00:00:00，小于23:59:59
+            filter_dict['updated_at__gte'] = post_date+" 00:00:00"
+            filter_dict['updated_at__lte'] = post_date + " 23:59:59"
+
         article_list = ArticleDao.getArticleList(filter_dict, param.get('page',1), label_id=label_id)
         article_list = article_list[0]
         res = []
