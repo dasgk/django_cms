@@ -65,3 +65,13 @@ class ArticleController:
         article_comment.locate_area = "中国"
         article_comment.save()
         return response_json(1,[])
+
+    def article_look_num_incr(request):
+        param = request.GET
+        article_id = param.get('article_id')
+        article = Article.objects.filter(article_id=article_id).first()
+        if article is None:
+            return response_json(0,[],'参数有误')
+        article.look_num = article.look_num+1
+        article.save()
+        return response_json(1, [], '操作成功')

@@ -30,6 +30,12 @@
 		mounted: function() {
 			//修改显示的文章详情
 			this.$root.databus.$on('current_article_id', function(article_id) {
+				//文章阅读量自增
+				axios.get('/article_look_num_incr', {
+					params: {
+						'article_id': article_id
+					}
+				});
 				// 显示对应的文章详情
 				current_article_id = article_id;
 				axios.get('/article_detail', {

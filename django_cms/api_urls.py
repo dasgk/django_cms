@@ -26,5 +26,5 @@ urlpatterns = [
     url('/cate_list', CateController.cate_list, name='api.cate.cate_list'),
     url('/label_list', LabelController.label_list, name='api.label.label_list'),
     url('/comment_update', ArticleController.comment_update, name='api.comment.comment_update'),
-
+    url('/article_look_num_incr', ArticleController.article_look_num_incr, name='api.article.article_look_num_incr'),
 ]
