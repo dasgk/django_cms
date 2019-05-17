@@ -16,7 +16,7 @@
 </template>
 
 <script>
-	import "@/css/header.css"
+	import "@/css/header.css";
 	export default {
 		name: 'html_header',
 		data() {

@@ -14,7 +14,7 @@
 
 					<!---  文章标题   -->
 					<h2>
-            <router-link  to="/detail" >{{article.title}}</router-link>
+						<a href="javascript:void(0)" @click="jump(article.article_id)">{{article.title}}</a>            			
 					</h2>
 					<!---  文章标题    结束--->
 
@@ -29,7 +29,7 @@
 				<!---  文章摘要    结束--->
 			</div>
 
-		  <!---  文章元數據信息  開始--->
+			<!---  文章元數據信息  開始--->
 			<div class="article_num_info">
 
 				<span class="visible-lg visible-md visible-sm pull-left">
@@ -61,32 +61,30 @@
 <script type="text/ecmascript-6">
 	import "@/css/article_list.css"
 	import axios from 'axios'
-  import "@/request/request.js"
+	import "@/request/request.js"
 
-  var vue;
+	var vue;
 	export default({
 		name: 'App',
 		data() {
 			return {
-			article_list:[]
+				article_list: []
 			}
 		},
-    methods:{
-        jump:function(){
-            vue.$router.push({
-            	name: 'article_detail'
-            })
-        }
-    },
+		methods: {
+			jump: function(article_id) {
+				//设置当前显示的文章ID，隐藏列表				
+				this.$root.databus.$emit('current_article_id',article_id);						
+			}
+		},
 		created: function() {
-		  vue = this
+			vue = this
 			axios.get('/article_list').then((response) => {
-					this.article_list = response.data.data
+				this.article_list = response.data.data
 
-				}).catch(function(response) {
-					console.log(response); //发生错误时执行的代码
-				});
+			}).catch(function(response) {
+				console.log(response); //发生错误时执行的代码
+			});
 		}
-
 	})
 </script>
