@@ -56,6 +56,8 @@
 			vue.article_content = response.data.data.content
 			vue.article_title = response.data.data.title
 			vue.comment_num = response.data.data.comment_num
+			vue.rate_value = response.data.data.rate_num
+
 			//修改评论列表
 			vue.$root.databus.$emit('comment_list', response.data.data.comments);
 			vue.$nextTick(function() {
@@ -92,7 +94,6 @@
 		methods: {
 			//提交评论
 			submit_comment: function() {
-
 				axios.get('/comment_update', {
 					params: {
 						'article_id': current_article_id,
@@ -109,22 +110,19 @@
 					});
 				}).catch(function(response) {});
 			},
-			article_rate:function(){
-				//提交本次评分
-				axios.get('/rate_value_submit', {
-					params: {
-						'article_id': current_article_id,
-						'rate_num':this.rate_value
-					}
-				}).then((response)=>function () {
-				  var layer_index = vue.$layer.msg(response.data.msg, function() {
-						//关闭当前弹出层
-						vue.$layer.close(layer_index)
-					});
-
+			article_rate:function() {
+        //提交本次评分
+        axios.get('/rate_value_submit', {
+          params: {
+            'article_id': current_article_id,
+            'rate_num': this.rate_value
+          }
         });
-			}
-
+        var layer_index = vue.$layer.msg('操作成功', function () {
+          //关闭当前弹出层
+          vue.$layer.close(layer_index)
+        });
+      }
 		},
 		mounted: function() {
 			//修改显示的文章详情

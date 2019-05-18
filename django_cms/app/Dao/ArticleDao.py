@@ -74,6 +74,8 @@ class ArticleDao(object):
         article_info['title'] = article.title
         article_info['content'] = article.content
         article_info['updated_at'] = article.updated_at
+        article_info['rate_num'] = article.rate_num
+
         if isinstance(article.updated_at, datetime.datetime):
             article_info['updated_at'] = article.updated_at.strftime('%Y-%m-%d %H:%M:%S')
         else:
