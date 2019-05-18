@@ -2,7 +2,7 @@
 <template id="article_main" style="background-color: white;width:60%;overflow-x: hidden;overflow-y: hidden;">
 	<!--文章标题开始--->
 	<div>
-		<div class="title" style="    line-height: 10px;font-size: 22px;">
+		<div class="title" style="line-height: 10px;font-size: 22px;">
 			<h1>{{article_title}}</h1>
 		</div>
 		<!--文章标题结束-->
