@@ -13,8 +13,7 @@
 		</div>
 		<!--文章内容结束--->
 	
-		<!--评论列表开始-->
-		<h4 name="a1" style="   text-align: left; line-height: 20px;font-size: 22px;">评论列表（{{comment_num}}）</h4>
+		<!--评论列表开始-->		
 		  <comments></comments>
 		<!--评论列表结束-->
 		<!----显示评论输入框 -->
@@ -89,12 +88,13 @@ import comments from "@/components/comments"
 						'article_id': current_article_id,
 						'comment': vue.comments
 					}
-				}).then((response) => {
-					debugger
+				}).then((response) => {					
 					var layer_index = vue.$layer.msg(response.data.msg,  function() {
 						//当前文章页面刷新
 						refresh_article(current_article_id)
+						//清空之前评论内容
 						vue.comments= '';
+						//关闭当前弹出层
 						vue.$layer.close(layer_index)
 					});
 				}).catch(function(response) {});
