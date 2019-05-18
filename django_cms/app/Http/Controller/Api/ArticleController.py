@@ -3,7 +3,10 @@ from django_cms.app.Dao.ArticleDao import ArticleDao
 from django_cms.app.Dao.TimeDao import TimeDao
 from django_cms.app.utility.helps import response_json
 from datetime import datetime
-from django_cms.app.utility.helps import get_file_url,get_client_ip
+from django_cms.app.utility.helps import get_file_url,get_client_ip,nums_with_two_point
+from django.db.models import Avg
+
+
 class ArticleController:
     def article_list(request):
         # 获得所有数据
@@ -86,6 +89,7 @@ class ArticleController:
         article.save()
         return response_json(1, [], '操作成功')
 
+
     def rate_value_submit(request):
         article_id = request.GET.get('article_id')
         rate_num = request.GET.get('rate_num')
@@ -95,4 +99,10 @@ class ArticleController:
         rate_modal.ip = get_client_ip(request)
         rate_modal.created_at = TimeDao.get_current_time()
         rate_modal.save()
+        rate_value_modal = ArticleRate.objects.filter(article_id=article_id).aggregate(Avg('rate_value'))
+        article = Article.objects.filter(article_id=article_id).first()
+        if article:
+            article.rate_num = nums_with_two_point(rate_value_modal['rate_value__avg'])
+            article.save()
+
         return response_json(1, [], '操作成功')

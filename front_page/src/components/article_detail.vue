@@ -116,7 +116,13 @@
 						'article_id': current_article_id,
 						'rate_num':this.rate_value
 					}
-				});
+				}).then((response)=>function () {
+				  var layer_index = vue.$layer.msg(response.data.msg, function() {
+						//关闭当前弹出层
+						vue.$layer.close(layer_index)
+					});
+
+        });
 			}
 
 		},

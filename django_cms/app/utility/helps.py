@@ -75,3 +75,6 @@ def get_client_ip(request):
         else:
             ip = '未知用户'
     return ip
+
+def nums_with_two_point(num):
+    return float('%.2f' % num)
