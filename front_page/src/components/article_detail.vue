@@ -87,16 +87,15 @@ import comments from "@/components/comments"
 				axios.get('/comment_update', {
 					params: {
 						'article_id': current_article_id,
-						'comment': this.comments
+						'comment': vue.comments
 					}
 				}).then((response) => {
-					this.$layer.msg(response.data.msg, {
-						offset: 't',
-						anim: 6,
-						time: 2000
-					}, function() {
+					debugger
+					var layer_index = vue.$layer.msg(response.data.msg,  function() {
 						//当前文章页面刷新
 						refresh_article(current_article_id)
+						vue.comments= '';
+						vue.$layer.close(layer_index)
 					});
 				}).catch(function(response) {});
 			},
