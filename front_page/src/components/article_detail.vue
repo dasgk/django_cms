@@ -21,7 +21,7 @@
 			<h4 name="a1" style="    line-height: 20px;font-size: 22px;">讨论这个项目</h4>
 			<el-input v-model="comments" style="width: 90%;margin-left: 5%;display: block;" type="textarea" :rows="5" placeholder="请输入您的高见">
 			</el-input>
-			<el-button type="success" @click="submit_comment()" style="display: block;margin-left:94%;margin-top:2%" icon="el-icon-chat-line-square" plain></el-button>
+			<el-button type="success" @click="submit_comment()" style="display: block;margin-left:92%;margin-top:2%" icon="el-icon-chat-line-square" plain>发表</el-button>
 		</div>
 		<!----显示评论输入框结束 -->
 
