@@ -61,3 +61,17 @@ def get_file_url(request,path):
     if path[0] == '/':
         return "http://"+request.get_host()+path
     return "http://" + request.get_host() + "/" + path
+
+'''
+    获得ip地址
+'''
+def get_client_ip(request):
+    ip = ""
+    if 'HTTP_X_FORWARDED_FOR' in request.META:
+        ip = request.META['HTTP_X_FORWARDED_FOR']
+    else:
+        if 'REMOTE_ADDR' in request.META and len(str(request.META['REMOTE_ADDR'])) > 0:
+            ip = request.META['REMOTE_ADDR']
+        else:
+            ip = '未知用户'
+    return ip

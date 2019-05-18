@@ -47,7 +47,7 @@
 						<i class="el-icon-view"></i>{{article.look_num}}次阅读</a>
 						&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="javascript:void(0)">
-						<i class="el-icon-star-on"></i> {{article.like_num}}人点赞</a>
+						<i class="el-icon-star-on"></i> {{article.rate_num}}人点赞</a>
 		</span>
         <span class="pull-right">
 			<a class="read-more" href="javascript:void(0)" @click="jump(article.article_id)" title="阅读全文">阅读全文	<i

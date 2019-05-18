@@ -1,8 +1,9 @@
-from django_cms.models import Article,ArticleComment,Cate
+from django_cms.models import Article,ArticleComment,Cate,ArticleRate
 from django_cms.app.Dao.ArticleDao import ArticleDao
+from django_cms.app.Dao.TimeDao import TimeDao
 from django_cms.app.utility.helps import response_json
 from datetime import datetime
-from django_cms.app.utility.helps import get_file_url
+from django_cms.app.utility.helps import get_file_url,get_client_ip
 class ArticleController:
     def article_list(request):
         # 获得所有数据
@@ -30,7 +31,7 @@ class ArticleController:
             item['title'] = article.title
             item['content'] = article.content[0:138]
             item['look_num'] = article.look_num
-            item['like_num'] = article.like_num
+            item['rate_num'] = article.rate_num
             item['comment_num'] = article.comment_num
             item['cate_id'] = article.cate_id
             cate = Cate.objects.filter(cate_id=article.cate_id).first()
@@ -83,4 +84,15 @@ class ArticleController:
             return response_json(0,[],'参数有误')
         article.look_num = article.look_num+1
         article.save()
+        return response_json(1, [], '操作成功')
+
+    def rate_value_submit(request):
+        article_id = request.GET.get('article_id')
+        rate_num = request.GET.get('rate_num')
+        rate_modal = ArticleRate()
+        rate_modal.article_id = article_id
+        rate_modal.rate_value = rate_num
+        rate_modal.ip = get_client_ip(request)
+        rate_modal.created_at = TimeDao.get_current_time()
+        rate_modal.save()
         return response_json(1, [], '操作成功')

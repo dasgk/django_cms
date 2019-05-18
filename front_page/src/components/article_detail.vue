@@ -18,7 +18,7 @@
 
 			<h4 name="a1" style="   text-align: left;; line-height: 20px;font-size: 22px;">评分</h4></td>
 
-			<el-rate style="margin-right: 80%;"v-model="value" @change="article_rate()" show-text>
+			<el-rate style="margin-right: 80%;"v-model="rate_value" @change="article_rate()" show-text>
 			</el-rate>
 		</div <!--评分结束-->
 
@@ -82,7 +82,8 @@
 				article_content: "",
 				article_title: "",
 				comment_num: 0,
-				comments: ''
+				comments: '',
+				rate_value:null
 			}
 		},
 		created: function() {
@@ -109,7 +110,13 @@
 				}).catch(function(response) {});
 			},
 			article_rate:function(){
-				alert(1)
+				//提交本次评分
+				axios.get('/rate_value_submit', {
+					params: {
+						'article_id': current_article_id,
+						'rate_num':this.rate_value
+					}
+				});
 			}
 
 		},

@@ -18,7 +18,7 @@ class Article(models.Model):
     title = models.CharField(max_length=200, help_text="文章标题", null=True, default="")
     content = models.TextField(help_text="文章内容", null=True)
     look_num = models.IntegerField(help_text="浏览数量", default=0, null=True)
-    like_num = models.IntegerField(help_text="点赞数量", default=0, null=True)
+    rate_num = models.FloatField(help_text="评分数值", default=0, null=True)
     comment_num = models.IntegerField(help_text="评论数量", default=0, null=True)
     cate_id = models.IntegerField(help_text="文章类别", default=0, null=True)
     status = models.IntegerField(help_text="1 表示草稿 2表示已经发表", default=1, null=True)
@@ -68,4 +68,12 @@ class ArticleComment(models.Model):
     created_at = models.DateTimeField(help_text="创建时间", null=True, default="2019-01-29 12:13:00", blank=True)
     class Meta:
         db_table = "article_comment"
+
+class ArticleRate(models.Model):
+    article_id = models.IntegerField(help_text="文章id", default=0)
+    ip = models.CharField(help_text="评分的IP地址",max_length=200, default="")
+    rate_value = models.FloatField(help_text="本次分值",default=0)
+    created_at = models.DateTimeField(help_text="创建时间", null=True, default="2019-01-29 12:13:00", blank=True)
+    class Meta:
+        db_table = "article_rate"
 

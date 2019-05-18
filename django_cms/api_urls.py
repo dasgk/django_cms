@@ -27,4 +27,5 @@ urlpatterns = [
     url('/label_list', LabelController.label_list, name='api.label.label_list'),
     url('/comment_update', ArticleController.comment_update, name='api.comment.comment_update'),
     url('/article_look_num_incr', ArticleController.article_look_num_incr, name='api.article.article_look_num_incr'),
+    url('/rate_value_submit', ArticleController.rate_value_submit, name='api.article.rate_value_submit'),
 ]
