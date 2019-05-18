@@ -79,7 +79,7 @@ class ArticleDao(object):
         else:
             article_info['updated_at'] = article.updated_at
         article_info['comments'] = []
-        comments = ArticleComment.objects.filter(article_id=article_id).filter(status=1)
+        comments = ArticleComment.objects.filter(article_id=article_id).filter(status=0)
         for comment in comments:
             item = {}
             item['content'] = comment.comment

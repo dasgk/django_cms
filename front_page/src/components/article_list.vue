@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-card class="box-card" v-for="article in article_list">
+    <el-card class="box-card" v-for="(article,index) in article_list" :key="index">
       <div class="article_list_img">
         <img :src="article.cate_url"/>
       </div>
@@ -65,6 +65,9 @@
   import "@/css/article_list.css"
   import axios from 'axios'
   import "@/request/request.js"
+
+
+
 
   var vue;
   export default ({
@@ -135,6 +138,5 @@
     mounted: function () {
 
     }
-
   })
 </script>

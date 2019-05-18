@@ -52,6 +52,9 @@ class ArticleController:
         article_info = ArticleDao.getArticleDetail(article_id)
         return response_json(1, article_info)
 
+    '''
+        发表文章评论
+    '''
     def comment_update(request):
         param = request.GET
         article_id = param.get('article_id', 0)
@@ -70,7 +73,7 @@ class ArticleController:
         article_comment.remote_addr = ip
         article_comment.locate_area = "中国"
         article_comment.save()
-        return response_json(1,[])
+        return response_json(1,[],'发表成功')
 
     def article_look_num_incr(request):
         param = request.GET
