@@ -12,9 +12,18 @@
 			<textarea v-model="article_content"></textarea>
 		</div>
 		<!--文章内容结束--->
-	
-		<!--评论列表开始-->		
-		  <comments></comments>
+
+		<!--评分开始-->
+		<div class="block" style="line-height:22px">
+
+			<h4 name="a1" style="   text-align: left;; line-height: 20px;font-size: 22px;">评分</h4></td>
+
+			<el-rate style="margin-right: 80%;"v-model="value" @change="article_rate()" show-text>
+			</el-rate>
+		</div <!--评分结束-->
+
+		<!--评论列表开始-->
+		<comments></comments>
 		<!--评论列表结束-->
 		<!----显示评论输入框 -->
 		<div style="text-align: left;">
@@ -34,7 +43,7 @@
 	import "@/js/editor.md-master/lib/marked.min.js";
 	import "@/js/editor.md-master/lib/prettify.min.js";
 	import axios from 'axios'
-import comments from "@/components/comments"
+	import comments from "@/components/comments"
 	var current_article_id = 0;
 	var vue = null;
 
@@ -48,7 +57,7 @@ import comments from "@/components/comments"
 			vue.article_title = response.data.data.title
 			vue.comment_num = response.data.data.comment_num
 			//修改评论列表
-			vue.$root.databus.$emit('comment_list',  response.data.data.comments);
+			vue.$root.databus.$emit('comment_list', response.data.data.comments);
 			vue.$nextTick(function() {
 				// 等待数据更新同步到DOM之后进行渲染
 				editormd.markdownToHTML("test-editormd", {
@@ -88,17 +97,20 @@ import comments from "@/components/comments"
 						'article_id': current_article_id,
 						'comment': vue.comments
 					}
-				}).then((response) => {					
-					var layer_index = vue.$layer.msg(response.data.msg,  function() {
+				}).then((response) => {
+					var layer_index = vue.$layer.msg(response.data.msg, function() {
 						//当前文章页面刷新
 						refresh_article(current_article_id)
 						//清空之前评论内容
-						vue.comments= '';
+						vue.comments = '';
 						//关闭当前弹出层
 						vue.$layer.close(layer_index)
 					});
 				}).catch(function(response) {});
 			},
+			article_rate:function(){
+				alert(1)
+			}
 
 		},
 		mounted: function() {
@@ -115,8 +127,8 @@ import comments from "@/components/comments"
 				refresh_article(current_article_id)
 			})
 		},
-		  components:{
-    	comments:comments
-    }
+		components: {
+			comments: comments
+		}
 	}
 </script>
