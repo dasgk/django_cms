@@ -12,7 +12,7 @@ class CateController:
             item['title'] = cate.title
             item['cate_img_url'] = get_file_url(request,cate.picture)
             item['article_count'] = Article.objects.filter(cate_id=cate.cate_id).count()
-            look_modal = Article.objects.filter(cate_id=cate.cate_id).aggregate(Sum('look_num'))
-            item['look_num'] =look_modal['look_num__sum']
+            item['look_num'] = Article.objects.filter(cate_id=cate.cate_id).aggregate(Sum('look_num')).get('look_num__sum')
+
             res.append(item)
         return response_json(1,res)
