@@ -14,6 +14,27 @@
 			</el-card>
 		</div>
 		<!--  站內搜索结束  -->
+		
+		
+    	<!--  文章分类  -->
+		<div>
+			<el-card id="label_all_in_site" class="box-card" style="margin-top: 20%;margin-left: 9%;width:84%; text-align: center;">
+				<div slot="header" class="clearfix">
+					<span style="text-align:center">个人分类</span>
+				</div>
+				<div style=" width:87%;line-height: 50x;;" class="tag_clouds"  v-for="cate in cate_list">
+					<el-row>
+  						<el-col style="height: 50px;" :span="24">
+  							<div class="grid-content" style="float: left;"><img :src="cate.cate_img_url" style="width:50px;height:50px"/></div>
+  							<div style="float: left; margin-top: 23px;;"class="grid-content">{{cate.title}}</div>
+  							
+  						<div style="float: right;margin-top: 25px;color: gray; font-size: 13PX;"class="grid-content">{{cate.article_count}}篇,访问量{{cate.look_num}}</div></el-col>
+					</el-row>					
+        		</div>
+			</el-card>
+		</div>
+		<!-- 文章分类 -->
+		
 
 		<!--  站內搜索开始  -->
 		<div>
@@ -22,52 +43,36 @@
 					<span style="text-align:center">标签聚合</span>
 				</div>
 				<div style=" width:87%;" class="tag_clouds"  v-for="label in label_list">
-					<a href="https://www.baidu.com" class="tag-cloud-link tag-link-48 tag-link-position-1" style="text-decoration:none;font-size: 14px;">{{label.title}}</a>
+				<a href="https://www.baidu.com" class="tag-cloud-link tag-link-48 tag-link-position-1" style="text-decoration:none;font-size: 14px;">{{label.title}}</a>
         </div>
 			</el-card>
 		</div>
 		<!--  站內搜索结束  -->
 
 
-    <!--  文章归档  -->
-		<div>
-			<el-card id="article_zips" class="box-card" style="margin-top: 20%;height:100%;margin-left: 9%;width:84%; text-align: center;padding: 0px;">
-      <ele-calendar
-                  :render-content="renderContent"
-                  :data="datedef"
-                  :prop="prop"
-            ></ele-calendar>
-			</el-card>
-		</div>
-		<!--  文章归档  -->
-
 	</div>
 </template>
 
 <script type="text/ecmascript-6">
 	// 引入外部整理好的css文件
-	import "@/css/html_aside.css"
-    import eleCalendar from 'ele-calendar'
-    import 'ele-calendar/dist/vue-calendar.css'
+	import "@/css/html_aside.css"    
     import axios from 'axios'
 	export default {
 		name: 'html_aside',
 		data() {
-			return{
-                datedef:[
-                    {"date":"2018-06-30","content":null,"cid":null},
-                    {"date":"2018-06-26","content":null,"cid":null},
-                ],
-                prop:'date',//对应日期字段名
-                label_list:[]
+			return{                
+                label_list:[],
+                cate_list:[]
             }
-		},
-     components: {
-            eleCalendar
-        },
+		},     
         created:function(){
-        axios.get('/label_list').then((response) => {
-					this.label_list = response.data.data
+        	axios.get('/label_list').then((response) => {
+				this.label_list = response.data.data
+				}).catch(function(response) {
+					console.log(response); //发生错误时执行的代码
+				});
+			axios.get('/cate_list').then((response) => {
+					this.cate_list = response.data.data
 
 				}).catch(function(response) {
 					console.log(response); //发生错误时执行的代码
