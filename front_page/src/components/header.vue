@@ -30,7 +30,7 @@
     },
     methods: {
       jump_index: function () {
-        this.$root.databus.$emit('article_reset', 1)
+        this.$root.databus.$emit('article_list', {})
       },
       querySearch(queryString, cb) {
         var restaurants = this.restaurants;

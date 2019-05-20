@@ -24,11 +24,13 @@
 				</div>
 				<div style=" width:87%;line-height: 50x;;" class="tag_clouds"  v-for="cate in cate_list">
 					<el-row>
-  						<el-col style="height: 50px;" :span="24">
-  							<div class="grid-content" style="float: left;"><img :src="cate.cate_img_url" style="width:50px;height:50px"/></div>
-  							<div style="float: left; margin-top: 23px;;"class="grid-content">{{cate.title}}</div>
+  						<el-col style="height: 50px;" :span="24" @click="article_list_by_cate(cate.cate_id)">
+  							<div class="grid-content"  style="float: left;">
+  								<img :src="cate.cate_img_url" style="width:50px;height:50px"/>
+  							</div>
+  							<div @click="article_list_by_cate(cate.cate_id)" style="cursor:pointer;margin-left: 5px;float: left; margin-top: 23px;;"class="grid-content">{{cate.title}}</div>
   							
-  						<div style="float: right;margin-top: 25px;color: gray; font-size: 13PX;"class="grid-content">{{cate.article_count}}篇,访问量{{cate.look_num}}</div></el-col>
+  						<div style="float: right;margin-top: 25px;color: gray; font-size: 13PX;"class="grid-content">文章{{cate.article_count}}篇,访问量{{cate.look_num}}</div></el-col>
 					</el-row>					
         		</div>
 			</el-card>
@@ -43,7 +45,7 @@
 					<span style="text-align:center">标签聚合</span>
 				</div>
 				<div style=" width:87%;" class="tag_clouds"  v-for="label in label_list">
-				<a href="https://www.baidu.com" class="tag-cloud-link tag-link-48 tag-link-position-1" style="text-decoration:none;font-size: 14px;">{{label.title}}</a>
+				<a href="javascript:void(0)" @click="article_list_by_label(label.label_id)" class="tag-cloud-link tag-link-48 tag-link-position-1" style="text-decoration:none;font-size: 14px;">{{label.title}}</a>
         </div>
 			</el-card>
 		</div>
@@ -54,7 +56,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-	// 引入外部整理好的css文件
+	// 引入外部整理好的css文件	
 	import "@/css/html_aside.css"    
     import axios from 'axios'
 	export default {
@@ -88,11 +90,17 @@
               )
            }
            return (
-            <div  style="min-height:60px;">
-             {loop(parmas)}
-            </div>
-            );
-             },
+            		<div  style="min-height:60px;">
+             			{loop(parmas)}
+            		</div>
+            		);
+           },
+           article_list_by_cate:function(cate_id){
+           		this.$root.databus.$emit('article_list', {'cate_id':cate_id})
+           },
+           article_list_by_label:function(label_id){           	
+           		this.$root.databus.$emit('article_list', {'label_id':label_id})
+           },
     },
 	}
 </script>
