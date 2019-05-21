@@ -52,7 +52,6 @@
             <div class="tagsinput-primary form-group" style="color:white;background-color:#1c232f;">
                 <input name="tagsinput" id="tagsinputval" class="tagsinput" data-role="tagsinput" value="{{labels}}"
                        placeholder="输入后回车"/>
-                <!--   <button class="btn" onClick="getinput()">获取输入的值</button>-->
             </div>
         </div>
     </div>
@@ -60,7 +59,6 @@
     <div class="form-group">
         <div class="col-sm-4 col-sm-offset-4">
             <input type="submit" value="发布博客" class="button button-pill button-primary">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              <button  class="button button-glow button-border button-rounded info">保存草稿</button>
         </div>
     </div>
@@ -74,11 +72,13 @@
 
 <script src="{% static 'js/jquery.min.js' %}"></script>
 <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'editor.md-master/editormd.min.js' %}"></script>
+<script src="{% static 'editor.md-master/editormd.js' %}"></script>
 <script src="{% static 'js/tagsinput.js' %}"></script>
 <script src="{% static 'layer/layer.js' %}"></script>
 <script src="{% static 'js/public.js' %}"></script>
 <script type="text/javascript">
+            var csrfToken = $("[name='csrfmiddlewaretoken']").val();
+
 			var testEditor;
             $(function() {
                 testEditor = editormd("test-editormd", {
@@ -89,13 +89,14 @@
                     height  : 640,
                     placeholder: '请写下您的点滴记录...',
                     syncScrolling : "single",
-                    path    : "{% static 'editor.md-master/lib/' %}"
+                    path    : "{% static 'editor.md-master/lib/' %}",
+                    imageUpload : true,
+                    imageFormats : ["jpg", "jpeg", "gif", "png", "bmp"],
+                    imageUploadURL : "{% url 'admin.file_upload_for_editormd' %}",
+                    crsf_token:csrfToken
                 });
+                testEditor.csrfToken = csrfToken;
             });
-function getinput(){
-	console.log($('#tagsinputval').val());
-}
-
 
 </script>
 </body>

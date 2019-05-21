@@ -41,5 +41,8 @@ urlpatterns = [
     url('/label_list', LabelController.index, name='admin.label.index'),
     # ????
     url('/show_file_upload', FileController.show_file_upload, name='admin.show_file_upload'),
+    url('/file_upload_for_editormd', FileController.file_upload_for_editormd, name='admin.file_upload_for_editormd'),
     url('/file_upload', FileController.file_upload, name='admin.file_upload'),
+
+
 ]

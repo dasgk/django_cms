@@ -13,6 +13,7 @@
 
     var factory = function (exports) {
 
+
 		var pluginName   = "image-dialog";
 
 		exports.fn.imageDialog = function() {
@@ -22,6 +23,7 @@
             var lang        = this.lang;
             var editor      = this.editor;
             var settings    = this.settings;
+
             var cursor      = cm.getCursor();
             var selection   = cm.getSelection();
             var imageLang   = lang.dialog.image;
@@ -46,12 +48,14 @@
                     action += "&callback=" + settings.uploadCallbackURL + "&dialog_id=editormd-image-dialog-" + guid;
                 }
 
-                var dialogContent = ( (settings.imageUpload) ? "<form action=\"" + action +"\" target=\"" + iframeName + "\" method=\"post\" enctype=\"multipart/form-data\" class=\"" + classPrefix + "form\">" : "<div class=\"" + classPrefix + "form\">" ) +
+                var dialogContent = ( (settings.imageUpload) ? "<form action=\"" + action +"\" target=\"" + iframeName + "\" method=\"POST\" enctype=\"multipart/form-data\" class=\"" + classPrefix + "form\">" : "<div class=\"" + classPrefix + "form\">" ) +
                                         ( (settings.imageUpload) ? "<iframe name=\"" + iframeName + "\" id=\"" + iframeName + "\" guid=\"" + guid + "\"></iframe>" : "" ) +
                                         "<label>" + imageLang.url + "</label>" +
+
                                         "<input type=\"text\" data-url />" + (function(){
                                             return (settings.imageUpload) ? "<div class=\"" + classPrefix + "file-input\">" +
                                                                                 "<input type=\"file\" name=\"" + classPrefix + "image-file\" accept=\"image/*\" />" +
+                                                                                "<input type='hidden' name='csrfmiddlewaretoken' value='"+this.csrfToken+"'/>"+
                                                                                 "<input type=\"submit\" value=\"" + imageLang.uploadButton + "\" />" +
                                                                             "</div>" : "";
                                         })() +
