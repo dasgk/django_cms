@@ -7,8 +7,8 @@
 					<span style="text-align:center">站内搜索</span>
 				</div>
 				<div style=" width:60%; margin-top: -3%;margin-right: auto;margin-bottom: 0px;margin-left: auto;">
-					<el-input class="inline-input" id='input_search_in_site' placeholder="请输入内容">
-						<i slot="suffix" class="el-input__icon el-icon-search"></i>
+					<el-input popper-class="my-autocomplete" v-model="state" placeholder="请输入内容" >
+  						<i class="el-icon-edit el-input__icon" slot="suffix" @click="handleIconClick">  </i> 
 					</el-input>
 				</div>
 			</el-card>
@@ -64,7 +64,8 @@
 		data() {
 			return{                
                 label_list:[],
-                cate_list:[]
+                cate_list:[],
+                state:''
             }
 		},     
         created:function(){
@@ -81,6 +82,10 @@
 				});
         },
 		methods: {
+			handleIconClick:function(){
+				this.$root.databus.$emit('breadcrumb_list', ['首页',"'"+this.state+"'相关文章"]);
+           		this.$root.databus.$emit('article_list', {'title':this.state})
+			},
 		  renderContent(h,parmas) {
             const loop = data =>{
               return (
@@ -94,6 +99,9 @@
              			{loop(parmas)}
             		</div>
             		);
+           },
+           search:function(){
+           		console.log(1111);
            },
            article_list_by_cate:function(cate_id,title){
            	this.$root.databus.$emit('breadcrumb_list', ['首页',"'"+title+"'相关文章"]);
