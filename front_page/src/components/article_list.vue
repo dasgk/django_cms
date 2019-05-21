@@ -9,7 +9,7 @@
         <div class="article_title">
 
           <!--   这是文章所属分类 -->
-          <a class="label" href="javascript:void(0)" @click="get_article_list_by_cate_id(article.cate_id)"> <span>{{article.cate_title}}</span>
+          <a class="label" href="javascript:void(0)" @click="get_article_list_by_cate_id(article.cate_id,article.cate_title)"> <span>{{article.cate_title}}</span>
             <i class="label-arrow"></i></a>
           <!--   这是文章所属分类 结束-->
 
@@ -92,13 +92,16 @@
         });      	
       },
       //获得特定类别的文章列表
-      get_article_list_by_cate_id: function (cate_id) {
+      get_article_list_by_cate_id: function (cate_id,title) {
         //获得特定类别的文章列表
+        this.$root.databus.$emit('breadcrumb_list', ['首页',"'"+title+"'相关文章"]);
         vue.refresh_article_list({'cate_id':cate_id})
       },
       //获得特定日期发表的文章列表
       get_article_list_by_post_date: function (time) {
+      	
         var post_date = time.substr(0, 10)
+        this.$root.databus.$emit('breadcrumb_list', ['首页',post_date+"  发表的文章"]);
         //获得特定类别的文章列表
         vue.refresh_article_list({ 'post_date': post_date})        
       }

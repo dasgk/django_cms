@@ -57,6 +57,8 @@
 			vue.article_title = response.data.data.title
 			vue.comment_num = response.data.data.comment_num
 			vue.rate_value = response.data.data.rate_num
+			//修改面包屑
+			vue.$root.databus.$emit('breadcrumb_list', ['首页',"文章详情"]);
 
 			//修改评论列表
 			vue.$root.databus.$emit('comment_list', response.data.data.comments);

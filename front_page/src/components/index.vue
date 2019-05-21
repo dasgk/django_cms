@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-header style="height:63px;background-color: white;">
+    <el-header style="height:88px;background-color: white;">
       <!-- 页面头部 -->
 
       <html_header></html_header>
