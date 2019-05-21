@@ -1,6 +1,13 @@
 /**
  * Created by Administrator on 2017/10/16.
  */
+ // url显示上传文件html页面的url
+ // title 显示页面的标题
+ // uploaded_type 上传的type_key
+ //id 显示文件的div
+ //type  2
+ // post_name 表示的是
+ // name_type 表示的是
 function upload_resource(url,title,uploaded_type,id,type,post_name,name_type){
     if(post_name==null||post_name==''){
         post_name=id;
@@ -22,7 +29,7 @@ function upload_resource(url,title,uploaded_type,id,type,post_name,name_type){
         move: false,
         resize: false,
         zIndex: 100000,
-        content: url+"?post_name="+post_name
+        content: url+"?uploaded_type="+uploaded_type
     });
 }
 

@@ -24,7 +24,7 @@
                 <div id="dndArea" class="placeholder">
                     <div id="filePicker"></div>
                     <p style="word-wrap: break-word;word-break: break-all;
-overflow: hidden;">本次最多上传1个文件，且每个文件大小在5M以内，文件格式为png</p>
+overflow: hidden;">本次最多上传{{allow_num}}个文件，且每个文件大小在{{allow_size_m}}M以内，文件格式为{{allow_type}}</p>
                 </div>
             </div>
             <div class="statusBar" style="display:none;">
@@ -46,6 +46,7 @@ overflow: hidden;">本次最多上传1个文件，且每个文件大小在5M以�
 		<script src="{% static 'js/jquery.min.js' %}"></script>
 <script>
         var html_info='';
+          var extensions='{{allow_type}}';
         /*
         * 整体上传成功
         * file_id    文件id
@@ -105,12 +106,13 @@ overflow: hidden;">本次最多上传1个文件，且每个文件大小在5M以�
 <script src="{% static 'layer/layer.js' %}"></script>
 <script>
         var _token='{% csrf_token %}';
-        var extensions='png';
-        var mimeTypes='image/png';
+        var extensions='{{allow_type}}';
+        var mimeTypes='{{mimeArray}}';
+        var type_key='{{type_key}}';
 
         var item_id=0;
-        var fileNumLimit=1;
-        var fileSingleSizeLimit=1024*5*1024;
+        var fileNumLimit={{allow_num}};
+        var fileSingleSizeLimit={{allow_size}};
         (function ($) {
             // 当domReady的时候开始初始化
             $(function () {
@@ -215,7 +217,7 @@ overflow: hidden;">本次最多上传1个文件，且每个文件大小在5M以�
                     formData: {
                         'ajax': 1,
                         'csrfmiddlewaretoken': '{{ csrf_token }}'  ,
-                        'type_key': '',
+                        'type_key': type_key,
                         'item_id': item_id
                     },
                     dnd: '#dndArea',
@@ -590,8 +592,8 @@ overflow: hidden;">本次最多上传1个文件，且每个文件大小在5M以�
 
                 var errorMsg = [];
                 errorMsg['Q_TYPE_DENIED'] = '文件类型错误，请重新选择';
-                errorMsg['F_EXCEED_SIZE'] = '只能上传5M以内的文件';
-                errorMsg['Q_EXCEED_NUM_LIMIT'] = '最多只能上传1个文件';
+                errorMsg['F_EXCEED_SIZE'] = '只能上传{{allow_size_m}}M以内的文件';
+                errorMsg['Q_EXCEED_NUM_LIMIT'] = '最多只能上传{{allow_num}}个文件';
                 errorMsg['F_DUPLICATE']='已添加相同的文件';
                 uploader.onError = function (code) {
                     layer.alert(errorMsg[code]);
