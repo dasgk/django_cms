@@ -6,7 +6,7 @@
 			</el-col>
 
 			<el-col :span="2.3" style="margin-left: -9%;margin-top: -0.3%;color:#FC326F;font-family:KaiTi">
-				<a href="javascript:void(0)" @click="jump_index()" style="color:#FC326F;">
+				<a href="javascript:void(0)" @click="jump_index('首页')" style="color:#FC326F;">
 					<h1>一个被动向前码农的自述</h1></a>
 			</el-col>
 			<el-col :span="2.3" style="margin-left: 10%;margin-top: 1%;color:rgb(50, 112, 252);;font-family:KaiTi">
@@ -15,8 +15,9 @@
 		</el-row>
 		<el-row>
 
-			<el-breadcrumb separator="/" style="margin-left: 10.2%;">				
-				<el-breadcrumb-item v-for="breadcrumb in breadcrumb_list" >{{breadcrumb}}</el-breadcrumb-item>				
+			<el-breadcrumb separator="/" style="margin-left: 10.2%;">
+        <el-breadcrumb-item  v-for="breadcrumb in breadcrumb_list" >
+          <a href="javascript:void(0)" @click="jump_index(breadcrumb)">{{breadcrumb}}</a></el-breadcrumb-item>
 			</el-breadcrumb>
 		</el-row>
 
@@ -41,9 +42,12 @@
 			vue = this		
 		},
 		methods: {
-			jump_index: function() {
-				this.$root.databus.$emit('breadcrumb_list', ['首页']);
-				this.$root.databus.$emit('article_list', {})
+			jump_index: function(text) {
+			  if(text == "首页"){
+				  this.$root.databus.$emit('breadcrumb_list', ['首页']);
+				  this.$root.databus.$emit('article_list', {})
+        }
+
 			},
 			querySearch(queryString, cb) {
 				var restaurants = this.restaurants;
