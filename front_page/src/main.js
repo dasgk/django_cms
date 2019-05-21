@@ -7,6 +7,8 @@ import ArticleDetail from './components/article_detail'
 import VueRouter from 'vue-router'
 import layer from 'vue-layer'
 import databus from "@/datacenterbus.js"
+import VueScroller from 'vue-scroller'
+
 //使用layer
 
 const routes = [
@@ -19,6 +21,7 @@ var router = new VueRouter({
   routes // （缩写）相当于 routes: routes
 })
 Vue.use(ElementUI);
+Vue.use(VueScroller);
 Vue.use(VueRouter)
 Vue.use(layer)
 Vue.prototype.$layer = layer(Vue);
