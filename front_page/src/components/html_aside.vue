@@ -8,7 +8,7 @@
 				</div>
 				<div style=" width:60%; margin-top: -3%;margin-right: auto;margin-bottom: 0px;margin-left: auto;">
 					<el-input popper-class="my-autocomplete" v-model="state" placeholder="请输入内容" >
-  						<i class="el-icon-edit el-input__icon" slot="suffix" @click="handleIconClick">  </i> 
+  						<i class="el-icon-search el-input__icon" slot="suffix" @click="handleIconClick">  </i> 
 					</el-input>
 				</div>
 			</el-card>
