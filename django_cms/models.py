@@ -77,3 +77,16 @@ class ArticleRate(models.Model):
     class Meta:
         db_table = "article_rate"
 
+
+class UploadFile(models.Model):
+    type_id = models.IntegerField(help_text="类型ID", default=0)
+    type_key = models.CharField(help_text="类型的key", max_length=200, default="")
+    path = models.CharField(help_text="存储路径", default='',max_length=200)
+    desc = models.CharField(max_length=200,help_text="类型描述", null=True, default="", blank=True)
+    allow_type = models.CharField(help_text="允许的文件后缀名",max_length=200,null=True);
+    allow_size = models.IntegerField(help_text="允许文件的大小", null=True);
+    allow_num = models.IntegerField(help_text="允许文件的数量", null=True);
+
+    class Meta:
+        db_table = "uploadfile_type"
+
