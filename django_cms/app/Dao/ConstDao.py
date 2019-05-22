@@ -1,7 +1,7 @@
 class ConstDao(object):
     @staticmethod
     def getPageNum():
-        return 15
+        return 1
 
     @staticmethod
     def maxPageCount():
