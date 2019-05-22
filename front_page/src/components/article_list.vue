@@ -86,9 +86,9 @@
         article_list_param:{},
         page : 1,
         more_articles:[], 
-        page_size:1, //每页的数量
+        page_size:15, //每页的数量
         pager_count:5, //显示的页码的数量
-        total:1000
+        total:0
       }
     },
     methods: {
