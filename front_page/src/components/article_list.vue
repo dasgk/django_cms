@@ -1,8 +1,6 @@
 <template>
   <div>
-    <scroller style="position:inherit" :on-infinite="infinite"
-            :on-refresh="refresh"
-　　         ref="my_scroller">
+    
     <el-card  class="box-card" v-for="(article,index) in article_list" :key="index">
       <div class="article_list_img">
         <img :src="article.cate_url"/>
@@ -61,7 +59,15 @@
       </div>
       <!---  文章元數據信息  結束--->
     </el-card>
-</scroller>
+<el-pagination
+  :page-size="page_size"
+  :pager-count="pager_count"
+  layout="prev, pager, next"
+  :total="total"
+  style="margin-top: 50px;"
+  @current-change="page_size_change"
+  >
+</el-pagination>
   </div>
 </template>
 <script type="text/ecmascript-6">
@@ -77,9 +83,12 @@
       return {
         article_list: [],
         noData:"",
-        article_param:[],
+        article_param:{},
         page : 1,
-        more_articles:[]
+        more_articles:[], 
+        page_size:1, //每页的数量
+        pager_count:5, //显示的页码的数量
+        total:1000
       }
     },
     methods: {
@@ -87,36 +96,33 @@
         //设置当前显示的文章ID，隐藏列表
         this.$root.databus.$emit('current_article_id', article_id);
       },
+      page_size_change:function(page_num){      	
+      	var param = this.article_param
+      	param['page'] = page_num
+      	this.get_new_article_list(param)
+      },
       //根据传递的参数，进行文章列表的更新
-      get_new_article_list: function(param){
+      get_new_article_list: function(param){      	
       	this.article_list_param = param 
 				axios.get('/article_list', {
           params: param
         }).then((response) => {
-          this.article_list = response.data.data
+          this.article_list = response.data.data.article_info 
+          this.page_size = response.data.data.page_size
+          this.total = response.data.data.total
+          
 
         }).catch(function (response) {
           console.log(response); //发生错误时执行的代码
         });      	
       },
-      //上拉加载更多文章
-      get_more_articles: function(param){
-      	param = this.article_list_param 
-      	param['page'] = this.page+1
-				axios.get('/article_list', {
-          params: param
-        }).then((response) => {
-          this.more_articles = response.data.data
-
-        }).catch(function (response) {
-          console.log(response); //发生错误时执行的代码
-        });      	
-      },
+     
       //获得特定类别的文章列表
       get_article_list_by_cate_id: function (cate_id,title) {
         //获得特定类别的文章列表
         this.$root.databus.$emit('breadcrumb_list', ['首页',"'"+title+"'相关文章"]);
         vue.get_new_article_list({'cate_id':cate_id})
+        
       },
       //获得特定日期发表的文章列表
       get_article_list_by_post_date: function (time) {      	
@@ -125,54 +131,19 @@
         //获得特定类别的文章列表
         vue.get_new_article_list({ 'post_date': post_date})        
       },
+      
 
-
-      infinite(done) {   //上拉加载
-      	
-　　　　　if(this.noData) {
-　　　　　　	setTimeout(()=>{
-　　　　　　	this.$refs.my_scroller.finishInfinite(2);
-　　　　　　	})
-　　　　　		return;
-　　　　　}
-				let param = vue.article_list_param;
-　　　　　setTimeout(() => {
-						param['page'] = vue.page+1;
-      	 		vue.page = param['page'];
-						axios.get('/article_list', {
-          		params: param
-        			}).then((response) => {
-        			debugger
-          			vue.more_articles = response.data.data
-          　					for(var k=0;k<vue.more_articles.length;k++){
-                	    vue.article_list.push(vue.more_articles[k])
-　　　　　　　　　　}　　　　　　　　　　
-　　　　　　　　　 if(vue.more_articles.length <= 0) {
-　　　　　　　　　　　　vue.noData = "没有更多数据"
-　　　　　　　　　　}
-        		}).catch(function (response) {
-          			console.log(response); //发生错误时执行的代码
-          	});
-          	
-				}, 1500)
-				done()
-　　　　},
-			 refresh:function(){         //下拉刷新
-　　　　		console.log('refresh')
-　　　　　　this.timeout = setTimeout(()=>{
-　　　　　　　this.$refs.my_scroller.finishPullToRefresh()
-　　　　　　	}, 1500)
-　　　　　　}
     },
     
     created: function () {
       vue = this
+      //初始化显示文章列表      
       vue.get_new_article_list({});
-        this.$root.databus.$on('article_list', function (newval) {
-          vue.get_new_article_list(newval)        
-          //显示文章列表
-          vue.$root.databus.$emit('article_list_show', 1)
-          vue.$root.databus.$emit('article_detail_show', 0)
+      this.$root.databus.$on('article_list', function (newval) {
+      vue.get_new_article_list(newval)        
+      //显示文章列表
+      vue.$root.databus.$emit('article_list_show', 1)
+      vue.$root.databus.$emit('article_detail_show', 0)
       });
     },
     mounted: function () {

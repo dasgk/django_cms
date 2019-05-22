@@ -5,7 +5,7 @@ from django_cms.app.utility.helps import response_json
 from datetime import datetime
 from django_cms.app.utility.helps import get_file_url,get_client_ip,nums_with_two_point
 from django.db.models import Avg
-
+from django_cms.app.Dao.ConstDao import ConstDao
 
 class ArticleController:
     def article_list(request):
@@ -26,8 +26,13 @@ class ArticleController:
             filter_dict['updated_at__lte'] = post_date + " 23:59:59"
 
         article_list = ArticleDao.getArticleList(filter_dict, param.get('page',1), label_id=label_id)
+        res = {}
+        res['total'] = article_list[1]
         article_list = article_list[0]
-        res = []
+        article_info = []
+
+        res['page_size'] =  ConstDao.getPageNum()
+
         for article in article_list:
             item = {}
             item['article_id'] = article.article_id
@@ -48,7 +53,9 @@ class ArticleController:
                 item['updated_at'] = article.updated_at.strftime('%Y-%m-%d %H:%M:%S')
             else:
                 item['updated_at'] = article.updated_at
-            res.append(item)
+                article_info.append(item)
+        res['article_info'] = article_info
+
         return response_json(1,res)
 
     def article_detail(request):
