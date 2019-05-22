@@ -83,7 +83,7 @@
       return {
         article_list: [],
         noData:"",
-        article_param:{},
+        article_list_param:{},
         page : 1,
         more_articles:[], 
         page_size:1, //每页的数量
@@ -97,7 +97,7 @@
         this.$root.databus.$emit('current_article_id', article_id);
       },
       page_size_change:function(page_num){      	
-      	var param = this.article_param
+      	var param = this.article_list_param
       	param['page'] = page_num
       	this.get_new_article_list(param)
       },
