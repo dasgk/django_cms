@@ -44,3 +44,35 @@ for row_index in data.index:
 print("处理之前的个数"+str(row_count)+'异常值个数'+str(except_count))
 #进行数据处理，将finish_time修改为day为单位
 data['finish_time'] = data['finish_time'].map(lambda x: x[0:10])
+#进行数据分离，去掉所有rent_museum_id不是5的数据集,只看牛首山博物馆的
+data = data[data['rent_museum_id']==5]
+#只看已完成的订单
+data = data[data['order_status']==5]
+# 每天的订单数量进行构建新的dataframe
+data_group =data.groupby(by='finish_time')
+order_statics = {'date':[],'count':[]}
+for i,j in data_group:
+    order_statics['date'].append(i)
+    order_statics['count'].append(len(j))
+order_statics_pd = pd.DataFrame.from_dict(order_statics)
+order_count_max = order_statics_pd.describe()['count']['max']
+order_count_min = order_statics_pd.describe()['count']['min']
+range = order_count_max - order_count_min
+group_num = 7 #一共分七组
+dif_value = range/group_num
+x_data = np.arange(order_count_min,order_count_max,dif_value)
+# 将元素类型修改为int
+x_data = x_data.astype(int)
+# 构成新的分布数组，key 是最小到最大订单数量，value是落在区间内的天数
+[rows, cols] = x_data.shape
+for i in range(rows):
+    for j in range(cols):
+        print(x_data[i, j])
+
+spread_pd = {'value_range':[],'day_count':[]}
+print(order_statics_pd)
+#for row_index in order_statics_pd.index:
+
+
+
+
