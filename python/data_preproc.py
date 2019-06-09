@@ -1,5 +1,7 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import numpy as np
+
 '''
     进行数据探索，检测异常值
 '''
@@ -59,20 +61,29 @@ order_count_max = order_statics_pd.describe()['count']['max']
 order_count_min = order_statics_pd.describe()['count']['min']
 range = order_count_max - order_count_min
 group_num = 7 #一共分七组
-dif_value = range/group_num
-x_data = np.arange(order_count_min,order_count_max,dif_value)
-# 将元素类型修改为int
-x_data = x_data.astype(int)
+dif_value = range/group_num #每组的长度
+x_data = np.arange(order_count_min,order_count_max+2*dif_value,dif_value, int)
 # 构成新的分布数组，key 是最小到最大订单数量，value是落在区间内的天数
-[rows, cols] = x_data.shape
-for i in range(rows):
-    for j in range(cols):
-        print(x_data[i, j])
-
-spread_pd = {'value_range':[],'day_count':[]}
-print(order_statics_pd)
-#for row_index in order_statics_pd.index:
-
-
+spread_data = {}
+for little_index in np.arange(0, x_data.size, 1):
+    for row_index in order_statics_pd.index:
+        if (order_statics_pd.loc[row_index][1] >= x_data[little_index]) and (order_statics_pd.loc[row_index][1] < x_data[little_index+1]):
+            if str(x_data[little_index]) not in spread_data.keys():
+                spread_data[str(x_data[little_index])] = 1
+            else:
+                spread_data[str(x_data[little_index])] = spread_data[str(x_data[little_index])]+1
 
 
+result_spread_data = {'limit_orders':[],'day_count':[]}
+for order_item in spread_data.keys():
+    result_spread_data['limit_orders'].append(int(order_item))
+    result_spread_data['day_count'].append(spread_data[order_item])
+width=10
+print(result_spread_data)
+plt.bar(result_spread_data['limit_orders'], result_spread_data['day_count'],width=width)
+plt.show()
+'''
+plt.hist(result_spread_data['day_count'], bins=result_spread_data['limit_orders'])
+plt.title("histogram")
+plt.show()
+'''
