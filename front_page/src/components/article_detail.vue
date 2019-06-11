@@ -39,7 +39,7 @@
 <script>
 	import "@/css/layout.css";
 	import "@/js/editor.md-master/css/editormd.css";
-	import "@/js/editor.md-master/editormd.min.js";
+	import "@/js/editor.md-master/editormd.js";
 	import "@/js/editor.md-master/lib/marked.min.js";
 	import "@/js/editor.md-master/lib/prettify.min.js";
 	import axios from 'axios'
@@ -65,7 +65,7 @@
 			vue.$nextTick(function() {
 				// 等待数据更新同步到DOM之后进行渲染
 				editormd.markdownToHTML("test-editormd", {
-					htmlDecode: "style,script,iframe", // you can filter tags decode
+			//		htmlDecode: "style,script,iframe", // you can filter tags decode
 					emoji: true,
 					taskList: true,
 					tex: true, // 默认不解析
