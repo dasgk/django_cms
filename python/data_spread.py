@@ -41,13 +41,15 @@ class DataSpread:
         #设置x坐标值
         plt.xticks(result_spread_data['limit_orders'], result_spread_data['limit_orders'])
         plt.title('订单分布')
+        #设置数字标签
+        for a, b in zip(result_spread_data['limit_orders'], result_spread_data['day_count']):
+            plt.text(a, b + 0.05, '%.0f' % b, ha='center', va='bottom', fontsize=7)
         plt.show()
         return result_spread_data
     def save_to_csv(self):
         data_dict = self.handle()
         spread_pd = pd.DataFrame.from_dict(data_dict)
         spread_pd.to_csv('./dlj_dlj_order_after_spread.csv')
-
 
 model = DataSpread('./dlj_dlj_order_after_preprocresult.csv')
 model.save_to_csv()
