@@ -4,7 +4,7 @@ from django_cms.models import Article, LabelArticle,Label,ArticleComment
 import random
 import logging
 import datetime
-
+import re
 class ArticleDao(object):
     @staticmethod
     def getArticleList(options, page_num, label_id):
@@ -32,6 +32,14 @@ class ArticleDao(object):
             article_filter = dict()
             article_filter['article_id'] = article_id
             article = Article.objects.filter(**article_filter).first()
+        # 内容中如果包含图片，则进行替换  示例：![](/static/uploadfiles/article/1560233063.png)
+        result = re.findall(r'!\[\]\((.+?)\)', content)
+        for item in result:
+            #判断item 中是否有前缀,有前缀则不处理
+            if item.find(ConstDao.getPrefixUrl()) != -1:
+                continue
+            #没有前缀，则添加
+            content = content.replace(item,ConstDao.getPrefixUrl()+item)
 
         if article == None:
             article = Article()
