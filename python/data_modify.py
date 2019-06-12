@@ -39,7 +39,9 @@ class DataFormat:
     def same_width_lisan(self,data):
         # ?????
         k = self.k
-        return pd.cut(data, k, labels=range(k))
+        labels = range(k)
+        # pd.cut ?????????x??????,?????????int??????????k?????
+        return pd.cut(data, k, labels=labels)
 
     '''
         ????
@@ -49,6 +51,7 @@ class DataFormat:
         w = [1.0 * i / k for i in range(k + 1)]
         w = data.describe(percentiles=w)[4:4 + k + 1]
         w[0] = w[0] * (1 - 1e-10)
+        # cut???????w??????????????????
         d2 = pd.cut(data, w, labels=range(k))
         return d2
 
@@ -58,12 +61,12 @@ class DataFormat:
 
     def k_means_lisan(self, data):
         k = self.k
-        kmodel = KMeans(n_clusters=k, n_jobs=4)  # ???? n_jobs????????CPU??
-        kmodel.fit(data.reshape((len(data), 1)))  # ????
-        c = pd.DataFrame(kmodel.cluster_centers_).sort(0)  # ???????????????????
+        kmodel = KMeans(n_clusters=k, n_jobs=1)  # ???? n_jobs????????CPU??
+        kmodel.fit(data.values.reshape((len(data), 1)))  # ????
+        c = pd.DataFrame(kmodel.cluster_centers_).sort_values(0,ascending=True)  # ???????????????????
         w = pd.rolling_mean(c, 2).iloc[1:]  # ????????????
         w = [0] + list(w[0]) + [data.max()]  # ???????
-        d3 = pc.cut(data, w, labels=range(k))
+        d3 = pd.cut(data, w, labels=range(k))
         return d3
 
     '''
@@ -84,6 +87,11 @@ class DataFormat:
 
 model = DataFormat('./dlj_dlj_order.csv')
 data = model.add_hour_attribute()
-d1 = model.same_width_lisan(data)
+data = data['use_hour'].copy()
+#d1 = model.same_width_lisan(data)
+#model.cluster_plot(d1,model.k).show()
+d2 = model.same_freq_lisan(data)
+model.cluster_plot(d2,model.k).show()
 
-
+#d3 = model.k_means_lisan(data)
+#model.cluster_plot(d3,model.k).show()
