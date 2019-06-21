@@ -71,7 +71,7 @@ class DataFormat:
         return d3
 
     '''
-        ????
+        离散点的处理
     '''
     def cluster_plot(self,d,k):
         plt.rcParams['font.sans-serif'] = ['SimHei']
@@ -82,9 +82,7 @@ class DataFormat:
         plt.ylim(-0.5,k-0.5)
         return plt
 
-'''
-    ????????????(???use_count?)
-'''
+
 
 model = DataFormat('./dlj_dlj_order.csv')
 data = model.add_hour_attribute()
