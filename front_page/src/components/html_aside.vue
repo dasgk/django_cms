@@ -44,9 +44,10 @@
 				<div slot="header" class="clearfix">
 					<span style="text-align:center">标签聚合</span>
 				</div>
-				<div style=" width:87%;" class="tag_clouds"  v-for="label in label_list">
-				<a href="javascript:void(0)" @click="article_list_by_label(label.label_id, label.title)" class="tag-cloud-link tag-link-48 tag-link-position-1" style="text-decoration:none;font-size: 14px;">{{label.title}}</a>
-        </div>
+				<div class="tag_clouds"  >
+					<a  v-for="label in label_list" href="javascript:void(0)" @click="article_list_by_label(label.label_id, label.title)"
+					 	class="tag-cloud-link tag-link-48 tag-link-position-1" style="text-decoration:none;font-size: 14px;">{{label.title}}</a>
+        		</div>
 			</el-card>
 		</div>
 		<!--  站內搜索结束  -->
