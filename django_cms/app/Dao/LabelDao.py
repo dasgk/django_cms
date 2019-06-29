@@ -3,6 +3,9 @@ from django.core.paginator import Paginator
 from django_cms.app.Dao.ConstDao import ConstDao
 from django_cms.app.Dao.TimeDao import TimeDao
 import logging
+from pytagcloud import create_tag_image, make_tags
+from pytagcloud.lang.counter import get_tag_counts
+
 class LabelDao(object):
     @staticmethod
     def update_label(tagsinput, article_id):
@@ -62,6 +65,17 @@ class LabelDao(object):
         label_count = Label.objects.count()
         return [label_list, label_count]
 
+    @staticmethod
     def get_all_label():
         label_list = Label.objects.order_by("-label_id").all()
         return label_list
+
+    # 创建标签云
+    @staticmethod
+    def create_labels_pic():
+        print(11)
+        #titles = Label.objects.values_list('title', flat=True)
+        #titles = list(titles)
+        #titles =  ' '.join(titles)
+        #tags = make_tags(get_tag_counts(titles), maxsize=120)
+        #create_tag_image(tags, 'cloud_large.png', size=(900, 600), fontname='Lobster')
