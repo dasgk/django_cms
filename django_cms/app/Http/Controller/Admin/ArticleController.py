@@ -50,7 +50,6 @@ class ArticleController(View):
         article = ArticleDao.createOrUpdate(article_id=param.get('article_id',0),cate_id=param.get('cate_id',1),title=param.get('title'), content=param.get('content',''))
         tagsinput = param.get('tagsinput')
         LabelDao.update_lable_article(tagsinput, article.article_id)
-        LabelDao.create_labels_pic()
         return response_json(1, [], "保存成功", reverse('admin.article.index'))
 
     def article_delete(request, article_id):
