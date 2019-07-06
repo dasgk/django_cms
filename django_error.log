@@ -1,4 +1,0 @@
-2019-07-06 14:47:46,722 [Thread-7:12800] [file_out.views:9] [LogDao:save_log_for_error] [ERROR]- 31312312312
-2019-07-06 14:49:15,932 [Thread-3:3008] [file_out.views:11] [LogDao:save_log_for_error] [ERROR]- a:1
-2019-07-06 14:49:15,932 [Thread-3:3008] [file_out.views:11] [LogDao:save_log_for_error] [ERROR]- b:2
-2019-07-06 14:49:15,932 [Thread-3:3008] [file_out.views:11] [LogDao:save_log_for_error] [ERROR]- c:3

@@ -1,5 +1,6 @@
-import logging
 
+
+import logging
 import logging.handlers
 
 class LogDao():
@@ -9,6 +10,7 @@ class LogDao():
         if(type(logger_content).__name__ == 'dict'):
             for key in logger_content:
                 logger.error(key+":"+logger_content[key])
+
 
     @staticmethod
     def save_log_for_console(logger_content):
