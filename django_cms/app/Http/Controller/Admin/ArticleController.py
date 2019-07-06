@@ -4,11 +4,13 @@ from django.shortcuts import render
 from django.views import View
 from django_cms.models import Article
 from django_cms.app.Dao.ArticleDao import ArticleDao
-
+from django_cms.app.Dao.LogDao import LogDao
 from django_cms.app.Dao.CateDao import CateDao
 from django_cms.app.Dao.LabelDao import LabelDao
 from django_cms.app.utility.helps import response_json
 from django.urls import reverse
+
+
 
 class ArticleController(View):
     '''

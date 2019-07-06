@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import time
+import datetime
+import logging
+import django.utils.log
+import logging.handlers
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -151,7 +156,7 @@ LOGGING = {
         'default': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': 'log/all.log',     #日志输出文件
+            'filename': BASE_DIR+'/django_all.log',     #日志输出文件
             'maxBytes': 1024*1024*5,                  #文件大小
             'backupCount': 5,                         #备份份数
             'formatter':'standard',                   #使用哪种formatters日志格式
@@ -159,7 +164,7 @@ LOGGING = {
         'error': {
             'level':'ERROR',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': 'log/error.log',
+            'filename': BASE_DIR+'/django_error.log',
             'maxBytes':1024*1024*5,
             'backupCount': 5,
             'formatter':'standard',
@@ -172,7 +177,7 @@ LOGGING = {
         'request_handler': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': 'log/script.log',
+            'filename': BASE_DIR+'/django_script.log',
             'maxBytes': 1024*1024*5,
             'backupCount': 5,
             'formatter':'standard',
@@ -180,7 +185,7 @@ LOGGING = {
         'scprits_handler': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename':'log/script.log',
+            'filename':BASE_DIR+'script.log',
             'maxBytes': 1024*1024*5,
             'backupCount': 5,
             'formatter':'standard',
@@ -202,7 +207,7 @@ LOGGING = {
             'level': 'INFO',
             'propagate': False
         },
-        'sourceDns.webdns.views': {
+        'file_out.views': {
             'handlers': ['default', 'error'],
             'level': 'DEBUG',
             'propagate': True
