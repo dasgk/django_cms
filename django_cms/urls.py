@@ -21,5 +21,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin',include('django_cms.admin_urls')),
     url(r'^api', include('django_cms.api_urls')),
-  #  url(r'', HomeController.jump2Index, name='index'),
+    url(r'', HomeController.jump2Index, name='index'),
 ]
