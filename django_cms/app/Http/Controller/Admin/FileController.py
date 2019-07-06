@@ -29,6 +29,7 @@ class FileController(View):
         res['allow_type'] = upload_file_type.allow_type
         res['allow_num'] = upload_file_type.allow_num
         res['allow_size'] = upload_file_type.allow_size
+        res['file_id'] = param.get('file_id','')
         res['allow_size_m'] = upload_file_type.allow_size / 1024 / 1024
         mimeArray = {};
         mimeArray['gif'] = 'image/gif';

@@ -29,7 +29,7 @@ function upload_resource(url,title,uploaded_type,id,type,post_name,name_type){
         move: false,
         resize: false,
         zIndex: 100000,
-        content: url+"?uploaded_type="+uploaded_type
+        content: url+"?uploaded_type="+uploaded_type+"&file_id="+id
     });
 }
 
