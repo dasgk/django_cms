@@ -17,12 +17,12 @@ train = data[:int(len(data)*p),:]  #p是浮点数，需要强制转换为int
 test = data[int(len(data)*p):,:]
 
 net = Sequential()
-net.add(Dense(3,10)) #添加输入层3个节点到隐藏层10个节点的连接
+net.add(Dense(input_dim=3, output_dim=10)) #添加输入层3个节点到隐藏层10个节点的连接
 net.add(Activation('relu')) # 隐藏层使用激活函数relu
-net.add(Dense(10,1)) #隐藏层10个节点到输出层1个节点的连接
+net.add(Dense(input_dim=10, output_dim=1)) #隐藏层10个节点到输出层1个节点的连接
 net.add(Activation('sigmoid')) #使用激活函数 sigmoid
-net.compile(loss="binary_crossentropy",optimizer='adam',class_mode='binary') #编译模型使用adam求解
-net.fit(train[:,:3],train[:,3:],nb_epoch=1000,batch_size=1) #训练模型，使用1000次
+net.compile(loss="binary_crossentropy",optimizer='adam', metrics=['accuracy']) #编译模型使用adam求解
+net.fit(train[:,:3],train[:,3],epochs=1000,batch_size=1) #训练模型，使用1000次
 net.save_weights(netfile)
 
 predict_result = net.predict_classes(test[:,:3]).reshape(len(test)) #将预测结果进行变形处理
