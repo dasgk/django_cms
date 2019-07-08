@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 import pandas as pd
-from scipy.interpolate import lagrange
+from scipy.interpolate import lagrange #拉格朗日函数
 
 inputfile = './data/missing_data.xls'
 outputfile = './data/missing_lagrange_processed.xls'
