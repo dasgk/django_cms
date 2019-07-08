@@ -169,6 +169,14 @@ LOGGING = {
             'backupCount': 5,
             'formatter':'standard',
         },
+        'info': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': BASE_DIR + '/django_info.log',
+            'maxBytes': 1024 * 1024 * 5,
+            'backupCount': 5,
+            'formatter': 'standard',
+        },
         'console':{
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
@@ -208,7 +216,7 @@ LOGGING = {
             'propagate': False
         },
         'files': {
-            'handlers': ['default', 'error'],
+            'handlers': ['info'],
             'level': 'DEBUG',
             'propagate': True
         },
