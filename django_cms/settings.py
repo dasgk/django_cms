@@ -207,7 +207,7 @@ LOGGING = {
             'level': 'INFO',
             'propagate': False
         },
-        'file_out.views': {
+        'files': {
             'handlers': ['default', 'error'],
             'level': 'DEBUG',
             'propagate': True
