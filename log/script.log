@@ -1,0 +1,111 @@
+2019-05-18 19:50:03,688 [Thread-2:123145358585856] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/rate_value_submit
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Api/ArticleController.py", line 105, in rate_value_submit
+    article.rate_num = rate_value_modal.rate_value
+AttributeError: 'dict' object has no attribute 'rate_value'
+2019-05-18 19:51:03,041 [Thread-2:123145566789632] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/rate_value_submit
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Api/ArticleController.py", line 105, in rate_value_submit
+    article.rate_num = rate_value_modal['rate_value']
+KeyError: 'rate_value'
+2019-05-18 19:51:25,573 [Thread-2:123145406570496] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/rate_value_submit
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Api/ArticleController.py", line 106, in rate_value_submit
+    article.rate_num = rate_value_modal['rate_value']
+KeyError: 'rate_value'
+2019-05-18 19:51:42,693 [Thread-2:123145406570496] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/rate_value_submit
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Api/ArticleController.py", line 106, in rate_value_submit
+    article.rate_num = rate_value_modal['rate_value']
+KeyError: 'rate_value'
+2019-06-03 21:34:27,255 [Thread-2:123145504190464] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-06-04 19:59:39,547 [Thread-2:123145355124736] [django.request:228] [log:log_response] [WARNING]- Not Found: /
+2019-06-04 19:59:39,716 [Thread-2:123145355124736] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-06-29 22:01:53,144 [Thread-2:123145463808000] [django.request:228] [log:log_response] [WARNING]- Not Found: /
+2019-06-29 22:01:53,314 [Thread-2:123145463808000] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-06-29 22:02:27,747 [Thread-6:123145479573504] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/article_save
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/ArticleController.py", line 53, in article_save
+    LabelDao.create_labels_pic()
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Dao/LabelDao.py", line 91, in create_labels_pic
+    mask=plt.imread('0Yc1l1EOfN.jpg'),  # 背景图片
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/matplotlib/pyplot.py", line 2152, in imread
+    return matplotlib.image.imread(fname, format)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/matplotlib/image.py", line 1359, in imread
+    with Image.open(fname) as image:
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/PIL/Image.py", line 2652, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '0Yc1l1EOfN.jpg'
+2019-06-29 22:02:47,884 [Thread-6:123145479573504] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/article_save
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/ArticleController.py", line 53, in article_save
+    LabelDao.create_labels_pic()
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Dao/LabelDao.py", line 91, in create_labels_pic
+    mask=plt.imread('0Yc1l1EOfN.jpg'),  # 背景图片
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/matplotlib/pyplot.py", line 2152, in imread
+    return matplotlib.image.imread(fname, format)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/matplotlib/image.py", line 1359, in imread
+    with Image.open(fname) as image:
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/PIL/Image.py", line 2652, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '0Yc1l1EOfN.jpg'
+2019-06-30 17:29:33,386 [Thread-2:123145329356800] [django.request:228] [log:log_response] [WARNING]- Not Found: /
+2019-06-30 17:29:33,547 [Thread-2:123145329356800] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-07-01 22:22:36,465 [Thread-2:123145543688192] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/article_save
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Http/Controller/Admin/ArticleController.py", line 53, in article_save
+    LabelDao.create_labels_pic()
+  File "/Users/jianyezhou/PycharmProjects/django_cms/django_cms/app/Dao/LabelDao.py", line 91, in create_labels_pic
+    mask=plt.imread('0Yc1l1EOfN.jpg'),  # 背景图片
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/matplotlib/pyplot.py", line 2152, in imread
+    return matplotlib.image.imread(fname, format)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/matplotlib/image.py", line 1359, in imread
+    with Image.open(fname) as image:
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/PIL/Image.py", line 2652, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '0Yc1l1EOfN.jpg'
+2019-07-03 20:21:29,556 [Thread-2:123145494777856] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-07-05 19:48:08,596 [Thread-2:123145326555136] [django.request:228] [log:log_response] [WARNING]- Not Found: /
+2019-07-05 19:48:08,766 [Thread-2:123145326555136] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
