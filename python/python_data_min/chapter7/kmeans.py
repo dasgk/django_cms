@@ -3,6 +3,8 @@
 import pandas as pd
 # sklearn.cluster 是聚类子库
 from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+import numpy as np
 
 inputfile='./data/air_data.csv'
 explorefile = './data/data_after_explore.xls'
@@ -53,16 +55,23 @@ def data_score():
 
 
 def kmeans():
-    data = pd.read_excel(output_score)
-    k = 5
-    kmodel = KMeans(n_clusters=k, n_jobs=4)
+    #header 指定列名行 默认值是0，取第一行是作为列名,不含列名 则 header=None
+    # names 可以指定列的名字
+    data = pd.read_excel(output_score, header=0,init='random')
+    k = 10
+    kmodel = KMeans(n_clusters=k)
+    # 进行训练
     kmodel.fit(data)
-    print(kmodel.cluster_centers_)
-    print(kmodel.labels_)
+    # 进行预测
+    kmodel.predict(data)
+    # 训练之后直接预测
+    y_= kmodel.fit_predict(data)
+    # 返回的是np.ndarray
+    labels = kmodel.labels_# 每行的标签，
+    # 是 k个类的值
+    print("输出类别的标签" ,np.unique(labels))
+    # 输出每个类别
+    for i in range(len(np.unique(labels))):
+        print('类别:',i,'数量：',len(data[y_==i]))
 
-data_statics()
-
-
-
-
-
+kmeans()
