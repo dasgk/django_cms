@@ -58,7 +58,7 @@ def kmeans():
     #header 指定列名行 默认值是0，取第一行是作为列名,不含列名 则 header=None
     # names 可以指定列的名字
     data = pd.read_excel(output_score, header=0,init='random')
-    k = 10
+    k = 5
     kmodel = KMeans(n_clusters=k)
     # 进行训练
     kmodel.fit(data)
@@ -73,5 +73,11 @@ def kmeans():
     # 输出每个类别
     for i in range(len(np.unique(labels))):
         print('类别:',i,'数量：',len(data[y_==i]))
+    #聚类中心
+    # 不使用科学计数法
+    np.set_printoptions(suppress=True)
+    np.set_printoptions(precision=4)
+    print(kmodel.cluster_centers_)
+
 
 kmeans()
